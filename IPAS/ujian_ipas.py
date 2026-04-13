@@ -4,7 +4,6 @@
 Program Ujian IPAS Kelas 6 SD
 - Langsung masuk soal (tanpa input nama/kelas)
 - 45 PG + 5 Esai, diacak setiap sesi
-- Soal esai renang gaya punggung SELALU keluar
 - Satu soal per tampilan, navigasi prev/next
 - Jawaban dapat diubah
 - Kode keluar guru: pinewood62
@@ -110,579 +109,525 @@ C = {
 }
 
 # ─────────────────────────────────────────────────────────────
-#  POOL SOAL PILIHAN GANDA  (100 soal – diambil 45 per sesi)
-#  Tingkat kesulitan: Mudah (1–56) → Menengah (57–78) → Sulit (79–100)
+#  POOL SOAL PILIHAN GANDA  (85 soal – diambil 45 per sesi)
+#  Tingkat kesulitan: Mudah (1–45) → Menengah (46–65) → Sulit (66–85)
 # ─────────────────────────────────────────────────────────────
 PG_POOL = [
 
     # ══════════════════════════════════════════════════════════
-    # MUDAH (1–56)
+    # MUDAH (1–45)
     # ══════════════════════════════════════════════════════════
 
-    # ── PERUBAHAN BENDA ──────────────────────────────────────
-    {"p": "Perubahan wujud dari es menjadi air disebut …",
-     "o": ["Membeku", "Mencair", "Menyublim", "Mengembun"],
-     "j": 1},
-
-    {"p": "Perubahan wujud dari air menjadi uap disebut …",
-     "o": ["Mencair", "Membeku", "Menguap", "Mengembun"],
+    # ── PERTUMBUHAN & PERKEMBANGAN ────────────────────────────
+    {"p": "Proses bertambahnya ukuran tinggi dan berat badan manusia disebut …",
+     "o": ["Perkembangan", "Pubertas", "Pertumbuhan", "Reproduksi"],
      "j": 2},
 
-    {"p": "Perubahan wujud dari uap air menjadi titik-titik air disebut …",
-     "o": ["Menguap", "Membeku", "Mencair", "Mengembun"],
-     "j": 3},
-
-    {"p": "Besi yang dibiarkan lama di udara terbuka dan terkena air akan mengalami …",
-     "o": ["Pelapukan", "Perkaratan", "Pembusukan", "Penyubliman"],
-     "j": 1},
-
-    {"p": "Proses pembusukan pada makanan disebabkan oleh …",
-     "o": ["Sinar matahari", "Angin kencang", "Bakteri dan jamur", "Air hujan"],
-     "j": 2},
-
-    {"p": "Benda yang dipanaskan akan mengalami …",
-     "o": ["Penyusutan", "Pemuaian", "Pembekuan", "Pelapukan"],
-     "j": 1},
-
-    {"p": "Kayu yang lapuk di hutan terutama disebabkan oleh …",
-     "o": ["Gaya gravitasi", "Udara panas", "Jamur dan air", "Debu dan pasir"],
-     "j": 2},
-
-    {"p": "Perubahan yang terjadi pada kertas yang dibakar adalah perubahan …",
-     "o": ["Fisika", "Kimia", "Wujud sementara", "Bentuk saja"],
-     "j": 1},
-
-    {"p": "Es krim yang dibiarkan di luar kulkas akan …",
-     "o": ["Membeku", "Mencair", "Mengembun", "Menyublim"],
-     "j": 1},
-
-    {"p": "Faktor yang memengaruhi cepat atau lambatnya perkaratan besi adalah …",
-     "o": ["Warna besi", "Berat besi", "Kelembapan udara", "Bentuk besi"],
-     "j": 2},
-
-    # ── PEMILIHAN BAHAN ──────────────────────────────────────
-    {"p": "Bahan yang bersifat isolator panas adalah …",
-     "o": ["Besi", "Tembaga", "Kayu", "Aluminium"],
-     "j": 2},
-
-    {"p": "Bahan yang bersifat konduktor panas adalah …",
-     "o": ["Plastik", "Karet", "Kain wol", "Besi"],
-     "j": 3},
-
-    {"p": "Gagang panci terbuat dari kayu atau plastik karena bahan tersebut …",
-     "o": ["Lebih murah", "Merupakan isolator panas", "Lebih ringan", "Lebih kuat"],
-     "j": 1},
-
-    {"p": "Bahan yang digunakan untuk membuat payung agar tahan air adalah …",
-     "o": ["Kertas", "Kain katun biasa", "Plastik atau nilon", "Wol"],
-     "j": 2},
-
-    {"p": "Karet gelang dapat kembali ke bentuk semula setelah direntangkan. Sifat ini disebut …",
-     "o": ["Keras", "Elastis", "Konduktif", "Magnetis"],
-     "j": 1},
-
-    {"p": "Bahan yang tepat untuk membuat panci memasak adalah aluminium karena …",
-     "o": ["Aluminium adalah isolator panas yang baik", "Aluminium adalah konduktor panas yang baik", "Aluminium tidak bisa berkarat", "Aluminium lebih murah dari plastik"],
-     "j": 1},
-
-    {"p": "Bahan yang digunakan untuk membuat pakaian agar mudah menyerap keringat adalah …",
-     "o": ["Plastik", "Nilon sintetis", "Katun", "Kaca serat"],
-     "j": 2},
-
-    {"p": "Sifat bahan yang diperlukan untuk membuat ban kendaraan adalah …",
-     "o": ["Keras dan kaku", "Elastis dan kuat", "Rapuh dan ringan", "Konduktor listrik"],
-     "j": 1},
-
-    # ── GAYA DAN GERAK ───────────────────────────────────────
-    {"p": "Gaya yang menyebabkan benda jatuh ke bawah adalah …",
-     "o": ["Gaya gesek", "Gaya gravitasi", "Gaya magnet", "Gaya pegas"],
-     "j": 1},
-
-    {"p": "Gaya yang bekerja pada karet ketapel saat direntangkan adalah …",
-     "o": ["Gaya gravitasi", "Gaya magnet", "Gaya pegas", "Gaya gesek"],
-     "j": 2},
-
-    {"p": "Gaya gesek yang terjadi antara ban mobil dan jalan membuat mobil …",
-     "o": ["Bergerak lebih cepat", "Melambat atau berhenti", "Melayang", "Berputar balik"],
-     "j": 1},
-
-    {"p": "Magnet dapat menarik benda yang terbuat dari …",
-     "o": ["Plastik", "Kayu", "Besi dan baja", "Karet"],
-     "j": 2},
-
-    {"p": "Benda bergerak lebih cepat jika diberi gaya yang …",
-     "o": ["Lebih kecil", "Sama besar", "Lebih besar", "Berlawanan arah"],
-     "j": 2},
-
-    {"p": "Contoh penerapan gaya pegas dalam kehidupan sehari-hari adalah …",
-     "o": ["Batu jatuh dari pohon", "Kasur pegas", "Besi berkarat", "Air mengalir"],
-     "j": 1},
-
-    {"p": "Gaya yang terjadi antara dua benda yang bersentuhan dan bergerak disebut …",
-     "o": ["Gaya gravitasi", "Gaya magnet", "Gaya gesek", "Gaya pegas"],
-     "j": 2},
-
-    {"p": "Jika dua gaya yang sama besar bekerja dengan arah berlawanan pada benda, maka benda …",
-     "o": ["Bergerak ke kanan", "Bergerak ke kiri", "Bergerak lebih cepat", "Diam atau seimbang"],
-     "j": 3},
-
-    {"p": "Buah mangga jatuh dari pohonnya disebabkan oleh …",
-     "o": ["Gaya pegas", "Gaya gesek", "Gaya gravitasi bumi", "Gaya magnet"],
-     "j": 2},
-
-    {"p": "Permukaan jalan yang kasar akan menghasilkan gaya gesek yang …",
-     "o": ["Lebih kecil", "Lebih besar", "Tidak ada", "Sama saja"],
-     "j": 1},
-
-    # ── ENERGI LISTRIK ───────────────────────────────────────
-    {"p": "Alat yang mengubah energi gerak menjadi energi listrik adalah …",
-     "o": ["Aki", "Baterai", "Dinamo/Generator", "Resistor"],
-     "j": 2},
-
-    {"p": "Baterai menghasilkan energi listrik dari energi …",
-     "o": ["Panas", "Gerak", "Kimia", "Cahaya"],
-     "j": 2},
-
-    {"p": "Alat yang digunakan untuk mengukur arus listrik adalah …",
-     "o": ["Voltmeter", "Amperemeter", "Ohmmeter", "Termometer"],
-     "j": 1},
-
-    {"p": "Alat yang mengubah energi listrik menjadi energi panas adalah …",
-     "o": ["Kipas angin", "Lampu LED", "Radio", "Setrika"],
-     "j": 3},
-
-    {"p": "Rangkaian listrik di mana semua lampu padam jika salah satu lampu mati disebut rangkaian …",
-     "o": ["Paralel", "Campuran", "Seri", "Terbuka"],
-     "j": 2},
-
-    {"p": "Bahan yang dapat menghantarkan listrik dengan baik disebut …",
-     "o": ["Isolator", "Konduktor", "Semikonduktor", "Resistor"],
-     "j": 1},
-
-    {"p": "Bahan yang tidak dapat menghantarkan listrik disebut …",
-     "o": ["Konduktor", "Isolator", "Generator", "Transformator"],
-     "j": 1},
-
-    {"p": "Contoh isolator listrik yang digunakan dalam kehidupan sehari-hari adalah …",
-     "o": ["Kawat tembaga", "Besi", "Aluminium", "Plastik dan karet"],
-     "j": 3},
-
-    {"p": "Alat yang mengubah energi listrik menjadi energi gerak adalah …",
-     "o": ["Setrika", "Lampu pijar", "Kipas angin", "Pemanas air"],
-     "j": 2},
-
-    {"p": "Voltmeter digunakan untuk mengukur …",
-     "o": ["Arus listrik", "Hambatan listrik", "Tegangan listrik", "Daya listrik"],
-     "j": 2},
-
-    {"p": "Sumber energi listrik yang memanfaatkan aliran air adalah …",
-     "o": ["Panel surya", "Generator angin", "PLTA", "Baterai"],
-     "j": 2},
-
-    {"p": "Rangkaian listrik di rumah menggunakan rangkaian paralel karena …",
-     "o": ["Lebih mudah dipasang", "Jika satu lampu mati, lampu lain tetap menyala", "Lebih hemat listrik", "Lebih aman dari kebakaran"],
-     "j": 1},
-
-    # ── PENGHEMATAN ENERGI ───────────────────────────────────
-    {"p": "Cara menghemat energi listrik di rumah yang paling tepat adalah …",
-     "o": ["Menggunakan semua lampu setiap saat", "Mematikan lampu jika tidak digunakan", "Menambah jumlah lampu", "Menggunakan lampu pijar"],
-     "j": 1},
-
-    {"p": "Lampu yang lebih hemat energi dibandingkan lampu pijar biasa adalah …",
-     "o": ["Lampu neon kuning", "Lampu pijar besar", "Lampu LED", "Lampu minyak"],
-     "j": 2},
-
-    {"p": "Penggunaan energi matahari untuk pemanas air di rumah merupakan contoh pemanfaatan energi …",
-     "o": ["Fosil", "Nuklir", "Terbarukan", "Kimia"],
-     "j": 2},
-
-    {"p": "Mengapa kita perlu menghemat energi listrik?",
-     "o": ["Agar tagihan listrik tetap mahal", "Karena sumber energi terbatas dan lingkungan harus dijaga", "Agar rumah menjadi gelap", "Karena listrik tidak berguna"],
-     "j": 1},
-
-    {"p": "Sumber energi yang tidak akan habis jika digunakan terus-menerus disebut energi …",
-     "o": ["Fosil", "Nuklir", "Terbarukan", "Batu bara"],
-     "j": 2},
-
-    {"p": "Bel listrik mengubah energi listrik menjadi energi …",
-     "o": ["Panas", "Cahaya", "Bunyi", "Gerak"],
-     "j": 2},
-
-    # ── TATA SURYA ───────────────────────────────────────────
-    {"p": "Planet yang paling dekat dengan Matahari adalah …",
-     "o": ["Venus", "Bumi", "Merkurius", "Mars"],
-     "j": 2},
-
-    {"p": "Planet yang memiliki cincin indah di sekitarnya adalah …",
-     "o": ["Mars", "Saturnus", "Venus", "Merkurius"],
-     "j": 1},
-
-    {"p": "Benda langit yang mengorbit planet disebut …",
-     "o": ["Komet", "Asteroid", "Satelit", "Meteor"],
-     "j": 2},
-
-    {"p": "Bumi berada pada urutan ke berapa dari Matahari dalam tata surya?",
-     "o": ["Pertama", "Kedua", "Ketiga", "Keempat"],
-     "j": 2},
-
-    {"p": "Benda langit yang berpijar sendiri karena menghasilkan panas dan cahaya disebut …",
-     "o": ["Planet", "Satelit", "Bintang", "Meteor"],
-     "j": 2},
-
-    {"p": "Komet disebut juga bintang …",
-     "o": ["Jatuh", "Berekor", "Berpijar", "Berputar"],
-     "j": 1},
-
-    # ── ROTASI & REVOLUSI ────────────────────────────────────
-    {"p": "Rotasi bumi menyebabkan terjadinya …",
-     "o": ["Pergantian musim", "Perbedaan siang dan malam", "Gerhana matahari", "Kalender Hijriyah"],
-     "j": 1},
-
-    {"p": "Revolusi bumi mengelilingi matahari membutuhkan waktu …",
-     "o": ["24 jam", "30 hari", "365,25 hari", "29,5 hari"],
-     "j": 2},
-
-    {"p": "Gerhana bulan terjadi ketika …",
-     "o": ["Bulan berada di antara bumi dan matahari",
-           "Bumi berada di antara matahari dan bulan",
-           "Matahari berada di antara bumi dan bulan",
-           "Bulan dan matahari sejajar di langit"],
-     "j": 1},
-
-    {"p": "Kalender Masehi didasarkan pada …",
-     "o": ["Revolusi bulan", "Rotasi bumi", "Revolusi bumi", "Rotasi bulan"],
-     "j": 2},
-
-    # ══════════════════════════════════════════════════════════
-    # MENENGAH (57–78) – 22 soal
-    # ══════════════════════════════════════════════════════════
-
-    {"p": "Perbedaan utama antara perubahan fisika dan perubahan kimia adalah …",
-     "o": ["Perubahan fisika menghasilkan zat baru, kimia tidak",
-           "Perubahan kimia menghasilkan zat baru, fisika tidak",
-           "Keduanya selalu menghasilkan zat baru",
-           "Keduanya tidak menghasilkan zat baru"],
-     "j": 1},
-
-    {"p": "Pelapukan yang disebabkan oleh akar tumbuhan yang menembus celah batuan disebut pelapukan …",
-     "o": ["Fisika", "Kimia", "Biologi", "Mekanis"],
-     "j": 2},
-
-    {"p": "Cara yang tepat untuk mencegah perkaratan pada besi adalah …",
-     "o": ["Menyimpan besi di tempat basah", "Mengecat atau melapisi besi dengan bahan anti karat", "Menambah kadar air pada besi", "Memanaskan besi setiap hari"],
-     "j": 1},
-
-    {"p": "Besi yang terkubur dalam tanah lembap akan lebih cepat berkarat karena …",
-     "o": ["Tanah mengandung bakteri saja",
-           "Kelembapan tinggi mempercepat reaksi oksidasi besi",
-           "Tanah panas mempercepat pelapukan",
-           "Tekanan tanah merusak struktur besi"],
-     "j": 1},
-
-    {"p": "Mengapa beton bertulang digunakan untuk membangun jembatan dan gedung tinggi?",
-     "o": ["Ringan dan murah", "Kuat menahan beban dan tahan lama", "Mudah dibentuk seperti karet", "Tidak dapat terbakar sama sekali"],
-     "j": 1},
-
-    {"p": "Bahan yang tepat untuk membuat kabel listrik adalah tembaga yang dilapisi …",
-     "o": ["Besi", "Karet atau plastik", "Aluminium", "Kayu"],
-     "j": 1},
-
-    {"p": "Contoh penerapan gaya magnet dalam kehidupan sehari-hari adalah …",
-     "o": ["Ban sepeda yang mengerem", "Pintu kulkas yang menutup rapat dengan magnet", "Balon udara yang naik", "Karet yang melentur"],
-     "j": 1},
-
-    {"p": "Saat bola sepak ditendang ke atas, gaya yang bekerja saat bola berada di udara adalah …",
-     "o": ["Hanya gaya tendangan", "Hanya gaya gravitasi", "Gaya gravitasi dan hambatan udara", "Tidak ada gaya yang bekerja"],
-     "j": 2},
-
-    {"p": "Perbedaan gaya sentuh dan gaya tak sentuh adalah …",
-     "o": ["Gaya sentuh memerlukan kontak langsung, gaya tak sentuh tidak",
-           "Gaya tak sentuh memerlukan kontak langsung, gaya sentuh tidak",
-           "Keduanya memerlukan kontak langsung",
-           "Keduanya tidak memerlukan kontak"],
+    {"p": "Urutan tahap pertumbuhan manusia yang benar dari awal adalah …",
+     "o": ["Bayi – Balita – Anak – Remaja – Dewasa – Lansia",
+           "Balita – Bayi – Anak – Remaja – Dewasa – Lansia",
+           "Anak – Bayi – Balita – Remaja – Dewasa – Lansia",
+           "Bayi – Anak – Balita – Remaja – Dewasa – Lansia"],
      "j": 0},
 
-    {"p": "Perbedaan antara aki dan baterai sebagai sumber listrik adalah …",
-     "o": ["Aki sekali pakai, baterai dapat diisi ulang",
-           "Baterai sekali pakai, aki dapat diisi ulang",
-           "Keduanya tidak dapat diisi ulang",
-           "Keduanya selalu dapat diisi ulang"],
-     "j": 1},
-
-    {"p": "Energi listrik pada panel surya berasal dari energi …",
-     "o": ["Panas bumi", "Cahaya matahari", "Angin", "Air terjun"],
-     "j": 1},
-
-    {"p": "Lampu lalu lintas modern menggunakan lampu LED karena …",
-     "o": ["Lebih mahal dan mewah",
-           "Lebih hemat energi dan tahan lama dibanding lampu pijar",
-           "LED menghasilkan lebih banyak panas",
-           "LED lebih mudah rusak"],
-     "j": 1},
-
-    {"p": "Menggunakan kendaraan umum atau bersepeda merupakan cara menghemat …",
-     "o": ["Energi listrik saja",
-           "Bahan bakar fosil dan mengurangi polusi",
-           "Air bersih",
-           "Energi nuklir"],
-     "j": 1},
-
-    {"p": "Planet yang dijuluki 'planet merah' adalah …",
-     "o": ["Venus", "Yupiter", "Mars", "Saturnus"],
-     "j": 2},
-
-    {"p": "Perbedaan antara meteor dan meteorit adalah …",
-     "o": ["Meteor sampai ke bumi, meteorit tidak",
-           "Meteorit adalah meteor yang sampai ke permukaan bumi",
-           "Meteor lebih besar dari meteorit",
-           "Meteorit berasal dari komet, meteor dari asteroid"],
-     "j": 1},
-
-    {"p": "Mengapa Venus lebih panas dari Merkurius meskipun Venus lebih jauh dari Matahari?",
-     "o": ["Venus lebih besar dari Merkurius",
-           "Venus memiliki atmosfer tebal dengan efek rumah kaca yang kuat",
-           "Venus berputar lebih cepat dari Merkurius",
-           "Venus memiliki lebih banyak gunung berapi aktif"],
-     "j": 1},
-
-    {"p": "Asteroid dalam tata surya sebagian besar terletak di antara orbit planet …",
-     "o": ["Bumi dan Mars", "Mars dan Yupiter", "Yupiter dan Saturnus", "Saturnus dan Uranus"],
-     "j": 1},
-
-    {"p": "Kalender Hijriyah memiliki hari lebih sedikit dari kalender Masehi karena …",
-     "o": ["Kalender Hijriyah didasarkan pada rotasi bulan",
-           "Kalender Hijriyah didasarkan pada revolusi bulan (29,5 hari/bulan = 354 hari/tahun)",
-           "Kalender Hijriyah didasarkan pada revolusi bumi",
-           "Kalender Hijriyah memiliki 13 bulan"],
-     "j": 1},
-
-    {"p": "Akibat revolusi bumi adalah …",
-     "o": ["Pergantian siang dan malam",
-           "Perbedaan waktu di berbagai daerah",
-           "Pergantian musim dan perbedaan lamanya siang dan malam",
-           "Terjadinya pasang surut air laut"],
-     "j": 2},
-
-    {"p": "Gerhana matahari terjadi ketika …",
-     "o": ["Bumi berada di antara matahari dan bulan",
-           "Bulan berada di antara bumi dan matahari",
-           "Matahari berada di antara bumi dan bulan",
-           "Bumi, bulan, dan matahari membentuk segitiga"],
-     "j": 1},
-
-    {"p": "Satelit alami bumi adalah …",
-     "o": ["Matahari", "Bulan", "Mars", "Venus"],
-     "j": 1},
-
-    {"p": "Peristiwa alam yang menyebabkan sebagian wilayah bumi mengalami musim hujan dan sebagian lain musim kemarau disebabkan oleh …",
-     "o": ["Rotasi bumi", "Revolusi bumi dan kemiringan sumbu bumi", "Gerhana matahari", "Gravitasi bulan"],
-     "j": 1},
-
-    # ══════════════════════════════════════════════════════════
-    # SULIT (79–100) – 22 soal
-    # ══════════════════════════════════════════════════════════
-
-    {"p": "Proses di mana benda padat langsung berubah menjadi gas tanpa melalui fase cair disebut …",
-     "o": ["Menguap", "Menyublim", "Membeku", "Mengembun"],
-     "j": 1},
-
-    {"p": "Roti yang ditumbuhi jamur mengalami perubahan kimia karena …",
-     "o": ["Hanya berubah warna saja",
-           "Terbentuk zat baru yang tidak dapat kembali ke bentuk semula",
-           "Hanya berubah bentuk saja",
-           "Perubahan dapat dibalik dengan didinginkan"],
-     "j": 1},
-
-    {"p": "Faktor lingkungan yang TIDAK memengaruhi kecepatan pelapukan batu adalah …",
-     "o": ["Suhu", "Kelembapan", "Warna batu", "Organisme (lumut dan jamur)"],
-     "j": 2},
-
-    {"p": "Mengapa kapal laut terbuat dari baja padahal baja lebih berat dari air?",
-     "o": ["Karena baja kedap air sehingga tidak tenggelam",
-           "Karena bentuk kapal yang berongga membuat volume air yang dipindahkan lebih besar dari berat kapal",
-           "Karena baja bersifat mengapung di air laut",
-           "Karena air laut memiliki daya dorong yang sangat kuat"],
-     "j": 1},
-
-    {"p": "Sifat bahan yang diperlukan untuk membuat peralatan medis seperti jarum suntik adalah …",
-     "o": ["Lunak, tidak higienis, dan murah",
-           "Keras, steril, tidak berkarat, dan tidak bereaksi dengan zat kimia tubuh",
-           "Elastis, mudah dibengkokkan, dan berwarna",
-           "Ringan, transparan, dan mudah terurai"],
-     "j": 1},
-
-    {"p": "Seorang astronot di luar angkasa melayang karena …",
-     "o": ["Di luar angkasa tidak ada udara",
-           "Gaya gravitasi di luar angkasa hampir nol",
-           "Pakaian astronot sangat ringan",
-           "Kecepatan pesawat terlalu tinggi"],
-     "j": 1},
-
-    {"p": "Sebuah buku diam di atas meja. Kondisi gaya yang bekerja pada buku tersebut adalah …",
-     "o": ["Hanya gaya gravitasi ke bawah",
-           "Gaya gravitasi ke bawah dan gaya normal meja ke atas yang seimbang",
-           "Tidak ada gaya yang bekerja",
-           "Hanya gaya normal meja ke atas"],
-     "j": 1},
-
-    {"p": "Mengapa rem pada kendaraan dirancang untuk meningkatkan gaya gesek?",
-     "o": ["Agar kendaraan bergerak lebih cepat",
-           "Agar roda kendaraan dapat berhenti dengan memperbesar hambatan gerak",
-           "Agar kendaraan dapat berbelok lebih mudah",
-           "Agar ban tidak cepat aus"],
-     "j": 1},
-
-    {"p": "Pada pembangkit listrik tenaga air (PLTA), urutan perubahan energi yang terjadi adalah …",
-     "o": ["Energi listrik → energi gerak → energi potensial",
-           "Energi potensial air → energi gerak → energi listrik",
-           "Energi panas → energi gerak → energi listrik",
-           "Energi kimia → energi listrik → energi gerak"],
-     "j": 1},
-
-    {"p": "Sebuah setrika memiliki daya 350 watt dan digunakan selama 2 jam. Energi listrik yang terpakai adalah …",
-     "o": ["175 Wh", "700 Wh", "0,175 kWh", "0,7 kWh"],
+    {"p": "Tahap awal terbentuknya individu baru dalam kandungan dimulai dari …",
+     "o": ["Janin", "Embrio", "Bayi", "Zigot"],
      "j": 3},
 
-    {"p": "Dampak utama penggunaan bahan bakar fosil secara berlebihan adalah …",
-     "o": ["Menurunkan harga BBM",
-           "Pemanasan global dan perubahan iklim akibat emisi CO₂",
-           "Meningkatkan produksi oksigen",
-           "Mengurangi polusi udara"],
+    {"p": "Organ reproduksi perempuan yang menghasilkan sel telur disebut …",
+     "o": ["Rahim", "Tuba falopi", "Vagina", "Ovarium"],
+     "j": 3},
+
+    {"p": "Sel yang dihasilkan oleh laki-laki dalam proses reproduksi adalah …",
+     "o": ["Ovum", "Zigot", "Embrio", "Sperma"],
+     "j": 3},
+
+    {"p": "Masa peralihan dari anak-anak menuju dewasa disebut …",
+     "o": ["Remaja", "Pubertas", "Bayi", "Balita"],
      "j": 1},
 
-    {"p": "Panel surya mengubah energi cahaya matahari menjadi energi listrik menggunakan efek …",
-     "o": ["Elektromagnetik", "Fotolistrik (fotovoltaik)", "Termoelektrik", "Piezoelektrik"],
-     "j": 1},
+    {"p": "Salah satu ciri pubertas pada laki-laki adalah …",
+     "o": ["Pinggul melebar", "Menstruasi", "Payudara berkembang", "Suara menjadi berat"],
+     "j": 3},
 
-    {"p": "Urutan planet dalam tata surya dari yang terdekat ke terjauh dari Matahari adalah …",
-     "o": ["Merkurius, Venus, Bumi, Mars, Yupiter, Saturnus, Uranus, Neptunus",
-           "Venus, Merkurius, Bumi, Mars, Yupiter, Saturnus, Uranus, Neptunus",
-           "Merkurius, Bumi, Venus, Mars, Yupiter, Saturnus, Uranus, Neptunus",
-           "Merkurius, Venus, Mars, Bumi, Yupiter, Saturnus, Uranus, Neptunus"],
-     "j": 0},
+    {"p": "Salah satu ciri pubertas pada perempuan adalah …",
+     "o": ["Dada melebar", "Suara menjadi besar", "Jakun tumbuh", "Menstruasi"],
+     "j": 3},
 
-    {"p": "Mengapa Pluto tidak lagi dikategorikan sebagai planet dalam tata surya?",
-     "o": ["Karena Pluto terlalu kecil untuk dilihat dari bumi",
-           "Karena Pluto tidak memenuhi syarat planet: tidak membersihkan orbitnya dari benda langit lain",
-           "Karena Pluto bergerak terlalu lambat mengelilingi matahari",
-           "Karena Pluto tidak memiliki satelit"],
-     "j": 1},
+    {"p": "Pakaian yang sebaiknya digunakan remaja saat pubertas adalah …",
+     "o": ["Pakaian terbuka dan tipis",
+           "Pakaian ketat agar terlihat keren",
+           "Pakaian yang sopan dan menutup aurat",
+           "Tidak ada aturan berpakaian"],
+     "j": 2},
 
-    {"p": "Planet Yupiter disebut raksasa tata surya karena …",
-     "o": ["Memiliki suhu permukaan paling tinggi",
-           "Merupakan planet terbesar dengan massa melebihi gabungan semua planet lain",
-           "Paling dekat dengan matahari",
-           "Memiliki cincin paling indah"],
-     "j": 1},
+    {"p": "Faktor internal yang memengaruhi pertumbuhan manusia adalah …",
+     "o": ["Makanan bergizi", "Lingkungan tempat tinggal", "Aktivitas fisik", "Gen/keturunan"],
+     "j": 3},
 
-    {"p": "Gerhana matahari total hanya terlihat dari sebagian kecil wilayah bumi karena …",
-     "o": ["Gerhana terjadi sangat singkat sehingga sulit terlihat",
-           "Bayangan umbra bulan berukuran kecil dan hanya jatuh pada sebagian kecil permukaan bumi",
-           "Gerhana hanya terjadi di belahan bumi utara",
-           "Cahaya matahari terlalu kuat untuk tertutup penuh"],
-     "j": 1},
+    # ── BENDA LANGIT ──────────────────────────────────────────
+    {"p": "Benda langit yang mengelilingi matahari dan menjadi tempat tinggal makhluk hidup adalah …",
+     "o": ["Mars", "Venus", "Jupiter", "Bumi"],
+     "j": 3},
 
-    {"p": "Perbedaan umbra dan penumbra dalam gerhana adalah …",
-     "o": ["Umbra adalah bayangan terang, penumbra adalah bayangan gelap",
-           "Umbra adalah bayangan gelap total, penumbra adalah bayangan setengah gelap",
-           "Umbra terjadi saat gerhana bulan, penumbra terjadi saat gerhana matahari",
-           "Umbra dan penumbra adalah istilah yang sama"],
-     "j": 1},
+    {"p": "Bulan adalah satelit alami yang mengelilingi …",
+     "o": ["Matahari", "Mars", "Jupiter", "Bumi"],
+     "j": 3},
 
-    {"p": "Mengapa tahun kabisat ditambahkan 1 hari pada bulan Februari setiap 4 tahun?",
-     "o": ["Karena kalender Masehi lebih pendek dari kalender Hijriyah",
-           "Karena revolusi bumi sebenarnya 365,25 hari sehingga setiap 4 tahun terkumpul 1 hari penuh",
-           "Karena bulan Februari selalu memiliki hari paling sedikit",
-           "Karena rotasi bumi sedikit melambat setiap 4 tahun"],
-     "j": 1},
+    {"p": "Planet yang paling dekat dengan matahari adalah …",
+     "o": ["Venus", "Bumi", "Mars", "Merkurius"],
+     "j": 3},
 
-    {"p": "Pengaruh gravitasi bulan terhadap bumi yang dirasakan di permukaan laut adalah …",
-     "o": ["Menyebabkan rotasi bumi lebih cepat",
-           "Menyebabkan pasang surut air laut",
-           "Menyebabkan gerhana setiap malam purnama",
-           "Menyebabkan pergantian musim"],
-     "j": 1},
+    {"p": "Planet yang memiliki cincin indah tersusun dari es dan debu adalah …",
+     "o": ["Jupiter", "Uranus", "Neptunus", "Saturnus"],
+     "j": 3},
 
-    {"p": "Pernyataan yang BENAR tentang perbedaan kalender Masehi dan Hijriyah adalah …",
-     "o": ["Masehi berdasarkan revolusi bulan (354 hari), Hijriyah berdasarkan revolusi bumi (365 hari)",
-           "Masehi berdasarkan revolusi bumi (365 hari), Hijriyah berdasarkan revolusi bulan (354 hari)",
-           "Keduanya berdasarkan revolusi bumi dengan jumlah hari sama",
-           "Keduanya berdasarkan revolusi bulan dengan jumlah hari sama"],
-     "j": 1},
+    {"p": "Planet yang berwarna merah dan dikenal sebagai planet merah adalah …",
+     "o": ["Venus", "Jupiter", "Merkurius", "Mars"],
+     "j": 3},
 
-    {"p": "Mengapa bumi adalah satu-satunya planet dalam tata surya yang diketahui dihuni makhluk hidup?",
-     "o": ["Karena bumi adalah planet terbesar",
-           "Karena bumi memiliki suhu yang sesuai, air cair, atmosfer beroksigen, dan lapisan pelindung ozon",
-           "Karena bumi paling dekat dengan matahari",
-           "Karena bumi memiliki paling banyak satelit alami"],
-     "j": 1},
+    {"p": "Planet terbesar dalam tata surya adalah …",
+     "o": ["Saturnus", "Neptunus", "Uranus", "Jupiter"],
+     "j": 3},
 
-    {"p": "Gerhana matahari cincin terjadi ketika …",
-     "o": ["Bulan sepenuhnya menutupi matahari",
-           "Bulan terlalu jauh dari bumi sehingga hanya bagian tengah matahari yang tertutup",
-           "Bumi menutupi sebagian cahaya matahari ke bulan",
-           "Matahari berada di antara bumi dan bulan"],
-     "j": 1},
+    {"p": "Kelompok planet dalam (inferior) terdiri dari …",
+     "o": ["Mars dan Jupiter",
+           "Saturnus dan Uranus",
+           "Bumi dan Mars",
+           "Merkurius dan Venus"],
+     "j": 3},
+
+    {"p": "Lapisan paling luar yang membentuk bumi disebut …",
+     "o": ["Mantel", "Inti dalam", "Inti luar", "Kerak"],
+     "j": 3},
+
+    {"p": "Benda langit yang mengorbit mengelilingi planet disebut …",
+     "o": ["Meteor", "Komet", "Asteroid", "Satelit"],
+     "j": 3},
+
+    {"p": "Bintang yang menjadi pusat tata surya kita adalah …",
+     "o": ["Bulan", "Bumi", "Jupiter", "Matahari"],
+     "j": 3},
+
+    # ── KEARIFAN LOKAL ────────────────────────────────────────
+    {"p": "Tradisi Sisingaan berasal dari daerah …",
+     "o": ["Jawa Tengah", "Bali", "Sumatra Barat", "Subang, Jawa Barat"],
+     "j": 3},
+
+    {"p": "Tradisi lompat batu (hombo batu) berasal dari daerah …",
+     "o": ["Bali", "Papua", "Kalimantan", "Nias, Sumatra Utara"],
+     "j": 3},
+
+    {"p": "Kerak telor adalah makanan khas dari daerah …",
+     "o": ["Yogyakarta", "Bandung", "Surabaya", "Betawi/Jakarta"],
+     "j": 3},
+
+    {"p": "Manfaat melestarikan kearifan lokal adalah …",
+     "o": ["Menghilangkan budaya asing",
+           "Membatasi pergaulan",
+           "Menutup diri dari dunia luar",
+           "Menjaga identitas dan budaya bangsa"],
+     "j": 3},
+
+    {"p": "Kearifan lokal masyarakat Indonesia mencerminkan …",
+     "o": ["Kelemahan bangsa", "Kemunduran teknologi", "Pertikaian antardaerah",
+           "Kekayaan dan keragaman budaya"],
+     "j": 3},
+
+    # ── USAHA EKONOMI ─────────────────────────────────────────
+    {"p": "Kegiatan ekonomi yang menghasilkan barang disebut …",
+     "o": ["Distribusi", "Konsumsi", "Jasa", "Produksi"],
+     "j": 3},
+
+    {"p": "Contoh usaha di bidang jasa adalah …",
+     "o": ["Pabrik tekstil", "Pertanian padi", "Toko beras", "Salon rambut"],
+     "j": 3},
+
+    {"p": "Seorang dokter yang memeriksa pasien termasuk usaha di bidang …",
+     "o": ["Perdagangan", "Industri", "Pertanian", "Jasa"],
+     "j": 3},
+
+    {"p": "Kegiatan menyalurkan barang dari produsen ke konsumen disebut …",
+     "o": ["Produksi", "Konsumsi", "Ekspor", "Distribusi"],
+     "j": 3},
+
+    {"p": "Usaha yang mengolah bahan mentah menjadi barang jadi disebut usaha …",
+     "o": ["Jasa", "Perdagangan", "Pertanian", "Industri"],
+     "j": 3},
+
+    {"p": "Petani yang menanam padi termasuk kegiatan ekonomi di bidang …",
+     "o": ["Jasa", "Perdagangan", "Industri", "Pertanian"],
+     "j": 3},
+
+    {"p": "Ojek online termasuk usaha di bidang …",
+     "o": ["Industri", "Perdagangan", "Pertanian", "Jasa transportasi"],
+     "j": 3},
+
+    {"p": "Pabrik yang membuat sepatu dari kulit termasuk usaha …",
+     "o": ["Pertanian", "Jasa", "Perdagangan", "Industri"],
+     "j": 3},
+
+    {"p": "Tukang las dan montir bengkel termasuk usaha di bidang …",
+     "o": ["Perdagangan", "Industri", "Pertanian", "Jasa"],
+     "j": 3},
+
+    {"p": "Nelayan yang menangkap ikan di laut termasuk kegiatan ekonomi di bidang …",
+     "o": ["Industri", "Jasa", "Perdagangan", "Pertanian/perikanan"],
+     "j": 3},
+
+    # ── ENERGI ALTERNATIF ────────────────────────────────────
+    {"p": "Kincir air memanfaatkan energi … untuk menghasilkan energi listrik.",
+     "o": ["Angin", "Matahari", "Panas bumi", "Air"],
+     "j": 3},
+
+    {"p": "Sumber energi yang tidak akan habis dan dapat diperbarui disebut energi …",
+     "o": ["Fosil", "Kimia", "Nuklir", "Terbarukan"],
+     "j": 3},
+
+    {"p": "Panel surya memanfaatkan energi … untuk menghasilkan listrik.",
+     "o": ["Angin", "Air", "Panas bumi", "Matahari"],
+     "j": 3},
+
+    {"p": "Bahan bakar minyak (BBM) termasuk sumber energi …",
+     "o": ["Terbarukan", "Alternatif", "Nuklir", "Tak terbarukan/fosil"],
+     "j": 3},
+
+    {"p": "Kincir angin mengubah energi angin menjadi energi …",
+     "o": ["Kimia", "Cahaya", "Panas", "Gerak/listrik"],
+     "j": 3},
+
+    # ── KERAJINAN ─────────────────────────────────────────────
+    {"p": "Kerajinan gerabah dibuat dari bahan baku …",
+     "o": ["Bambu", "Kayu", "Plastik", "Tanah liat"],
+     "j": 3},
+
+    {"p": "Kerajinan anyaman tikar dibuat dari bahan baku …",
+     "o": ["Tanah liat", "Besi", "Kaca", "Bambu/pandan"],
+     "j": 3},
+
+    {"p": "Bahan baku utama untuk membuat batik adalah …",
+     "o": ["Kayu", "Bambu", "Tanah liat", "Kain"],
+     "j": 3},
+
+    {"p": "Kerajinan wayang kulit dibuat dari bahan baku …",
+     "o": ["Tanah liat", "Bambu", "Kain", "Kulit hewan (sapi/kerbau)"],
+     "j": 3},
+
+    {"p": "Kerajinan ukiran dari Bali umumnya terbuat dari …",
+     "o": ["Tanah liat", "Bambu", "Kain", "Kayu"],
+     "j": 3},
+
+    # ══════════════════════════════════════════════════════════
+    # MENENGAH (46–65)
+    # ══════════════════════════════════════════════════════════
+
+    {"p": "Urutan yang benar tahap pembentukan individu dalam kandungan adalah …",
+     "o": ["Embrio → zigot → janin → bayi",
+           "Janin → zigot → embrio → bayi",
+           "Bayi → zigot → embrio → janin",
+           "Zigot → embrio → janin → bayi"],
+     "j": 3},
+
+    {"p": "Hormon yang dihasilkan oleh ovarium pada perempuan adalah …",
+     "o": ["Testosteron dan androgen",
+           "Insulin dan glukagon",
+           "Adrenalin dan kortisol",
+           "Estrogen dan progesteron"],
+     "j": 3},
+
+    {"p": "Faktor eksternal yang memengaruhi perkembangan manusia adalah …",
+     "o": ["Gen dari orang tua",
+           "Kromosom dalam sel",
+           "Hormon dalam tubuh",
+           "Makanan bergizi dan lingkungan sosial"],
+     "j": 3},
+
+    {"p": "Pembuahan (fertilisasi) terjadi ketika …",
+     "o": ["Sel telur berkembang menjadi janin",
+           "Zigot menempel di dinding rahim",
+           "Embrio terbentuk di ovarium",
+           "Sperma bertemu dan menyatu dengan sel telur"],
+     "j": 3},
+
+    {"p": "Perubahan pada remaja perempuan saat pubertas yang berhubungan dengan reproduksi adalah …",
+     "o": ["Suara membesar", "Jakun tumbuh", "Otot membesar", "Menstruasi"],
+     "j": 3},
+
+    {"p": "Bumi dan Mars termasuk kelompok planet …",
+     "o": ["Interior", "Inferior", "Eksterior", "Superior/luar"],
+     "j": 3},
+
+    {"p": "Lapisan bumi dari luar ke dalam yang benar adalah …",
+     "o": ["Mantel → kerak → inti dalam → inti luar",
+           "Inti dalam → inti luar → mantel → kerak",
+           "Kerak → inti luar → mantel → inti dalam",
+           "Kerak → mantel → inti luar → inti dalam"],
+     "j": 3},
+
+    {"p": "Yang membedakan planet Mars dari planet lain adalah …",
+     "o": ["Berwarna biru dan memiliki air",
+           "Terbesar di tata surya",
+           "Memiliki cincin",
+           "Berwarna merah dan memiliki 2 bulan (Phobos dan Deimos)"],
+     "j": 3},
+
+    {"p": "Yang dimaksud dengan planet inferior adalah …",
+     "o": ["Planet yang lebih besar dari Bumi",
+           "Planet yang orbitnya di luar orbit Bumi",
+           "Planet yang tidak memiliki satelit",
+           "Planet yang orbitnya di dalam orbit Bumi"],
+     "j": 3},
+
+    {"p": "Urutan planet dari terdekat ke matahari yang benar adalah …",
+     "o": ["Venus – Merkurius – Bumi – Mars",
+           "Bumi – Venus – Merkurius – Mars",
+           "Mars – Bumi – Venus – Merkurius",
+           "Merkurius – Venus – Bumi – Mars"],
+     "j": 3},
+
+    {"p": "Sisingaan adalah tradisi rakyat berupa … yang berasal dari Subang.",
+     "o": ["Tarian perang dengan pedang",
+           "Upacara adat menangkap ikan",
+           "Pertunjukan wayang kulit semalam suntuk",
+           "Arak-arakan anak yang diusung di atas patung singa"],
+     "j": 3},
+
+    {"p": "Lompat batu (hombo batu) di Nias awalnya berfungsi sebagai …",
+     "o": ["Upacara keagamaan",
+           "Permainan anak-anak",
+           "Pertunjukan seni untuk wisatawan",
+           "Latihan perang dan keberanian para pemuda"],
+     "j": 3},
+
+    {"p": "Kerak telor adalah makanan khas Betawi yang dibuat dari bahan …",
+     "o": ["Tepung terigu, gula, dan susu",
+           "Singkong, gula merah, dan kelapa",
+           "Sagu, santan, dan garam",
+           "Beras ketan, telur bebek, dan ebi"],
+     "j": 3},
+
+    {"p": "Salah satu manfaat kearifan lokal bagi masyarakat adalah …",
+     "o": ["Membuat masyarakat tertutup dari kemajuan",
+           "Menghambat pertumbuhan ekonomi",
+           "Menggantikan hukum nasional",
+           "Memperkuat persatuan dan jati diri bangsa"],
+     "j": 3},
+
+    {"p": "Industri kerajinan tangan berbasis kearifan lokal dapat meningkatkan …",
+     "o": ["Pencemaran lingkungan",
+           "Pengangguran di desa",
+           "Ketergantungan pada produk impor",
+           "Pendapatan dan kesejahteraan masyarakat"],
+     "j": 3},
+
+    {"p": "Usaha ekonomi yang dilakukan secara bersama-sama dengan modal bersama disebut …",
+     "o": ["Usaha perseorangan",
+           "Usaha pemerintah",
+           "Usaha asing",
+           "Usaha bersama (koperasi/CV/PT)"],
+     "j": 3},
+
+    {"p": "Guru, dokter, dan tukang cukur merupakan contoh usaha di bidang …",
+     "o": ["Perdagangan", "Industri", "Pertanian", "Jasa"],
+     "j": 3},
+
+    {"p": "Kegiatan menukar barang atau jasa dengan uang disebut …",
+     "o": ["Produksi", "Distribusi", "Konsumsi", "Perdagangan"],
+     "j": 3},
+
+    {"p": "BUMN (Badan Usaha Milik Negara) adalah contoh usaha yang dimiliki oleh …",
+     "o": ["Perorangan swasta",
+           "Koperasi seluruh Indonesia",
+           "Perusahaan asing",
+           "Pemerintah/negara"],
+     "j": 3},
+
+    {"p": "Koperasi adalah usaha bersama yang berasaskan …",
+     "o": ["Persaingan bebas", "Keuntungan semata", "Modal besar", "Kekeluargaan"],
+     "j": 3},
+
+    # ══════════════════════════════════════════════════════════
+    # SULIT (66–85)
+    # ══════════════════════════════════════════════════════════
+
+    {"p": "Pernyataan yang BENAR tentang pengertian pertumbuhan adalah …",
+     "o": ["Pertumbuhan adalah perubahan perilaku dan kedewasaan seseorang",
+           "Pertumbuhan dan perkembangan adalah hal yang sama persis",
+           "Pertumbuhan hanya dipengaruhi oleh makanan saja",
+           "Pertumbuhan adalah perubahan fisik yang dapat diukur, seperti tinggi dan berat badan"],
+     "j": 3},
+
+    {"p": "Faktor yang memengaruhi perkembangan manusia antara lain adalah faktor genetik, nutrisi, dan …",
+     "o": ["Cuaca dan iklim",
+           "Warna kulit dan ras",
+           "Jenis kelamin saja",
+           "Lingkungan sosial dan stimulasi"],
+     "j": 3},
+
+    {"p": "Pernyataan yang SALAH tentang tradisi Sisingaan adalah …",
+     "o": ["Berasal dari Subang, Jawa Barat",
+           "Biasa ditampilkan saat khitanan atau acara adat",
+           "Menggunakan patung berbentuk singa sebagai properti",
+           "Merupakan tradisi tari perang dari Kalimantan"],
+     "j": 3},
+
+    {"p": "Pernyataan yang BENAR tentang kerak telor adalah …",
+     "o": ["Kerak telor berasal dari Yogyakarta",
+           "Kerak telor dibuat dari tepung terigu biasa",
+           "Kerak telor adalah minuman tradisional Jawa",
+           "Kerak telor adalah makanan khas Betawi dari Jakarta"],
+     "j": 3},
+
+    {"p": "Pernyataan yang BENAR tentang usaha di bidang jasa adalah …",
+     "o": ["Usaha jasa menghasilkan barang yang dapat disimpan",
+           "Usaha jasa selalu membutuhkan bahan baku berupa logam",
+           "Usaha jasa tidak memerlukan keahlian khusus",
+           "Usaha jasa menghasilkan pelayanan yang dirasakan langsung oleh konsumen"],
+     "j": 3},
+
+    {"p": "Kelompok planet inferior yang tepat adalah …",
+     "o": ["Mars dan Bumi",
+           "Jupiter dan Saturnus",
+           "Uranus dan Neptunus",
+           "Merkurius dan Venus"],
+     "j": 3},
+
+    {"p": "Kelompok planet luar (superior) yang orbitnya di luar orbit Bumi adalah …",
+     "o": ["Merkurius dan Venus",
+           "Merkurius, Venus, Bumi",
+           "Bumi dan Mars",
+           "Mars, Jupiter, Saturnus, Uranus, Neptunus"],
+     "j": 3},
+
+    {"p": "Lapisan bumi yang berwujud cair dan sangat panas berada di bagian …",
+     "o": ["Kerak bumi", "Mantel bumi bagian atas", "Atmosfer bumi", "Inti luar bumi"],
+     "j": 3},
+
+    {"p": "Tahap awal terbentuknya individu dalam kandungan setelah terjadi pembuahan adalah …",
+     "o": ["Janin", "Bayi", "Embrio", "Zigot"],
+     "j": 3},
+
+    {"p": "Organ reproduksi perempuan yang berfungsi sebagai tempat berkembangnya janin adalah …",
+     "o": ["Ovarium", "Tuba falopi", "Vagina", "Rahim (uterus)"],
+     "j": 3},
+
+    {"p": "Dalam proses reproduksi, sperma akan bertemu sel telur di …",
+     "o": ["Rahim", "Ovarium", "Vagina", "Tuba falopi"],
+     "j": 3},
+
+    {"p": "Pernyataan yang BENAR tentang masa pubertas adalah …",
+     "o": ["Pubertas hanya dialami oleh perempuan",
+           "Pubertas adalah masa anak-anak sebelum sekolah",
+           "Pubertas tidak disertai perubahan fisik apapun",
+           "Pubertas adalah masa peralihan dari anak-anak ke dewasa, disertai perubahan fisik dan emosi"],
+     "j": 3},
+
+    {"p": "Kincir air yang digunakan untuk menggerakkan generator memanfaatkan energi alternatif berupa …",
+     "o": ["Energi angin",
+           "Energi matahari",
+           "Energi panas bumi",
+           "Energi air (hidroelektrik)"],
+     "j": 3},
+
+    {"p": "Manfaat kearifan lokal yang berhubungan dengan penguatan identitas nasional adalah …",
+     "o": ["Menghambat masuknya budaya asing secara paksa",
+           "Membuat masyarakat tidak mau menerima teknologi baru",
+           "Menutup peluang wisata internasional",
+           "Menjadi ciri khas yang membedakan Indonesia dari negara lain"],
+     "j": 3},
+
+    {"p": "Usaha ekonomi yang paling tepat dikategorikan sebagai usaha jasa adalah …",
+     "o": ["Pabrik yang memproduksi sepatu",
+           "Toko yang menjual pakaian",
+           "Ladang pertanian yang menghasilkan sayuran",
+           "Rumah sakit yang merawat pasien"],
+     "j": 3},
+
+    {"p": "Bumi merupakan satu-satunya planet yang …",
+     "o": ["Mengelilingi matahari",
+           "Memiliki satelit alami",
+           "Berputar pada porosnya",
+           "Diketahui mendukung kehidupan makhluk hidup"],
+     "j": 3},
+
+    {"p": "Bahan baku utama untuk membuat kerajinan gerabah tradisional adalah …",
+     "o": ["Pasir pantai yang halus",
+           "Serbuk kayu dan lem",
+           "Bubur kertas (papier-mache)",
+           "Tanah liat yang dibakar"],
+     "j": 3},
+
+    {"p": "Perbedaan antara pertumbuhan dan perkembangan manusia yang paling tepat adalah …",
+     "o": ["Pertumbuhan adalah proses mental, perkembangan adalah proses fisik",
+           "Pertumbuhan dan perkembangan sama-sama tidak dapat diukur",
+           "Pertumbuhan hanya terjadi pada otak",
+           "Pertumbuhan bisa diukur secara fisik (tinggi/berat), perkembangan meliputi kemampuan dan kedewasaan"],
+     "j": 3},
+
+    {"p": "Gambar kincir angin besar di ladang terbuka menunjukkan pemanfaatan energi alternatif berupa …",
+     "o": ["Energi panas matahari",
+           "Energi air terjun",
+           "Energi panas bumi (geothermal)",
+           "Energi angin (aeolian)"],
+     "j": 3},
+
+    {"p": "Tradisi lompat batu (Fahombo) dari suku Nias menunjukkan kearifan lokal berupa …",
+     "o": ["Ritual pemujaan dewa alam",
+           "Permainan anak-anak yang menghibur",
+           "Upacara pernikahan adat Nias",
+           "Latihan fisik dan mental untuk kesiapan perang"],
+     "j": 3},
 ]
 
 # ─────────────────────────────────────────────────────────────
-#  POOL ESAI  (17 soal – diambil 5 per sesi)
-#  Soal nomor 17 (indeks 16) SELALU keluar
+#  POOL ESAI  (15 soal – diambil 5 per sesi secara acak)
 # ─────────────────────────────────────────────────────────────
-ESAI_WAJIB_IDX = 16
-
 ESAI_POOL = [
     # 0
-    {"p": "Jelaskan faktor-faktor yang memengaruhi perubahan pada benda!",
-     "pedoman": "Suhu, tekanan, kelembapan, cahaya matahari, waktu, dan kuman/mikroorganisme (bakteri dan jamur)."},
+    {"p": "Sebutkan 3 faktor yang memengaruhi pertumbuhan dan perkembangan manusia!",
+     "pedoman": "1. Faktor genetik (gen/keturunan dari orang tua). 2. Faktor nutrisi (makanan bergizi yang cukup, seperti protein, vitamin, dan mineral). 3. Faktor lingkungan (lingkungan sosial, stimulasi belajar, dan kondisi kesehatan)."},
     # 1
-    {"p": "Mengapa kaktus memiliki daun berbentuk duri?",
-     "pedoman": "Untuk mengurangi penguapan air sehingga kaktus dapat bertahan hidup di lingkungan gurun yang sangat kering."},
+    {"p": "Sebutkan 4 contoh benda langit yang ada di tata surya beserta penjelasan singkatnya!",
+     "pedoman": "1. Planet – benda langit bulat yang mengelilingi matahari (contoh: Bumi, Mars). 2. Bintang – benda langit yang memancarkan cahayanya sendiri (contoh: Matahari). 3. Satelit – benda langit yang mengelilingi planet (contoh: Bulan). 4. Komet – benda langit berekor panjang yang mengelilingi matahari."},
     # 2
-    {"p": "Sebutkan contoh benda konduktor dan isolator panas beserta penggunaannya dalam kehidupan sehari-hari!",
-     "pedoman": "Konduktor: besi/aluminium (panci, wajan) karena menghantarkan panas dengan baik. Isolator: kayu/plastik (gagang panci) karena menghambat perpindahan panas agar tangan tidak terbakar."},
+    {"p": "Tuliskan 6 tahap pertumbuhan dan perkembangan manusia secara urut!",
+     "pedoman": "1. Bayi (0-2 tahun). 2. Balita (2-5 tahun). 3. Anak-anak (6-11 tahun). 4. Remaja/Pubertas (12-18 tahun). 5. Dewasa (19-60 tahun). 6. Lanjut usia/Lansia (di atas 60 tahun)."},
     # 3
-    {"p": "Apa manfaat menghemat energi listrik di rumah?",
-     "pedoman": "Mengurangi biaya tagihan listrik, menjaga ketersediaan sumber energi agar tidak cepat habis, dan mengurangi dampak pencemaran lingkungan dari pembangkit listrik."},
+    {"p": "Jelaskan 4 manfaat kearifan lokal bagi masyarakat Indonesia!",
+     "pedoman": "1. Memperkuat identitas dan jati diri bangsa Indonesia di tengah pengaruh budaya asing. 2. Menjaga persatuan dan kerukunan masyarakat. 3. Meningkatkan kesejahteraan melalui kerajinan tangan dan pariwisata budaya. 4. Mewariskan nilai dan kearifan nenek moyang kepada generasi berikutnya."},
     # 4
-    {"p": "Jelaskan perbedaan rotasi dan revolusi bumi!",
-     "pedoman": "Rotasi: bumi berputar pada porosnya sendiri dalam waktu 24 jam, mengakibatkan siang dan malam. Revolusi: bumi mengelilingi matahari dalam waktu 365,25 hari, mengakibatkan pergantian musim dan perhitungan tahun."},
+    {"p": "Jelaskan sumber energi alternatif yang dimanfaatkan oleh kincir air dan cara kerjanya!",
+     "pedoman": "Kincir air memanfaatkan energi kinetik (gerak) air yang mengalir atau jatuh. Cara kerja: aliran air mengenai bilah kincir sehingga berputar, putaran diteruskan ke generator untuk menghasilkan listrik. Energi ini disebut energi hidroelektrik dan termasuk energi terbarukan."},
     # 5
-    {"p": "Apa yang menyebabkan terjadinya gerhana matahari?",
-     "pedoman": "Gerhana matahari terjadi ketika bulan berada di antara bumi dan matahari sehingga cahaya matahari yang menuju bumi terhalang oleh bayangan bulan."},
+    {"p": "Sebutkan minimal 3 bahan baku yang digunakan untuk membuat kerajinan tradisional Indonesia beserta contoh produknya!",
+     "pedoman": "1. Tanah liat -> gerabah, keramik. 2. Bambu/pandan -> anyaman tikar, bakul. 3. Kayu -> ukiran, patung. 4. Kain -> batik, tenun ikat. 5. Kulit hewan -> wayang kulit, tas. 6. Rotan -> kursi, keranjang."},
     # 6
-    {"p": "Tuliskan manfaat mempelajari tata surya!",
-     "pedoman": "Mengetahui susunan dan ciri-ciri planet, memahami fenomena alam seperti gerhana dan pasang surut, membantu pengembangan teknologi luar angkasa, dan memperluas pengetahuan ilmu sains."},
+    {"p": "Jelaskan tahap pertumbuhan manusia yang disebut masa pubertas, termasuk ciri-cirinya!",
+     "pedoman": "Pubertas adalah masa peralihan dari anak-anak menuju dewasa (usia 10-18 tahun). Ciri pada laki-laki: suara membesar, tumbuh jakun, rambut di ketiak. Ciri pada perempuan: menstruasi, pinggul melebar, payudara berkembang. Selain fisik, remaja juga mengalami perubahan emosi."},
     # 7
-    {"p": "Jelaskan perbedaan perubahan fisika dan perubahan kimia! Berikan contoh masing-masing!",
-     "pedoman": "Perubahan fisika: tidak menghasilkan zat baru dan dapat dikembalikan (contoh: es mencair, kertas dipotong). Perubahan kimia: menghasilkan zat baru dan tidak dapat dikembalikan (contoh: kertas dibakar, makanan membusuk)."},
+    {"p": "Sebutkan organ reproduksi perempuan yang berfungsi menghasilkan sel telur dan hormon estrogen serta progesteron!",
+     "pedoman": "Organ tersebut adalah ovarium (indung telur). Ovarium berjumlah dua buah di rongga panggul. Fungsinya: menghasilkan sel telur (ovum) setiap siklus menstruasi, serta memproduksi hormon estrogen (mengatur ciri kelamin sekunder) dan progesteron (mempersiapkan rahim untuk kehamilan)."},
     # 8
-    {"p": "Sebutkan 3 sumber energi terbarukan dan jelaskan cara menghasilkan listriknya!",
-     "pedoman": "1. Matahari – panel surya mengubah cahaya menjadi listrik. 2. Air – PLTA menggunakan aliran air untuk memutar turbin generator. 3. Angin – kincir angin memutar generator untuk menghasilkan listrik."},
+    {"p": "Sebutkan dan jelaskan lapisan-lapisan yang membentuk bumi dari luar ke dalam!",
+     "pedoman": "1. Kerak bumi - lapisan terluar, tempat kita berpijak, tersusun dari batuan. 2. Mantel bumi - lapisan tebal di bawah kerak, sebagian berwujud semi-cair (magma). 3. Inti luar bumi - berwujud cair dari besi dan nikel, sangat panas. 4. Inti dalam bumi - bagian terdalam, berwujud padat dari besi dan nikel."},
     # 9
-    {"p": "Jelaskan mengapa bumi dapat mendukung kehidupan dibandingkan planet lain dalam tata surya!",
-     "pedoman": "Bumi memiliki suhu yang sesuai (rata-rata 22°C), tersedia air dalam wujud cair, memiliki atmosfer yang mengandung oksigen, dan terlindung dari radiasi berbahaya oleh lapisan ozon."},
+    {"p": "Jelaskan perbedaan planet dalam (inferior) dan planet luar (superior) beserta contoh masing-masing!",
+     "pedoman": "Planet inferior adalah planet yang orbitnya di dalam orbit Bumi, yaitu Merkurius dan Venus. Planet superior adalah planet yang orbitnya di luar orbit Bumi, yaitu Mars, Jupiter, Saturnus, Uranus, dan Neptunus."},
     # 10
-    {"p": "Apa perbedaan antara meteor, meteorit, dan asteroid?",
-     "pedoman": "Asteroid: benda langit berbatu yang mengorbit matahari di antara Mars dan Yupiter. Meteor: benda langit yang terbakar saat masuk atmosfer bumi (terlihat sebagai bintang jatuh). Meteorit: meteor yang tidak habis terbakar dan mencapai permukaan bumi."},
+    {"p": "Jelaskan proses awal terbentuknya individu baru dalam kandungan dari zigot hingga janin!",
+     "pedoman": "1. Sperma membuahi sel telur (ovum) di tuba falopi -> terbentuk zigot. 2. Zigot membelah menjadi kumpulan sel (morula). 3. Berkembang menjadi embrio dan menempel di dinding rahim. 4. Embrio berkembang menjadi janin selama sekitar 9 bulan hingga lahir sebagai bayi."},
     # 11
-    {"p": "Jelaskan bagaimana rangkaian listrik seri dan paralel bekerja, serta sebutkan kelebihan masing-masing!",
-     "pedoman": "Seri: komponen terhubung berurutan, arus sama di semua komponen, jika satu putus semua padam, kelebihannya sederhana. Paralel: komponen terhubung sejajar, tegangan sama, jika satu putus lainnya tetap menyala – itulah yang digunakan di rumah."},
+    {"p": "Sebutkan 4 jenis usaha ekonomi di bidang jasa yang kamu ketahui beserta contohnya!",
+     "pedoman": "1. Jasa pendidikan - guru, tutor, lembaga kursus. 2. Jasa kesehatan - dokter, perawat, bidan. 3. Jasa transportasi - ojek online, taksi, bus. 4. Jasa perbaikan - montir bengkel, tukang las, teknisi elektronik."},
     # 12
-    {"p": "Jelaskan proses terjadinya gerhana bulan!",
-     "pedoman": "Gerhana bulan terjadi ketika bumi berada di antara matahari dan bulan sehingga bayangan bumi jatuh ke permukaan bulan. Gerhana total terjadi saat seluruh bulan masuk ke bayangan umbra bumi."},
+    {"p": "Sebutkan 4 nama planet dalam tata surya beserta satu ciri khasnya masing-masing!",
+     "pedoman": "Pilih 4 dari: Merkurius - terkecil, terdekat Matahari. Venus - terpanas, atmosfer CO2 tebal. Bumi - satu-satunya planet berpenghuni. Mars - merah, memiliki gunung berapi terbesar (Olympus Mons). Jupiter - terbesar. Saturnus - memiliki cincin indah. Uranus - berputar miring. Neptunus - terjauh dari Matahari."},
     # 13
-    {"p": "Sebutkan 5 planet dalam tata surya beserta satu ciri khas masing-masing!",
-     "pedoman": "Merkurius (terkecil, terdekat Matahari), Venus (terpanas, bintang fajar), Mars (berwarna merah, memiliki 2 satelit), Yupiter (terbesar), Saturnus (memiliki cincin indah dari es dan debu)."},
+    {"p": "Jelaskan apa itu kearifan lokal dan berikan 2 contoh tradisi kearifan lokal dari daerah berbeda di Indonesia!",
+     "pedoman": "Kearifan lokal adalah pengetahuan, nilai, dan tradisi turun-temurun yang berkembang dalam suatu masyarakat. Contoh: 1. Sisingaan dari Subang, Jawa Barat - arak-arakan anak di atas patung singa saat khitanan. 2. Lompat batu (Fahombo) dari Nias, Sumatra Utara - melompati batu setinggi sekitar 2 meter sebagai latihan keberanian pemuda."},
     # 14
-    {"p": "Mengapa bahan yang digunakan untuk membuat alat masak berbeda-beda? Jelaskan berdasarkan sifatnya!",
-     "pedoman": "Panci dari aluminium/stainless (konduktor panas baik agar cepat panas), gagang dari kayu/plastik (isolator agar tangan tidak terbakar), wajan berlapis teflon (anti lengket agar makanan tidak menempel), tutup dari kaca (transparan agar bisa melihat makanan)."},
-    # 15
-    {"p": "Jelaskan mengapa tahun kabisat terjadi setiap 4 tahun sekali!",
-     "pedoman": "Karena revolusi bumi sebenarnya membutuhkan 365,25 hari. Seperempat hari yang tersisa setiap tahun dikumpulkan, sehingga setiap 4 tahun terkumpul 1 hari penuh yang ditambahkan pada bulan Februari sehingga menjadi 29 hari."},
-    # 16 – SELALU KELUAR
-    {"p": "Jelaskan gerakan dalam olahraga renang gaya punggung!",
-     "pedoman": "Posisi tubuh telentang menghadap ke atas, kedua kaki bergerak naik turun bergantian (flutter kick), kedua tangan mengayuh bergantian ke belakang seperti baling-baling, kepala tetap di atas permukaan air, pernapasan dilakukan secara teratur."},
+    {"p": "Jelaskan apa yang dimaksud sel sperma dan apa perannya dalam proses reproduksi manusia!",
+     "pedoman": "Sel sperma (spermatozoa) adalah sel reproduksi yang dihasilkan oleh testis pada laki-laki. Perannya: membuahi sel telur (ovum) dari perempuan. Saat satu sperma menyatu dengan sel telur, terbentuklah zigot yang merupakan awal kehidupan individu baru dalam kandungan."},
 ]
 
 # ─────────────────────────────────────────────────────────────
@@ -706,11 +651,8 @@ def prepare_session():
             "j":    labels[new_answer],
         })
 
-    # Pilih esai: soal wajib + 4 acak dari sisanya
-    wajib = ESAI_POOL[ESAI_WAJIB_IDX]
-    pool_lain = [q for i, q in enumerate(ESAI_POOL) if i != ESAI_WAJIB_IDX]
-    selected_esai = random.sample(pool_lain, NUM_ESAI - 1) + [wajib]
-    random.shuffle(selected_esai)
+    # Pilih 5 esai secara acak dari pool
+    selected_esai = random.sample(ESAI_POOL, NUM_ESAI)
 
     for q in selected_esai:
         prepared.append({
