@@ -917,6 +917,7 @@ class UjianApp:
         self._timer_lbl  = None
         self._timer_secs = WAKTU_MENIT * 60
         self._timer_id   = None
+        self._nav_lock   = False   # prevents rapid/double navigation on slow PCs
 
         self._build_exam()
         self._enforce_fg()
@@ -949,7 +950,7 @@ class UjianApp:
                     self.root.focus_force()
         except Exception:
             pass
-        self.root.after(400, self._enforce_fg)
+        self.root.after(600, self._enforce_fg)
 
     def _try_exit(self):
         stop_hook()
@@ -1076,6 +1077,10 @@ class UjianApp:
     #  QUESTION DISPLAY
     # ════════════════════════════════════════════════════════
     def _show_question(self, idx):
+        if self._nav_lock:
+            return
+        self._nav_lock = True
+
         self._save_essay()
         self.current = idx
 
@@ -1094,6 +1099,12 @@ class UjianApp:
             self._render_pg(card, idx)
         else:
             self._render_esai(card, idx)
+
+        # Release lock after tkinter finishes processing current render batch
+        self.root.after(250, self._release_nav_lock)
+
+    def _release_nav_lock(self):
+        self._nav_lock = False
 
     # ── PG question ──────────────────────────────────────────
     def _render_pg(self, card, idx):
@@ -1118,8 +1129,7 @@ class UjianApp:
 
         prog_frame = tk.Frame(card, bg="#e2e8f0", height=5)
         prog_frame.pack(fill="x", padx=40, pady=(10, 0))
-        prog_frame.update_idletasks()
-        pw = prog_frame.winfo_width() or 800
+        pw = 800
         pct_w = max(4, int(pw * pg_num / total))
         tk.Frame(prog_frame, bg=C["q_pg_accent"],
                  height=5, width=pct_w).place(x=0, y=0)
@@ -1132,10 +1142,80 @@ class UjianApp:
 
         opts_wrap = tk.Frame(card, bg=C["card"])
         opts_wrap.pack(fill="x", padx=40, pady=(4, 0))
+
+        # Build options and keep widget refs for in-place visual update (no flicker)
+        opt_widgets = {}   # letter -> {"row": w, "badge": w, "lbl": w}
+
+        def _apply_style(ws, selected):
+            if selected:
+                ws["row"].config(bg=C["opt_sel_bg"])
+                ws["badge"].config(bg=C["opt_sel_lbg"], fg="#ffffff")
+                ws["lbl"].config(bg=C["opt_sel_bg"], fg=C["opt_sel_fg"])
+                for w in ws.values():
+                    w.unbind("<Enter>")
+                    w.unbind("<Leave>")
+            else:
+                ws["row"].config(bg=C["opt_bg"])
+                ws["badge"].config(bg=C["opt_letter_bg"], fg=C["opt_letter_fg"])
+                ws["lbl"].config(bg=C["opt_bg"], fg=C["opt_fg"])
+                r, l = ws["row"], ws["lbl"]
+                def h_in(e, r=r, l=l):
+                    r.config(bg=C["opt_hover"]); l.config(bg=C["opt_hover"])
+                def h_out(e, r=r, l=l):
+                    r.config(bg=C["opt_bg"]); l.config(bg=C["opt_bg"])
+                for w in ws.values():
+                    w.bind("<Enter>", h_in)
+                    w.bind("<Leave>", h_out)
+
+        def _select(letter):
+            if self.answers.get(idx) == letter:
+                return
+            self.answers[idx] = letter
+            self._refresh_counter()
+            self._update_nav()
+            for let, ws in opt_widgets.items():
+                _apply_style(ws, let == letter)
+
         current_answer = self.answers.get(idx)
         for opt in q["o"]:
-            self._render_option(opts_wrap, idx, opt[0], opt[3:],
-                                is_selected=(current_answer == opt[0]))
+            letter = opt[0]
+            text   = opt[3:]
+            sel    = (current_answer == letter)
+
+            row_bg = C["opt_sel_bg"] if sel else C["opt_bg"]
+            txt_fg = C["opt_sel_fg"] if sel else C["opt_fg"]
+            lbg    = C["opt_sel_lbg"] if sel else C["opt_letter_bg"]
+            lfg    = "#ffffff" if sel else C["opt_letter_fg"]
+
+            row = tk.Frame(opts_wrap, bg=row_bg, cursor="hand2")
+            row.pack(fill="x", pady=5)
+
+            badge = tk.Label(row, text=letter, bg=lbg, fg=lfg,
+                             font=("Segoe UI", 12, "bold"),
+                             width=2, padx=10, pady=14)
+            badge.pack(side="left")
+
+            lbl = tk.Label(row, text=text, bg=row_bg, fg=txt_fg,
+                           font=("Segoe UI", 12), anchor="w",
+                           padx=16, pady=14, wraplength=820, justify="left")
+            lbl.pack(side="left", fill="x", expand=True)
+
+            ws = {"row": row, "badge": badge, "lbl": lbl}
+            opt_widgets[letter] = ws
+
+            click = (lambda let=letter: lambda e: _select(let))()
+            for w in (row, badge, lbl):
+                w.bind("<Button-1>", click)
+
+            if not sel:
+                r, l = row, lbl
+                def h_in(e, r=r, l=l):
+                    r.config(bg=C["opt_hover"]); l.config(bg=C["opt_hover"])
+                def h_out(e, r=r, l=l):
+                    r.config(bg=C["opt_bg"]); l.config(bg=C["opt_bg"])
+                for w in (row, badge, lbl):
+                    w.bind("<Enter>", h_in)
+                    w.bind("<Leave>", h_out)
 
         self._render_nav_buttons(card, idx)
 
@@ -1155,8 +1235,7 @@ class UjianApp:
 
         prog_frame = tk.Frame(card, bg="#e2e8f0", height=5)
         prog_frame.pack(fill="x", padx=40, pady=(10, 0))
-        prog_frame.update_idletasks()
-        pw = prog_frame.winfo_width() or 800
+        pw = 800
         pct_w = max(4, int(pw * (idx + 1) / total))
         tk.Frame(prog_frame, bg=C["q_esai_accent"],
                  height=5, width=pct_w).place(x=0, y=0)
@@ -1185,53 +1264,6 @@ class UjianApp:
         self._cur_tw = txt
 
         self._render_nav_buttons(card, idx)
-
-    # ── Option button ─────────────────────────────────────────
-    def _render_option(self, parent, q_idx, letter, text, is_selected):
-        if is_selected:
-            row_bg = C["opt_sel_bg"]; txt_fg = C["opt_sel_fg"]
-            lbg    = C["opt_sel_lbg"]; lfg   = "#ffffff"
-        else:
-            row_bg = C["opt_bg"]; txt_fg = C["opt_fg"]
-            lbg    = C["opt_letter_bg"]; lfg   = C["opt_letter_fg"]
-
-        row = tk.Frame(parent, bg=row_bg, cursor="hand2")
-        row.pack(fill="x", pady=5)
-
-        badge = tk.Label(row, text=letter,
-                         bg=lbg, fg=lfg,
-                         font=("Segoe UI", 12, "bold"),
-                         width=2, padx=10, pady=14)
-        badge.pack(side="left")
-
-        lbl = tk.Label(row, text=text,
-                       bg=row_bg, fg=txt_fg,
-                       font=("Segoe UI", 12),
-                       anchor="w", padx=16, pady=14,
-                       wraplength=820, justify="left")
-        lbl.pack(side="left", fill="x", expand=True)
-
-        def _select(let=letter, i=q_idx):
-            self.answers[i] = let
-            self._refresh_counter()
-            self._update_nav()
-            self._show_question(i)
-
-        def _hover_in(e):
-            if not is_selected:
-                row.config(bg=C["opt_hover"])
-                lbl.config(bg=C["opt_hover"])
-
-        def _hover_out(e):
-            if not is_selected:
-                row.config(bg=C["opt_bg"])
-                lbl.config(bg=C["opt_bg"])
-
-        for w in (row, badge, lbl):
-            w.bind("<Button-1>", lambda e, f=_select: f())
-            if not is_selected:
-                w.bind("<Enter>", _hover_in)
-                w.bind("<Leave>", _hover_out)
 
     # ── Prev / Next buttons ───────────────────────────────────
     def _render_nav_buttons(self, card, idx):

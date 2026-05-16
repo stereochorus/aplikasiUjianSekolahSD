@@ -925,6 +925,7 @@ class UjianApp:
         self._timer_lbl  = None
         self._timer_secs = WAKTU_MENIT * 60
         self._timer_id   = None
+        self._nav_lock   = False
 
         self._build_exam()
         self._enforce_fg()
@@ -957,7 +958,7 @@ class UjianApp:
                     self.root.focus_force()
         except Exception:
             pass
-        self.root.after(400, self._enforce_fg)
+        self.root.after(600, self._enforce_fg)
 
     def _try_exit(self):
         stop_hook()
@@ -1090,8 +1091,11 @@ class UjianApp:
     #  QUESTION DISPLAY
     # ════════════════════════════════════════════════════════
     def _show_question(self, idx):
-        self._save_essay()
+        if self._nav_lock:
+            return
+        self._nav_lock = True
 
+        self._save_essay()
         self.current = idx
 
         if self._q_frame:
@@ -1109,6 +1113,11 @@ class UjianApp:
             self._render_pg(card, idx)
         else:
             self._render_esai(card, idx)
+
+        self.root.after(250, self._release_nav_lock)
+
+    def _release_nav_lock(self):
+        self._nav_lock = False
 
     # ── PG question ──────────────────────────────────────────
     def _render_pg(self, card, idx):
@@ -1133,8 +1142,7 @@ class UjianApp:
 
         prog_frame = tk.Frame(card, bg="#e2e8f0", height=5)
         prog_frame.pack(fill="x", padx=40, pady=(10, 0))
-        prog_frame.update_idletasks()
-        pw    = prog_frame.winfo_width() or 800
+        pw    = 800
         pct_w = max(4, int(pw * pg_num / total))
         tk.Frame(prog_frame, bg=C["q_pg_accent"],
                  height=5, width=pct_w).place(x=0, y=0)
@@ -1170,8 +1178,7 @@ class UjianApp:
 
         prog_frame = tk.Frame(card, bg="#e2e8f0", height=5)
         prog_frame.pack(fill="x", padx=40, pady=(10, 0))
-        prog_frame.update_idletasks()
-        pw    = prog_frame.winfo_width() or 800
+        pw    = 800
         pct_w = max(4, int(pw * (idx + 1) / total))
         tk.Frame(prog_frame, bg=C["q_esai_accent"],
                  height=5, width=pct_w).place(x=0, y=0)
