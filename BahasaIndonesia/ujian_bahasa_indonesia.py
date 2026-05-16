@@ -72,875 +72,640 @@ def stop_hook():
 #  WARNA (tema terang & nyaman)
 # ─────────────────────────────────────────────────────────────
 C = {
-    "page":           "#f0f4f8",   # latar utama abu-biru muda
-    "topbar":         "#1e3a5f",   # navy gelap
+    "page":           "#f0f4f8",
+    "topbar":         "#1e3a5f",
     "topbar_text":    "#ffffff",
-    "nav_bg":         "#ffffff",   # nav putih bersih
-    "nav_todo":       "#dde3ec",   # belum dijawab: abu
+    "nav_bg":         "#ffffff",
+    "nav_todo":       "#dde3ec",
     "nav_todo_fg":    "#64748b",
-    "nav_done":       "#22c55e",   # sudah dijawab: hijau
+    "nav_done":       "#22c55e",
     "nav_done_fg":    "#ffffff",
-    "nav_curr":       "#f59e0b",   # soal aktif: amber
+    "nav_curr":       "#f59e0b",
     "nav_curr_fg":    "#ffffff",
-    "nav_esai_done":  "#8b5cf6",   # esai dijawab: ungu
+    "nav_esai_done":  "#8b5cf6",
     "nav_esai_done_fg": "#ffffff",
-    "card":           "#ffffff",   # kartu soal putih
-    "q_pg_accent":    "#2563eb",   # aksen PG: biru
-    "q_esai_accent":  "#7c3aed",   # aksen Esai: ungu
-    "q_text":         "#1e293b",   # teks soal hitam gelap
-    "q_sub":          "#64748b",   # teks keterangan abu
-    # Opsi PG
-    "opt_bg":         "#f1f5f9",   # unselected bg
-    "opt_fg":         "#94a3b8",   # unselected text (redup)
-    "opt_letter_bg":  "#e2e8f0",   # badge huruf unselected
+    "card":           "#ffffff",
+    "q_pg_accent":    "#2563eb",
+    "q_esai_accent":  "#7c3aed",
+    "q_text":         "#1e293b",
+    "q_sub":          "#64748b",
+    "opt_bg":         "#f1f5f9",
+    "opt_fg":         "#94a3b8",
+    "opt_letter_bg":  "#e2e8f0",
     "opt_letter_fg":  "#64748b",
-    "opt_sel_bg":     "#2563eb",   # selected bg biru terang
-    "opt_sel_fg":     "#ffffff",   # selected text putih
-    "opt_sel_lbg":    "#1d4ed8",   # badge huruf selected
-    "opt_hover":      "#eff6ff",   # hover
-    # Tombol
+    "opt_sel_bg":     "#2563eb",
+    "opt_sel_fg":     "#ffffff",
+    "opt_sel_lbg":    "#1d4ed8",
+    "opt_hover":      "#eff6ff",
     "btn_prev":       "#94a3b8",
     "btn_next":       "#2563eb",
     "btn_submit":     "#16a34a",
     "btn_exit":       "#e94560",
     "btn_text":       "#ffffff",
-    # Timer
     "timer_ok":       "#22c55e",
     "timer_warn":     "#f59e0b",
     "timer_crit":     "#ef4444",
-    # Essay
     "esai_area":      "#f8fafc",
     "esai_text":      "#1e293b",
 }
 
 # ─────────────────────────────────────────────────────────────
-#  POOL SOAL PILIHAN GANDA  (100 soal – diambil 45 per sesi)
+#  POOL SOAL PILIHAN GANDA  (60 soal – diambil 45 per sesi)
 # ─────────────────────────────────────────────────────────────
 PG_POOL = [
-    # ── KALIMAT MAJEMUK (8 soal) ─────────────────────────────
-    {"p": "Kalimat majemuk setara adalah kalimat yang ...",
-     "o": ["Hanya memiliki satu klausa tanpa kata hubung",
-           "Terdiri dari dua klausa atau lebih yang berkedudukan setara, dihubungkan kata hubung koordinatif",
-           "Memiliki induk kalimat dan anak kalimat yang tidak setara",
-           "Terdiri dari satu subjek dan satu predikat saja"],
+
+    # ── 1. TEKS EKSPLANASI ───────────────────────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Gempa bumi adalah getaran yang terjadi di permukaan bumi akibat\n'
+           'pergerakan lempeng tektonik yang saling berbenturan. Energi yang\n'
+           'dihasilkan sangat besar sehingga dapat merusak bangunan di atasnya.\n'
+           'Daerah yang paling sering mengalami gempa disebut zona ring of fire."\n\n'
+           'Informasi yang terdapat dalam teks eksplanasi di atas adalah ...'),
+     "o": ["Gempa bumi tidak berbahaya bagi bangunan di permukaan bumi",
+           "Gempa bumi disebabkan oleh pergerakan lempeng tektonik yang saling berbenturan",
+           "Daerah ring of fire tidak pernah mengalami gempa bumi",
+           "Energi gempa bumi sangat kecil sehingga tidak terasa oleh manusia"],
      "j": 1},
 
-    {"p": "Kata penghubung yang digunakan dalam kalimat majemuk setara penjumlahan adalah ...",
-     "o": ["Tetapi, namun, akan tetapi",
-           "Karena, sebab, oleh karena itu",
-           "Dan, serta, lalu",
-           "Jika, apabila, andaikan"],
+    {"p": "Tujuan utama penulisan teks eksplanasi adalah ...",
+     "o": ["Menghibur pembaca dengan cerita yang menarik dan penuh imajinasi",
+           "Meyakinkan pembaca untuk setuju dengan pendapat penulis",
+           "Menjelaskan proses terjadinya suatu fenomena alam atau sosial secara ilmiah",
+           "Menceritakan pengalaman pribadi penulis secara kronologis"],
      "j": 2},
 
-    {"p": "Kalimat 'Andi belajar keras karena ingin lulus ujian' adalah contoh kalimat majemuk ...",
-     "o": ["Setara penjumlahan",
-           "Setara pertentangan",
-           "Bertingkat sebab-akibat",
-           "Setara pilihan"],
+    # ── 2. KALIMAT EFEKTIF ───────────────────────────────────
+    {"p": "Manakah kalimat yang efektif di bawah ini?",
+     "o": ["Para hadirin-hadirin dimohon untuk duduk dengan tertib sekalian.",
+           "Kami sangat amat bahagia sekali merayakan hari ulang tahun ini.",
+           "Budi pergi ke sekolah setiap hari dengan berjalan kaki.",
+           "Kami semua para guru mengucapkan terima kasih banyak sekali."],
      "j": 2},
 
-    {"p": "Manakah yang merupakan kalimat majemuk setara pertentangan?",
-     "o": ["Rini belajar dan adiknya bermain.",
-           "Ibu memasak serta ayah membaca koran.",
-           "Dia rajin belajar tetapi nilainya kurang memuaskan.",
-           "Siti pergi ke sekolah karena ada ujian."],
+    {"p": 'Kalimat "Banyak anak-anak bermain di lapangan itu" tidak efektif karena ...',
+     "o": ["Tidak memiliki subjek yang jelas dalam kalimat",
+           'Terdapat pemborosan kata: "banyak" dan "anak-anak" sama-sama menyatakan jamak',
+           "Tidak ada kata kerja (predikat) dalam kalimat tersebut",
+           "Kata 'lapangan' tidak tepat digunakan dalam konteks ini"],
+     "j": 1},
+
+    # ── 3. OBJEK HASIL PENGAMATAN ────────────────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Tanaman padi tumbuh di sawah. Tingginya sekitar 80–100 cm.\n'
+           'Daunnya berwarna hijau panjang dan ramping. Batangnya berbuku-buku\n'
+           'dan berongga. Buahnya yang matang berwarna kuning keemasan."\n\n'
+           'Objek yang diamati dalam teks laporan hasil pengamatan di atas adalah ...'),
+     "o": ["Sawah dan lingkungan sekitarnya yang subur",
+           "Tanaman padi",
+           "Petani yang menanam padi di sawah",
+           "Proses pemanenan padi saat musim panen"],
+     "j": 1},
+
+    {"p": "Teks laporan hasil pengamatan berbeda dari teks narasi karena ...",
+     "o": ["Teks laporan menggunakan banyak kata kiasan dan gaya bahasa",
+           "Teks laporan mendeskripsikan objek berdasarkan fakta hasil pengamatan secara sistematis",
+           "Teks laporan selalu berisi cerita yang dialami oleh penulisnya sendiri",
+           "Teks laporan hanya menceritakan peristiwa berdasarkan urutan waktu"],
+     "j": 1},
+
+    # ── 4. KOSAKATA BERMAKNA DENOTATIF ───────────────────────
+    {"p": "Kosakata yang bermakna denotatif adalah kosakata yang memiliki makna ...",
+     "o": ["Kiasan atau makna yang diubah dari makna sebenarnya",
+           "Tersirat dan perlu ditafsirkan berdasarkan konteks kalimat",
+           "Sebenarnya atau makna sesungguhnya sesuai kamus bahasa",
+           "Ambigu dan memiliki banyak tafsiran yang berbeda-beda"],
      "j": 2},
 
-    {"p": "Kalimat majemuk bertingkat memiliki ciri ...",
-     "o": ["Kedua klausa berkedudukan setara",
-           "Terdiri dari satu klausa saja tanpa kata hubung",
-           "Terdapat induk kalimat dan anak kalimat yang tidak setara",
-           "Tidak pernah menggunakan kata hubung"],
+    {"p": "Kalimat yang menggunakan kosakata baru bermakna denotatif adalah ...",
+     "o": ["Gadis itu adalah bunga desa yang paling cantik di kampungnya.",
+           "Ayah mencuci tangan dengan sabun sebelum makan siang.",
+           "Perutnya sudah keroncongan minta diisi nasi goreng.",
+           "Hatiku berbunga-bunga mendengar kabar gembira itu."],
+     "j": 1},
+
+    # ── 5. RANGKUMAN INFORMASI ───────────────────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Banjir sering melanda Jakarta setiap musim hujan. Penyebab utamanya\n'
+           'adalah saluran air tersumbat sampah dan alih fungsi lahan hijau menjadi\n'
+           'pemukiman. Pemerintah berupaya mengatasinya dengan membuat waduk dan\n'
+           'normalisasi sungai."\n\n'
+           'Rangkuman yang paling tepat dari teks di atas adalah ...'),
+     "o": ["Jakarta selalu banjir karena warganya membuang sampah sembarangan ke sungai",
+           "Pemerintah membuat waduk untuk memenuhi kebutuhan air bersih warga Jakarta",
+           "Banjir di Jakarta disebabkan saluran tersumbat dan alih fungsi lahan, dan pemerintah berupaya mengatasinya",
+           "Curah hujan tinggi adalah satu-satunya penyebab banjir yang terjadi di Jakarta"],
      "j": 2},
 
-    {"p": "'Walaupun hujan deras, Budi tetap berangkat sekolah.' Kata 'walaupun' menunjukkan hubungan ...",
-     "o": ["Sebab",
-           "Syarat",
-           "Waktu",
-           "Pertentangan / konsesif"],
+    {"p": "Langkah yang tepat untuk membuat rangkuman teks bacaan adalah ...",
+     "o": ["Menyalin semua kalimat dalam teks secara lengkap tanpa pengurangan",
+           "Mencatat bagian yang menarik saja tanpa memperhatikan isi utama",
+           "Mengambil kalimat pertama setiap paragraf dan menggabungkannya begitu saja",
+           "Membaca teks, menentukan gagasan pokok setiap paragraf, lalu merangkainya menjadi paragraf singkat"],
      "j": 3},
 
-    {"p": "Kalimat majemuk setara pilihan ditandai dengan kata hubung ...",
-     "o": ["Dan, serta",
-           "Tetapi, namun",
-           "Atau",
-           "Karena, sebab"],
+    # ── 6. KALIMAT BERMAKNA DENOTATIF ────────────────────────
+    {"p": "Di antara kalimat-kalimat berikut, manakah yang bermakna denotatif?",
+     "o": ["Dia adalah tulang punggung keluarganya sejak ayahnya pergi.",
+           "Rudi mendapat nilai merah di rapor semester ini.",
+           "Ibu membeli dua kilogram daging sapi di pasar pagi ini.",
+           "Anak itu menjadi buah bibir satu sekolah karena prestasinya."],
      "j": 2},
 
-    {"p": "Manakah kalimat majemuk bertingkat dengan anak kalimat syarat?",
-     "o": ["Ibu memasak dan ayah mencuci piring.",
-           "Dia tidak hadir karena sakit demam tinggi.",
-           "Jika kamu rajin belajar, kamu pasti berhasil.",
-           "Rina suka membaca tetapi adiknya suka bermain."],
-     "j": 2},
+    {"p": 'Makna denotatif dari kata "kaki" terdapat dalam kalimat ...',
+     "o": ["Ia adalah kaki tangan penjahat yang ditangkap oleh polisi.",
+           "Di kaki bukit itu terdapat sebuah desa yang sangat indah.",
+           "Kaki tangannya gemetar saat mendengar kabar buruk tersebut.",
+           "Budi berlari menggunakan kakinya yang kuat saat olahraga pagi."],
+     "j": 3},
 
-    # ── MAKNA KATA DALAM TEKS (6 soal) ──────────────────────
-    {"p": "Kata 'gigih' bermakna ...",
-     "o": ["Mudah menyerah dan cepat putus asa",
-           "Tidak mau berusaha sama sekali",
-           "Teguh hati dan tidak mudah menyerah dalam berjuang",
-           "Lambat dalam bekerja"],
-     "j": 2},
+    # ── 7. KATA BERMAKNA KONOTATIF ───────────────────────────
+    {"p": '"Pemuda itu adalah bintang harapan bangsa."\nKata yang bermakna konotatif dalam kalimat tersebut adalah ...',
+     "o": ["Pemuda",
+           "Harapan",
+           "Bangsa",
+           "Bintang"],
+     "j": 3},
 
-    {"p": "Makna kata 'bersahaja' dalam kalimat 'Pak Lurah dikenal sebagai orang yang bersahaja' adalah ...",
-     "o": ["Sombong dan suka pamer",
-           "Sederhana dan tidak berlebihan",
-           "Kaya raya dan berpengaruh",
-           "Pintar dan cerdas"],
+    {"p": "Manakah kalimat yang mengandung kata bermakna konotatif?",
+     "o": ["Adik membeli tiga buah apel merah di warung dekat sekolah.",
+           "Para pahlawan telah gugur dalam mempertahankan kemerdekaan bangsa.",
+           "Dokter memeriksa pasien yang datang ke puskesmas itu.",
+           "Petani memanen padi di sawah ketika musim kemarau tiba."],
      "j": 1},
 
-    {"p": "Kata 'cekatan' bermakna ...",
-     "o": ["Lamban dan malas bekerja",
-           "Ceroboh dan tidak teliti",
-           "Cepat dan terampil dalam melakukan sesuatu",
-           "Tidak mau membantu orang lain"],
-     "j": 2},
-
-    {"p": "Perhatikan kalimat: 'Nenek itu bertutur dengan lemah lembut kepada cucunya.' Makna kata 'bertutur' adalah ...",
-     "o": ["Berjalan perlahan",
-           "Berbicara",
-           "Bernyanyi merdu",
-           "Menulis surat"],
+    # ── 8. TEKS IMAJINASI / FIKSI ────────────────────────────
+    {"p": "Teks berikut yang termasuk teks imajinasi (fiksi) adalah ...",
+     "o": ["Gunung Merapi meletus pada tahun 2010 dan menelan banyak korban jiwa.",
+           "Di sebuah negeri antah berantah, hiduplah seorang putri baik hati bernama Ayu.",
+           "Laporan cuaca hari ini menyebutkan suhu Jakarta mencapai 32 derajat Celsius.",
+           "Presiden Indonesia pertama adalah Ir. Soekarno yang lahir tahun 1901."],
      "j": 1},
 
-    {"p": "Kata 'dermawan' bermakna ...",
-     "o": ["Kikir dan tidak mau berbagi",
-           "Suka memberi dan membantu orang lain",
-           "Kaya raya dan berpengaruh",
-           "Pintar berdagang"],
+    {"p": "Ciri khas teks fiksi yang membedakannya dari teks nonfiksi adalah ...",
+     "o": ["Menggunakan data dan fakta yang dapat diverifikasi kebenarannya",
+           "Ditulis berdasarkan hasil penelitian ilmiah yang dapat diuji",
+           "Berisi cerita yang bersumber dari imajinasi pengarang, bukan kejadian nyata",
+           "Selalu menggunakan bahasa formal dan kaku sesuai aturan EYD"],
+     "j": 2},
+
+    # ── 9. GAGASAN POKOK TEKS LAPORAN ────────────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Lebah madu adalah serangga yang hidup berkoloni. Seekor koloni terdiri\n'
+           'atas ratu lebah, lebah pekerja, dan lebah jantan. Lebah pekerja bertugas\n'
+           'mencari nektar bunga untuk diolah menjadi madu sebagai cadangan makanan."\n\n'
+           'Gagasan pokok teks laporan di atas adalah ...'),
+     "o": ["Lebah pekerja bertugas mencari nektar dari bunga-bunga di sekitar sarang",
+           "Madu digunakan sebagai cadangan makanan koloni lebah",
+           "Lebah madu adalah serangga yang hidup berkoloni",
+           "Ratu lebah memimpin seluruh anggota koloni lebah madu"],
+     "j": 2},
+
+    {"p": "Gagasan pokok (ide pokok) suatu paragraf biasanya terdapat pada ...",
+     "o": ["Setiap kalimat dalam paragraf secara merata dan sama rata",
+           "Kalimat yang paling panjang di antara kalimat-kalimat dalam paragraf",
+           "Kalimat utama yang dapat berada di awal, akhir, atau awal dan akhir paragraf",
+           "Kalimat terakhir setiap paragraf tanpa pengecualian"],
+     "j": 2},
+
+    # ── 10. MAKNA KATA DALAM KARYA SASTRA ───────────────────
+    {"p": ('Dalam cerpen, seorang tokoh digambarkan "seperti ksatria tanpa\n'
+           'senjata di medan perang." Makna ungkapan tersebut adalah ...'),
+     "o": ["Tokoh tersebut adalah seorang prajurit militer yang gagah berani",
+           "Tokoh berani namun tidak memiliki kemampuan yang cukup untuk menghadapi masalah",
+           "Tokoh adalah seorang pemanah terampil yang kehilangan busurnya",
+           "Tokoh tersebut seorang pengecut yang tidak mau berjuang sama sekali"],
      "j": 1},
 
-    {"p": "Kata 'gigih' dan 'ulet' dalam bahasa Indonesia memiliki hubungan makna ...",
-     "o": ["Antonim — makna berlawanan",
-           "Homonim — bunyi sama, makna beda",
-           "Sinonim — makna serupa",
-           "Polisemi — satu kata banyak makna"],
-     "j": 2},
-
-    # ── PUISI (8 soal) ───────────────────────────────────────
-    {"p": "Berikut yang BUKAN merupakan unsur pembangun puisi adalah ...",
-     "o": ["Rima dan irama",
-           "Diksi (pilihan kata)",
-           "Alur cerita dan latar",
-           "Majas (gaya bahasa)"],
-     "j": 2},
-
-    {"p": ("Perhatikan kutipan puisi berikut!\n"
-           "'Hijau daunmu menyejukkan mata\n"
-           " Akarmu menancap kuat di bumi\n"
-           " Buahmu manis menyegarkan rasa\n"
-           " Kau berguna bagi kami'\n\n"
-           "Tema puisi tersebut adalah ..."),
-     "o": ["Keindahan laut dan pantai",
-           "Jasa seorang guru",
-           "Kegunaan pohon bagi manusia",
-           "Keindahan pemandangan pegunungan"],
-     "j": 2},
-
-    {"p": "Amanat puisi adalah ...",
-     "o": ["Gambaran tempat dan waktu dalam puisi",
-           "Pesan atau nasihat yang ingin disampaikan penyair melalui puisinya",
-           "Gaya bahasa yang digunakan penyair",
-           "Pilihan kata-kata indah dalam puisi"],
+    {"p": 'Kata "layu" dalam kalimat sastra "Senyumnya telah layu sejak kepergian ibunya" bermakna ...',
+     "o": ["Tanaman yang kekurangan air dan mulai menguning daunnya",
+           "Tidak semangat, sedih, dan kehilangan keceriaan dalam hidup",
+           "Sakit keras sehingga harus berbaring di ranjang terus-menerus",
+           "Tidak mau makan karena dilanda kesedihan yang sangat mendalam"],
      "j": 1},
 
-    {"p": "Kalimat 'Ombak berlari mengejar pantai' menggunakan majas ...",
+    # ── 11. CIRI TEKS FIKSI ATAU NONFIKSI ───────────────────
+    {"p": "Manakah yang merupakan ciri-ciri teks nonfiksi?",
+     "o": ["Ditulis berdasarkan imajinasi pengarang dan bersifat menghibur",
+           "Mengandung tokoh-tokoh yang sepenuhnya dibuat-buat oleh pengarang",
+           "Berdasarkan fakta, data nyata, dan dapat dibuktikan kebenarannya",
+           "Memiliki alur cerita yang penuh konflik dan ketegangan dramatik"],
+     "j": 2},
+
+    {"p": ('Bacaan: "Buku Laskar Pelangi karya Andrea Hirata menceritakan\n'
+           'perjuangan anak-anak di Pulau Belitung. Tokoh seperti Ikal dan Lintang\n'
+           'merupakan rekaan pengarang meski terinspirasi dari kehidupan nyata."\n\n'
+           'Berdasarkan ciri-cirinya, karya yang dijelaskan teks di atas adalah ...'),
+     "o": ["Nonfiksi ilmiah karena berisi fakta tentang Pulau Belitung",
+           "Fiksi karena tokoh-tokohnya merupakan rekaan pengarang",
+           "Teks laporan karena mendeskripsikan keadaan di Pulau Belitung",
+           "Nonfiksi karena terinspirasi penuh dari kehidupan nyata"],
+     "j": 1},
+
+    # ── 12. UNSUR INTRINSIK KARYA SASTRA ────────────────────
+    {"p": ('Bacalah kutipan berikut!\n'
+           '"Malam itu hujan deras mengguyur kota. Di sebuah gubuk reot di pinggir\n'
+           'sungai, Sinta duduk memeluk lututnya. Ia teringat ayahnya yang belum\n'
+           'pulang. Air matanya menetes, namun ia tetap bersabar menanti."\n\n'
+           'Latar tempat yang terdapat dalam kutipan cerita di atas adalah ...'),
+     "o": ["Kota yang sedang diguyur hujan deras",
+           "Sungai yang meluap karena hujan deras",
+           "Gubuk reot di pinggir sungai",
+           "Rumah Sinta yang terletak di tengah kota"],
+     "j": 2},
+
+    # SOAL SULIT (1 dari 6)
+    {"p": ('Bacalah kutipan cerita berikut!\n'
+           '"Pak Hasan selalu berbagi nasi bungkus untuk pengemis setiap Jumat.\n'
+           'Meski gajinya pas-pasan, ia tidak pernah absen. Tetangganya berkata,\n'
+           '"Buat apa susah-susah berbagi, toh mereka tidak berterima kasih?"\n'
+           'Pak Hasan hanya tersenyum, "Kebaikan tidak perlu dibalas, Pak."\n\n'
+           'Watak tokoh Pak Hasan yang paling tepat berdasarkan kutipan di atas adalah ...'),
+     "o": ["Sombong dan suka pamer kepada tetangga sekitar rumahnya",
+           "Kikir karena bergaji kecil namun tetap mengeluarkan uangnya",
+           "Dermawan, ikhlas, dan tidak mengharapkan imbalan dari kebaikannya",
+           "Sederhana namun kurang peduli terhadap kondisi lingkungannya"],
+     "j": 2},
+
+    # ── 13. PESAN MORAL CERPEN ───────────────────────────────
+    {"p": ('Bacalah cerpen berikut!\n'
+           '"Rara selalu mencontek saat ujian karena malas belajar. Suatu hari,\n'
+           'ia tertangkap guru dan mendapat nilai nol. Rara sangat malu di depan\n'
+           'teman-temannya. Sejak itu, ia berjanji tidak akan mencontek lagi\n'
+           'dan mulai rajin belajar setiap malam."\n\n'
+           'Pesan moral yang terkandung dalam cerpen di atas adalah ...'),
+     "o": ["Janganlah malu ketika melakukan kesalahan di depan teman",
+           "Mencontek adalah cara pintar untuk mendapat nilai bagus",
+           "Kejujuran dan kerja keras dalam belajar adalah kunci keberhasilan",
+           "Guru seharusnya tidak menghukum siswa yang mencontek di kelas"],
+     "j": 2},
+
+    # SOAL SULIT (2 dari 6)
+    {"p": ('Bacalah cerpen berikut!\n'
+           '"Pak Budi dikenal sebagai petani gigih. Meski lahannya kecil dan sering\n'
+           'dicemooh tetangga, ia tetap diam dan tekun merawat tanamannya. Saat\n'
+           'panen tiba, ladang Pak Budi menghasilkan dua kali lipat dibanding petani\n'
+           'lain. Tetangga yang pernah mencemooh kini malah meminta ilmunya."\n\n'
+           'Pesan moral yang paling tepat dari cerpen tersebut adalah ...'),
+     "o": ["Kita harus membalas ejekan orang lain dengan memamerkan kesuksesan",
+           "Lahan yang besar adalah syarat utama menjadi petani yang berhasil",
+           "Kerja keras, ketekunan, dan tidak mudah terprovokasi omongan orang akan membuahkan hasil",
+           "Sebaiknya kita meminta maaf kepada orang yang pernah kita ejek"],
+     "j": 2},
+
+    # ── 14. ANTONIM DAN SINONIM ─────────────────────────────
+    {"p": 'Sinonim kata "bijaksana" adalah ...',
+     "o": ["Ceroboh",
+           "Gegabah",
+           "Arif",
+           "Angkuh"],
+     "j": 2},
+
+    {"p": 'Antonim kata "hemat" dalam kalimat "Ayah adalah orang yang hemat dalam mengelola keuangan" adalah ...',
+     "o": ["Cermat",
+           "Boros",
+           "Teliti",
+           "Rajin"],
+     "j": 1},
+
+    # ── 15. FAKTA DAN OPINI ──────────────────────────────────
+    {"p": "Manakah kalimat yang merupakan fakta?",
+     "o": ["Menurutku, olahraga renang adalah olahraga yang paling menyenangkan.",
+           "Sebaiknya pelajar Indonesia lebih giat membaca buku di waktu luang.",
+           "Indonesia merdeka pada tanggal 17 Agustus 1945.",
+           "Sepertinya cuaca hari ini akan hujan deras di sore hari."],
+     "j": 2},
+
+    {"p": "Manakah kalimat yang merupakan opini?",
+     "o": ["Gunung Everest adalah gunung tertinggi di dunia dengan ketinggian 8.849 meter.",
+           "Samudra Pasifik adalah samudra terluas di permukaan bumi.",
+           "Menurut saya, pendidikan karakter lebih penting daripada pendidikan akademis.",
+           "Air mendidih pada suhu 100 derajat Celsius pada tekanan udara normal."],
+     "j": 2},
+
+    # ── 16. TIPE STRUKTUR TEKS ───────────────────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Suatu pagi, Budi terbangun terlambat. Ia bergegas mandi, kemudian\n'
+           'sarapan dalam tergesa-gesa. Lalu ia berlari ke halte bus agar tidak\n'
+           'terlambat sampai di sekolah."\n\n'
+           'Teks tersebut termasuk tipe teks ...'),
+     "o": ["Eksposisi",
+           "Argumentasi",
+           "Deskripsi",
+           "Naratif"],
+     "j": 3},
+
+    {"p": "Teks yang berisi pendapat dan alasan-alasan untuk meyakinkan pembaca disebut teks ...",
+     "o": ["Naratif",
+           "Deskripsi",
+           "Eksposisi",
+           "Argumentasi"],
+     "j": 3},
+
+    # ── 17. IDE POKOK DAN IDE PENDUKUNG ─────────────────────
+    {"p": ('Bacalah paragraf berikut!\n'
+           '"Pohon mangrove sangat bermanfaat bagi lingkungan pesisir. Akarnya\n'
+           'yang kuat mencegah erosi pantai. Daunnya yang lebat menjadi tempat\n'
+           'hidup berbagai jenis burung. Selain itu, buahnya dapat diolah menjadi\n'
+           'makanan oleh masyarakat sekitar."\n\n'
+           'Ide pokok paragraf tersebut adalah ...'),
+     "o": ["Akar pohon mangrove yang kuat mencegah abrasi pantai",
+           "Daun pohon mangrove menjadi tempat hidup berbagai jenis burung",
+           "Pohon mangrove sangat bermanfaat bagi lingkungan pesisir",
+           "Buah mangrove dapat diolah menjadi berbagai jenis makanan"],
+     "j": 2},
+
+    {"p": ('Berdasarkan paragraf tentang mangrove di atas, kalimat\n'
+           '"Akarnya yang kuat mencegah erosi pantai" berfungsi sebagai ...'),
+     "o": ["Ide pokok yang menjadi inti dari paragraf",
+           "Ide pendukung yang menjelaskan manfaat pohon mangrove",
+           "Kesimpulan dari seluruh isi paragraf tersebut",
+           "Kalimat penghubung antara dua paragraf berbeda"],
+     "j": 1},
+
+    # ── 18. KALIMAT LANGSUNG DAN TIDAK LANGSUNG ─────────────
+    {"p": "Manakah yang merupakan kalimat langsung?",
+     "o": ["Guru bertanya apakah murid-murid sudah mengerjakan PR mereka.",
+           "Ibu menyuruh adik untuk segera mandi dan siap-siap ke sekolah.",
+           '"Apakah kalian sudah mengerjakan PR?" tanya Pak Guru kepada murid-muridnya.',
+           "Dokter mengatakan bahwa pasien itu harus beristirahat selama seminggu."],
+     "j": 2},
+
+    {"p": 'Kalimat langsung "Rini berkata, \'Aku akan datang ke pesta ulang tahunmu besok.\'" jika diubah menjadi kalimat tidak langsung menjadi ...',
+     "o": ["Rini berkata bahwa aku akan datang ke pesta ulang tahunmu besok.",
+           "Rini berkata bahwa ia akan datang ke pesta ulang tahun itu besok.",
+           "Rini berkata, \"Dia akan datang ke pesta ulang tahunmu besok.\"",
+           "Rini bilang kalau aku mau datang ke pesta ulang tahunnya besok."],
+     "j": 1},
+
+    # ── 19. KOSAKATA BARU MEMBENTUK TEKS ────────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Kegiatan mendaur ulang sampah plastik sangat ... bagi lingkungan.\n'
+           'Dengan mendaur ulang, kita mengurangi ... sampah yang menumpuk\n'
+           'di tempat pembuangan akhir."\n\n'
+           'Kosakata yang tepat untuk melengkapi teks tersebut secara berurutan adalah ...'),
+     "o": ["berbahaya — kelebihan",
+           "merugikan — jumlah",
+           "bermanfaat — volume",
+           "berguna — permasalahan"],
+     "j": 2},
+
+    {"p": 'Kosakata yang tepat untuk melengkapi kalimat "Pemerintah daerah sedang ... pembangunan jalan baru yang menghubungkan dua kecamatan" adalah ...',
+     "o": ["menghentikan",
+           "merencanakan",
+           "menolak",
+           "melupakan"],
+     "j": 1},
+
+    # ── 20. PENDAPAT TERHADAP TEKS NARATIF ──────────────────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Edi adalah anak yang nakal. Setiap hari ia mengganggu teman-temannya.\n'
+           'Gurunya sudah berkali-kali menasihati, namun Edi tidak mengubah sikapnya.\n'
+           'Akibatnya, Edi tidak memiliki teman dan selalu merasa kesepian."\n\n'
+           'Pendapat yang tepat terhadap teks naratif di atas adalah ...'),
+     "o": ["Edi adalah anak yang baik hati dan suka menolong teman-temannya",
+           "Sikap nakal Edi perlu diubah karena membuat dirinya sendiri menderita dan tidak memiliki teman",
+           "Teman-teman Edi yang salah karena tidak mau bermain dengannya",
+           "Guru harus bersabar meskipun Edi terus mengulangi kenakalan yang sama"],
+     "j": 1},
+
+    {"p": "Memberikan pendapat terhadap teks naratif berarti ...",
+     "o": ["Menyalin kembali isi teks dengan kata-kata sendiri secara lengkap",
+           "Mengubah alur cerita sesuai keinginan pembaca",
+           "Menyampaikan penilaian atau tanggapan terhadap isi teks berdasarkan alasan yang logis",
+           "Menghafal semua dialog tokoh yang ada dalam teks tersebut"],
+     "j": 2},
+
+    # ── 21. TUJUAN POSTER LINGKUNGAN ─────────────────────────
+    {"p": 'Poster bertuliskan "Jaga Kebersihan Sungai, Buang Sampah pada Tempatnya!" bertujuan untuk ...',
+     "o": ["Memberitahu warga tentang jadwal pengangkutan sampah di daerahnya",
+           "Mengajak masyarakat menjaga kebersihan sungai dengan tidak membuang sampah sembarangan",
+           "Mempromosikan produk tempat sampah yang dijual di pasaran",
+           "Melaporkan kondisi sungai yang sudah tercemar kepada pemerintah"],
+     "j": 1},
+
+    {"p": "Pernyataan yang BENAR tentang poster lingkungan adalah ...",
+     "o": ["Poster lingkungan hanya boleh dipasang di kantor pemerintah",
+           "Poster lingkungan bertujuan untuk menjual produk-produk ramah lingkungan",
+           "Poster lingkungan menggunakan gambar dan kalimat singkat untuk mengajak masyarakat menjaga lingkungan",
+           "Poster lingkungan harus ditulis dengan bahasa ilmiah yang formal dan sangat panjang"],
+     "j": 2},
+
+    # ── 22. ARTI KATA BERCETAK TEBAL (TEKS EKSPLANASI) ──────
+    {"p": ('Bacalah teks berikut!\n'
+           '"Proses evaporasi terjadi ketika air di permukaan bumi menguap\n'
+           'akibat panas matahari. Air yang menguap berubah menjadi uap air\n'
+           'yang naik ke atmosfer dan membentuk awan."\n\n'
+           'Arti kata evaporasi pada teks eksplanasi di atas adalah ...'),
+     "o": ["Proses turunnya air hujan dari awan ke permukaan bumi",
+           "Proses penguapan air dari permukaan bumi akibat panas matahari",
+           "Proses pembentukan awan dari uap air yang ada di udara",
+           "Proses mengalirnya air sungai dari hulu menuju lautan"],
+     "j": 1},
+
+    {"p": ('Bacalah teks berikut!\n'
+           '"Banjir sering terjadi akibat deforestasi yang tidak terkendali.\n'
+           'Hutan yang gundul tidak mampu menyerap air hujan sehingga air\n'
+           'langsung mengalir ke dataran rendah dan menyebabkan banjir."\n\n'
+           'Makna kata deforestasi pada teks tersebut adalah ...'),
+     "o": ["Penanaman pohon secara besar-besaran di daerah yang gundul",
+           "Pembangunan perumahan di area hutan yang masih lebat",
+           "Penggundulan atau penebangan hutan secara besar-besaran",
+           "Program penghijauan kembali hutan yang telah rusak"],
+     "j": 2},
+
+    # ── 23. UNSUR-UNSUR PUISI ────────────────────────────────
+    {"p": ('Bacalah puisi berikut!\n\n'
+           '    Pagi harum semerbak bunga\n'
+           '    Embun menetes di dedaunan\n'
+           '    Mentari menyinari alam raya\n'
+           '    Ciptaan Tuhan yang menawan\n\n'
+           'Rima (sajak) yang digunakan dalam puisi di atas adalah ...'),
+     "o": ["a-a-a-a",
+           "a-b-c-d",
+           "a-b-a-b",
+           "a-a-b-b"],
+     "j": 2},
+
+    {"p": 'Unsur yang menunjukkan "pesan yang ingin disampaikan penyair" dalam sebuah puisi disebut ...',
+     "o": ["Rima",
+           "Diksi",
+           "Amanat",
+           "Larik"],
+     "j": 2},
+
+    # ── 24. MAJAS METAFORA ───────────────────────────────────
+    {"p": '"Waktu adalah uang yang tidak bisa dikembalikan." Kalimat tersebut adalah contoh majas ...',
      "o": ["Simile",
-           "Metafora",
-           "Personifikasi",
-           "Hiperbola"],
-     "j": 2},
-
-    {"p": "Kalimat 'Wajahnya bagaikan rembulan di malam hari' menggunakan majas ...",
-     "o": ["Metafora",
            "Personifikasi",
            "Hiperbola",
-           "Simile"],
+           "Metafora"],
      "j": 3},
 
-    {"p": "Kalimat 'Dia adalah bintang kelas kami' menggunakan majas ...",
-     "o": ["Simile",
-           "Metafora",
+    {"p": 'Arti dari kalimat bermajas metafora "Dia adalah pagar makan tanaman dalam keluarga itu" adalah ...',
+     "o": ["Dia adalah orang yang pandai bercocok tanam untuk keluarganya",
+           "Dia justru merugikan atau mengkhianati orang-orang yang seharusnya dilindunginya",
+           "Dia adalah pelindung setia yang menjaga semua anggota keluarganya",
+           "Dia adalah orang yang suka berkebun dan menanam pagar di sekitar rumah"],
+     "j": 1},
+
+    # ── 25. ISTILAH DALAM WAWANCARA ──────────────────────────
+    {"p": "Dalam kegiatan wawancara, orang yang mengajukan pertanyaan disebut ...",
+     "o": ["Narasumber",
+           "Moderator",
+           "Pewawancara",
+           "Reporter utama"],
+     "j": 2},
+
+    {"p": "Pernyataan yang BENAR tentang narasumber dalam kegiatan wawancara adalah ...",
+     "o": ["Narasumber adalah orang yang mengajukan pertanyaan kepada pewawancara",
+           "Narasumber adalah orang yang memiliki keahlian atau pengetahuan tentang topik yang diwawancara",
+           "Narasumber harus selalu menjawab setiap pertanyaan tanpa boleh menolak",
+           "Narasumber dan pewawancara selalu merupakan orang yang sama"],
+     "j": 1},
+
+    # ── 26. JUDUL CERITA FIKSI ───────────────────────────────
+    {"p": "Manakah yang termasuk judul cerita fiksi di bawah ini?",
+     "o": ["Laporan Tahunan Kependudukan Kota Jakarta 2024",
+           "Cara Mudah Menanam Sayuran Organik di Rumah",
+           "Si Kancil dan Buaya",
+           "Sejarah Kemerdekaan Indonesia 17 Agustus 1945"],
+     "j": 2},
+
+    # SOAL SULIT (3 dari 6)
+    {"p": ('Di antara judul-judul berikut, manakah yang BUKAN merupakan cerita fiksi?\n'
+           '(Pilih berdasarkan pengetahuanmu tentang jenis karya sastra Indonesia)'),
+     "o": ["Petualangan Sherina (film anak-anak)",
+           "Harimau! Harimau! karya Mochtar Lubis",
+           "Bumi Manusia karya Pramoedya Ananta Toer",
+           "Catatan Seorang Demonstran karya Soe Hok Gie"],
+     "j": 3},
+
+    # ── 27. MEMPERBAIKI KALIMAT EFEKTIF ──────────────────────
+    {"p": 'Perbaikan yang tepat untuk kalimat "Kami semua para siswa-siswa hadir dalam upacara bendera itu" adalah ...',
+     "o": ["Kami semua para siswa hadir dalam upacara bendera itu.",
+           "Kami semua siswa hadir dalam upacara bendera itu.",
+           "Para siswa hadir dalam upacara bendera itu.",
+           "Kami para siswa-siswa hadir dalam upacara bendera itu."],
+     "j": 2},
+
+    # SOAL SULIT (4 dari 6)
+    {"p": 'Kalimat "Dengan membaca buku ilmu pengetahuan kita akan bertambah" mengandung kelemahan karena ...',
+     "o": ["Tidak memiliki subjek yang jelas dalam kalimat",
+           "Tidak memiliki predikat sama sekali",
+           'Ambigu: "ilmu pengetahuan" bisa dipahami sebagai keterangan "buku" atau subjek klausa kedua',
+           "Menggunakan kata yang tidak baku menurut KBBI"],
+     "j": 2},
+
+    # ── 28. FUNGSI IMBUHAN ME- ───────────────────────────────
+    {"p": 'Kata "menulis" mendapat imbuhan me- yang berfungsi sebagai ...',
+     "o": ["Kata sifat yang menjelaskan keadaan subjek kalimat",
+           "Kata kerja aktif yang menunjukkan subjek melakukan tindakan",
+           "Kata benda yang menunjukkan hasil dari suatu pekerjaan",
+           "Kata keterangan yang menjelaskan cara kerja predikat"],
+     "j": 1},
+
+    {"p": 'Imbuhan me- pada kata "mempelajari" dalam kalimat "Siswa mempelajari materi Bahasa Indonesia" berfungsi untuk ...',
+     "o": ["Membentuk kata sifat dari kata dasar 'pelajar'",
+           "Membentuk kata benda dari kata dasar 'belajar'",
+           "Membentuk kata kerja aktif yang menunjukkan kegiatan yang dilakukan subjek",
+           "Membentuk kata keterangan dari kata dasar 'ajar'"],
+     "j": 2},
+
+    # ── 29. UNSUR EKSTRINSIK TEKS SASTRA ────────────────────
+    {"p": "Unsur ekstrinsik karya sastra adalah unsur yang berasal dari ...",
+     "o": ["Dalam karya sastra itu sendiri, seperti tema dan alur cerita",
+           "Luar karya sastra, seperti latar belakang pengarang dan kondisi sosial saat karya dibuat",
+           "Struktur bahasa yang digunakan dalam karya sastra tersebut",
+           "Dialog antar tokoh yang terdapat dalam karya sastra"],
+     "j": 1},
+
+    {"p": "Manakah yang termasuk unsur ekstrinsik dalam sebuah novel?",
+     "o": ["Tokoh protagonis dan antagonis dalam cerita novel",
+           "Latar tempat dan waktu terjadinya peristiwa dalam novel",
+           "Latar belakang pendidikan dan kehidupan pengarangnya",
+           "Alur cerita dari awal hingga akhir novel tersebut"],
+     "j": 2},
+
+    # ── 30. JENIS MAJAS ──────────────────────────────────────
+    {"p": '"Suaranya menggelegar membelah langit hingga bumi bergetar." Kalimat tersebut menggunakan majas ...',
+     "o": ["Metafora",
            "Personifikasi",
-           "Litotes"],
-     "j": 1},
-
-    {"p": "Persamaan bunyi pada akhir baris-baris puisi disebut ...",
-     "o": ["Irama",
-           "Sajak / rima",
-           "Bait",
-           "Larik"],
-     "j": 1},
-
-    {"p": "Satu kesatuan beberapa baris dalam puisi disebut ...",
-     "o": ["Larik",
-           "Sajak",
-           "Bait",
-           "Rima"],
-     "j": 2},
-
-    # ── PANTUN (8 soal) ──────────────────────────────────────
-    {"p": "Jumlah baris dalam satu bait pantun adalah ...",
-     "o": ["2 baris",
-           "6 baris",
-           "4 baris",
-           "8 baris"],
-     "j": 2},
-
-    {"p": "Dalam pantun, baris ke-1 dan ke-2 disebut ...",
-     "o": ["Isi",
-           "Sampiran",
-           "Penutup",
-           "Pembuka"],
-     "j": 1},
-
-    {"p": "Pola sajak (rima) yang benar dalam sebuah pantun adalah ...",
-     "o": ["a-a-a-a",
-           "a-b-a-b",
-           "a-a-b-b",
-           "a-b-b-a"],
-     "j": 1},
-
-    {"p": ("Perhatikan pantun berikut!\n"
-           "'Pohon mangga di tepi kali,\n"
-           " Buahnya lebat berwarna merah.\n"
-           " Kalau ingin jadi anak berbakti,\n"
-           " Hormatilah ibu dan ayah.'\n\n"
-           "Pantun tersebut termasuk jenis pantun ..."),
-     "o": ["Pantun jenaka",
-           "Pantun teka-teki",
-           "Pantun nasihat",
-           "Pantun adat"],
-     "j": 2},
-
-    {"p": "Perbedaan utama antara pantun dan syair adalah ...",
-     "o": ["Pantun bersajak a-b-a-b; syair bersajak a-a-a-a",
-           "Pantun berasal dari Jawa; syair berasal dari Arab",
-           "Pantun terdiri dari 6 baris; syair terdiri dari 4 baris",
-           "Pantun tidak memiliki sampiran; syair memiliki sampiran"],
-     "j": 0},
-
-    {"p": ("Perhatikan pantun berikut!\n"
-           "'Kalau ada jarum yang patah,\n"
-           " Jangan simpan di dalam peti.\n"
-           " Kalau ada kata yang salah,\n"
-           " Jangan simpan di dalam hati.'\n\n"
-           "Makna isi pantun tersebut adalah ..."),
-     "o": ["Simpanlah patahan jarum dengan baik di peti",
-           "Jangan memendam rasa sakit hati; maafkanlah kesalahan orang lain",
-           "Jangan bicara sembarangan kepada orang lain",
-           "Jaga barang-barang berharga dengan hati-hati"],
-     "j": 1},
-
-    {"p": "Jumlah suku kata yang benar pada tiap baris pantun adalah ...",
-     "o": ["4–6 suku kata",
-           "8–12 suku kata",
-           "13–15 suku kata",
-           "2–3 suku kata"],
-     "j": 1},
-
-    {"p": ("Perhatikan pantun berikut!\n"
-           "'Pergi ke pasar beli terasi,\n"
-           " Beli juga asam dan garam.\n"
-           " Rajin belajar setiap hari,\n"
-           " Agar cita-cita tidak padam.'\n\n"
-           "Bagian isi pantun di atas terdapat pada baris ..."),
-     "o": ["Baris 1 dan 2",
-           "Baris 2 dan 3",
-           "Baris 3 dan 4",
-           "Baris 1 dan 3"],
-     "j": 2},
-
-    # ── IDE POKOK & PARAGRAF (8 soal) ───────────────────────
-    {"p": "Ide pokok (gagasan utama) paragraf adalah ...",
-     "o": ["Kalimat yang mengakhiri sebuah paragraf",
-           "Gagasan yang menjadi dasar atau inti dari sebuah paragraf",
-           "Kalimat yang memberikan penjelasan pada kalimat lain",
-           "Kata-kata sulit yang ada dalam paragraf"],
-     "j": 1},
-
-    {"p": ("Perhatikan paragraf berikut!\n"
-           "'Membaca sangat bermanfaat bagi kehidupan. Dengan membaca, kita mendapat\n"
-           "banyak pengetahuan baru. Membaca juga dapat melatih konsentrasi dan daya\n"
-           "ingat. Selain itu, membaca dapat memperluas wawasan kita.'\n\n"
-           "Ide pokok paragraf tersebut adalah ..."),
-     "o": ["Membaca melatih konsentrasi dan daya ingat",
-           "Membaca dapat memperluas wawasan kita",
-           "Membaca sangat bermanfaat bagi kehidupan",
-           "Membaca memberikan banyak pengetahuan baru"],
-     "j": 2},
-
-    {"p": "Kalimat utama suatu paragraf adalah kalimat yang ...",
-     "o": ["Paling panjang di antara kalimat lainnya dalam paragraf",
-           "Berisi gagasan pokok atau inti dari paragraf",
-           "Selalu terletak di akhir paragraf",
-           "Mengandung kata hubung sebab-akibat"],
-     "j": 1},
-
-    {"p": "Kalimat penjelas dalam paragraf berfungsi untuk ...",
-     "o": ["Memperkenalkan topik baru dalam paragraf",
-           "Menyimpulkan seluruh isi paragraf",
-           "Menjelaskan, merinci, atau mendukung ide pokok",
-           "Membuka paragraf berikutnya"],
-     "j": 2},
-
-    {"p": "Paragraf yang kalimat utamanya terletak di awal paragraf disebut paragraf ...",
-     "o": ["Induktif",
-           "Campuran",
-           "Deduktif",
-           "Ineratif"],
-     "j": 2},
-
-    {"p": ("Perhatikan paragraf berikut!\n"
-           "'Sungai Ciliwung terkenal dengan keindahannya. Di sepanjang alirannya\n"
-           "terdapat tumbuhan hijau yang rindang. Airnya jernih mengalir deras.\n"
-           "Ikan-ikan berenang bebas di dalamnya.'\n\n"
-           "Paragraf di atas termasuk jenis paragraf ..."),
-     "o": ["Induktif — kalimat utama di akhir",
-           "Deduktif — kalimat utama di awal",
-           "Campuran — kalimat utama di awal dan akhir",
-           "Deskriptif tanpa kalimat utama"],
-     "j": 1},
-
-    {"p": "Paragraf induktif adalah paragraf yang ...",
-     "o": ["Kalimat utamanya berada di awal paragraf",
-           "Tidak memiliki kalimat utama sama sekali",
-           "Kalimat utamanya berada di akhir paragraf",
-           "Kalimat utamanya berada di tengah paragraf"],
-     "j": 2},
-
-    {"p": ("Perhatikan paragraf berikut!\n"
-           "'Budi selalu mengerjakan PR tepat waktu. Ia tidak pernah terlambat masuk\n"
-           "sekolah. Nilai-nilainya selalu bagus dan memuaskan. Budi adalah siswa\n"
-           "yang teladan di kelasnya.'\n\n"
-           "Kalimat utama paragraf tersebut adalah ..."),
-     "o": ["Budi selalu mengerjakan PR tepat waktu.",
-           "Nilai-nilainya selalu bagus dan memuaskan.",
-           "Ia tidak pernah terlambat masuk sekolah.",
-           "Budi adalah siswa yang teladan di kelasnya."],
+           "Simile",
+           "Hiperbola"],
      "j": 3},
 
-    # ── SINONIM & ANTONIM (6 soal) ───────────────────────────
-    {"p": "Sinonim kata 'gembira' adalah ...",
-     "o": ["Sedih",
-           "Senang",
-           "Marah",
-           "Takut"],
+    # SOAL SULIT (5 dari 6)
+    {"p": '"Saya punya sebuah gubuk kecil untuk berteduh," kata pemilik rumah mewah itu dengan rendah hati.\nKalimat tersebut menggunakan majas ...',
+     "o": ["Hiperbola",
+           "Litotes",
+           "Metafora",
+           "Eufemisme"],
      "j": 1},
 
-    {"p": "Sinonim kata 'pandai' adalah ...",
-     "o": ["Bodoh",
-           "Lambat",
-           "Cerdas",
-           "Malas"],
-     "j": 2},
-
-    {"p": "Sinonim kata 'indah' adalah ...",
-     "o": ["Jelek",
-           "Elok",
-           "Rusak",
-           "Kotor"],
-     "j": 1},
-
-    {"p": "Antonim kata 'rajin' adalah ...",
-     "o": ["Giat",
-           "Tekun",
-           "Malas",
-           "Semangat"],
-     "j": 2},
-
-    {"p": "Antonim kata 'berani' adalah ...",
-     "o": ["Gagah",
-           "Kuat",
-           "Penakut",
-           "Perkasa"],
-     "j": 2},
-
-    {"p": "Antonim kata 'terang' adalah ...",
-     "o": ["Bersinar",
-           "Gelap",
-           "Cerah",
-           "Bercahaya"],
-     "j": 1},
-
-    # ── TEKS DESKRIPSI (6 soal) ──────────────────────────────
-    {"p": "Teks deskripsi adalah teks yang ...",
-     "o": ["Menceritakan peristiwa secara berurutan berdasarkan waktu",
-           "Menggambarkan suatu objek secara detail agar pembaca seolah melihat langsung",
-           "Meyakinkan pembaca tentang suatu pendapat",
-           "Menjelaskan cara melakukan sesuatu langkah demi langkah"],
-     "j": 1},
-
-    {"p": "Ciri utama teks deskripsi adalah ...",
-     "o": ["Menggunakan kata hubung waktu seperti lalu dan kemudian",
-           "Menggunakan kalimat-kalimat yang bersifat argumentatif",
-           "Menggunakan kata-kata yang melukiskan keadaan objek secara rinci dan detail",
-           "Menggunakan banyak kalimat perintah"],
-     "j": 2},
-
-    {"p": "Tujuan penulisan teks deskripsi adalah ...",
-     "o": ["Menghibur pembaca dengan cerita lucu",
-           "Memengaruhi pendapat pembaca",
-           "Membuat pembaca seolah-olah melihat, merasakan, atau mengalami langsung objek yang digambarkan",
-           "Menjelaskan proses terjadinya sesuatu secara ilmiah"],
-     "j": 2},
-
-    {"p": "Manakah kalimat yang merupakan ciri khas teks deskripsi?",
-     "o": ["Lalu ia berjalan menuju sekolah dengan tergesa-gesa.",
-           "Sebaiknya kita rajin berolahraga setiap pagi.",
-           "Kucing itu berbulu putih bersih, bermata biru jernih, dan bertubuh gemuk menggemaskan.",
-           "Pertama, panaskan minyak goreng di dalam wajan."],
-     "j": 2},
-
-    {"p": ("Perhatikan kalimat berikut!\n"
-           "'Pantai itu memiliki pasir putih yang lembut, air biru jernih yang tenang,\n"
-           "dan dihiasi pohon kelapa yang melambai-lambai.'\n\n"
-           "Kalimat di atas merupakan contoh kalimat dalam teks ..."),
-     "o": ["Narasi",
-           "Persuasi",
-           "Deskripsi",
-           "Prosedur"],
-     "j": 2},
-
-    {"p": "Objek yang dapat dijadikan bahan tulisan teks deskripsi adalah ...",
-     "o": ["Hanya benda mati saja",
-           "Hanya tempat wisata yang terkenal",
-           "Segala sesuatu yang dapat diamati, seperti tempat, orang, hewan, atau benda",
-           "Hanya tokoh-tokoh terkenal dalam sejarah"],
-     "j": 2},
-
-    # ── TEKS NARASI (6 soal) ─────────────────────────────────
-    {"p": "Teks narasi adalah teks yang ...",
-     "o": ["Menggambarkan suatu objek secara rinci dan detail",
-           "Meyakinkan pembaca tentang suatu pendapat",
-           "Menceritakan rangkaian peristiwa secara berurutan berdasarkan waktu",
-           "Menjelaskan cara membuat atau melakukan sesuatu"],
-     "j": 2},
-
-    {"p": "Ciri utama teks narasi yang membedakannya dari teks lain adalah ...",
-     "o": ["Memuat pendapat dan argumen yang kuat",
-           "Memuat langkah-langkah kegiatan secara urut",
-           "Peristiwanya tersusun berdasarkan urutan waktu (kronologis)",
-           "Banyak menggunakan kata-kata sifat untuk melukiskan"],
-     "j": 2},
-
-    {"p": "Kata hubung yang sering digunakan dalam teks narasi untuk menyatakan urutan waktu adalah ...",
-     "o": ["Tetapi, namun, akan tetapi",
-           "Pertama, kemudian, lalu, akhirnya, setelah itu",
-           "Jika, apabila, andaikan, seandainya",
-           "Karena, sebab, sehingga, akibatnya"],
-     "j": 1},
-
-    {"p": "Teks narasi fiksi adalah teks narasi yang ...",
-     "o": ["Berdasarkan kejadian nyata yang benar-benar pernah terjadi",
-           "Berisi laporan berita yang sebenarnya",
-           "Merupakan karangan imajinatif atau rekaan pengarang",
-           "Menjelaskan fakta ilmiah secara runtut"],
-     "j": 2},
-
-    {"p": "Teks narasi nonfiksi adalah teks narasi yang ...",
-     "o": ["Sepenuhnya berdasarkan imajinasi pengarang",
-           "Tidak mengandung nilai kebenaran apapun",
-           "Berdasarkan kejadian atau peristiwa nyata yang benar-benar terjadi",
-           "Menggunakan tokoh hewan sebagai pelaku utama"],
-     "j": 2},
-
-    {"p": ("Perhatikan teks berikut!\n"
-           "'Pagi itu Budi bangun pukul 05.00. Setelah mandi, ia sarapan bersama\n"
-           "keluarga. Kemudian ia berpamitan kepada orang tua lalu berangkat ke sekolah.'\n\n"
-           "Teks tersebut termasuk jenis teks ..."),
-     "o": ["Deskripsi",
-           "Narasi",
-           "Persuasi",
-           "Prosedur"],
-     "j": 1},
-
-    # ── UNSUR INTRINSIK CERITA (10 soal) ────────────────────
-    {"p": "Ide atau gagasan yang menjadi inti dan mendasari seluruh isi cerita disebut ...",
-     "o": ["Alur",
-           "Latar",
-           "Tema",
-           "Amanat"],
-     "j": 2},
-
-    {"p": "Rangkaian peristiwa yang membentuk jalan cerita dari awal hingga akhir disebut ...",
-     "o": ["Tema",
-           "Alur",
-           "Latar",
-           "Sudut pandang"],
-     "j": 1},
-
-    {"p": "Gambaran tentang tempat, waktu, dan suasana terjadinya peristiwa dalam cerita disebut ...",
-     "o": ["Tema",
-           "Alur",
-           "Latar",
-           "Amanat"],
-     "j": 2},
-
-    {"p": ("Perhatikan kutipan cerita:\n"
-           "'Kejadian itu berlangsung di sebuah desa kecil pada sore hari\n"
-           "ketika suasana sunyi senyap dan angin berhembus sepoi-sepoi.'\n\n"
-           "Yang termasuk latar suasana pada kutipan cerita tersebut adalah ..."),
-     "o": ["Desa kecil",
-           "Sore hari",
-           "Sunyi senyap",
-           "Angin berhembus"],
-     "j": 2},
-
-    {"p": "Tokoh yang berwatak baik dan biasanya menjadi tokoh utama yang diperjuangkan nasibnya disebut ...",
-     "o": ["Antagonis",
-           "Tritagonis",
-           "Figuran",
-           "Protagonis"],
-     "j": 3},
-
-    {"p": "Tokoh yang berwatak jahat dan biasanya menjadi penentang tokoh utama dalam cerita disebut ...",
-     "o": ["Protagonis",
-           "Antagonis",
-           "Tritagonis",
-           "Figuran"],
-     "j": 1},
-
-    {"p": "Pesan moral yang ingin disampaikan pengarang kepada pembaca melalui ceritanya disebut ...",
-     "o": ["Tema",
-           "Alur",
-           "Latar",
-           "Amanat"],
-     "j": 3},
-
-    {"p": ("Perhatikan cerita berikut!\n"
-           "'Meskipun hidup dalam kemiskinan, Dina tidak pernah menyerah.\n"
-           "Ia terus belajar dengan giat hingga akhirnya berhasil meraih beasiswa.'\n\n"
-           "Amanat yang dapat diambil dari cerita tersebut adalah ..."),
-     "o": ["Kemiskinan adalah halangan terbesar dalam hidup",
-           "Jangan mengharapkan beasiswa dari siapapun",
-           "Ketekunan dan semangat pantang menyerah akan membawa keberhasilan",
-           "Orang miskin tidak akan bisa meraih cita-cita"],
-     "j": 2},
-
-    {"p": "Cerita yang menggunakan sudut pandang orang pertama ditandai dengan penggunaan kata ...",
-     "o": ["Dia, ia, mereka",
-           "Kamu, kalian, Anda",
-           "Aku, saya",
-           "Beliau, mereka, ia"],
-     "j": 2},
-
-    {"p": ("Perhatikan cerita singkat:\n"
-           "'Pak Guru selalu sabar mengajar murid-muridnya. Setiap hari ia datang\n"
-           "tepat waktu. Ia tidak pernah marah meski muridnya nakal sekalipun.'\n\n"
-           "Tema cerita tersebut adalah ..."),
-     "o": ["Kemalasan seorang murid di sekolah",
-           "Kesabaran dan keteladanan seorang guru",
-           "Kenakalan anak-anak di sekolah",
-           "Pentingnya datang tepat waktu ke sekolah"],
-     "j": 1},
-
-    # ── FABEL, LEGENDA, CERITA RAKYAT (5 soal) ──────────────
-    {"p": "Cerita yang tokoh-tokohnya adalah hewan yang berperilaku dan berbicara seperti manusia disebut ...",
-     "o": ["Legenda",
-           "Mitos",
-           "Fabel",
-           "Sage"],
-     "j": 2},
-
-    {"p": "Cerita rakyat yang menceritakan asal-usul suatu tempat, benda, atau peristiwa disebut ...",
-     "o": ["Mitos",
-           "Legenda",
-           "Fabel",
-           "Dongeng"],
-     "j": 1},
-
-    {"p": "Ciri utama fabel yang membedakannya dari cerita lain adalah ...",
-     "o": ["Tokohnya manusia biasa dengan kehidupan sehari-hari",
-           "Berlatar di istana kerajaan pada zaman dahulu",
-           "Tokohnya binatang yang bisa berpikir dan berbicara seperti manusia",
-           "Selalu berakhir dengan kebahagiaan tokoh utama"],
-     "j": 2},
-
-    {"p": "Amanat yang dapat diambil dari fabel 'Semut dan Belalang' adalah ...",
-     "o": ["Bermainlah sebanyak mungkin selagi masih muda",
-           "Bekerja keraslah dan bersiaplah untuk menghadapi masa depan",
-           "Mintalah bantuan kepada teman jika dalam kesulitan",
-           "Jangan berteman dengan orang yang berbeda sifatnya"],
-     "j": 1},
-
-    {"p": "Dalam cerita 'Malin Kundang', pesan moral yang paling utama adalah ...",
-     "o": ["Merantaulah sejauh mungkin untuk mencari kekayaan",
-           "Jadilah pedagang yang sukses dan kaya raya",
-           "Jangan durhaka kepada orang tua",
-           "Carilah pasangan hidup yang cantik dan kaya"],
-     "j": 2},
-
-    # ── KALIMAT EFEKTIF (5 soal) ─────────────────────────────
-    {"p": "Kalimat efektif adalah kalimat yang ...",
-     "o": ["Panjang dan menggunakan banyak kata agar jelas",
-           "Menggunakan kata-kata asing agar terdengar ilmiah",
-           "Mengandung unsur yang lengkap, tidak berlebihan, dan tidak berulang",
-           "Menggunakan kata-kata kiasan sebanyak mungkin"],
-     "j": 2},
-
-    {"p": "Kalimat 'Banyak siswa-siswa yang hadir dalam upacara' tidak efektif karena ...",
-     "o": ["Tidak memiliki subjek yang jelas",
-           "Terdapat pemborosan kata: 'banyak' dan 'siswa-siswa' sama-sama menyatakan jamak",
-           "Menggunakan kata yang salah penulisannya",
-           "Tidak memiliki predikat"],
-     "j": 1},
-
-    {"p": "'Para hadirin-hadirin sekalian dimohon untuk berdiri.' Perbaikan kalimat efektifnya adalah ...",
-     "o": ["Para hadirin-hadirin dimohon berdiri.",
-           "Para hadirin dimohon untuk berdiri.",
-           "Hadirin-hadirin dimohon untuk berdiri.",
-           "Semua para hadirin dimohon berdiri."],
-     "j": 1},
-
-    {"p": "Manakah kalimat yang efektif di bawah ini?",
-     "o": ["Saya sangat amat senang sekali mendapat hadiah itu.",
-           "Para tamu-tamu undangan sudah hadir semua.",
-           "Saya sangat senang mendapat hadiah itu.",
-           "Kami semua para guru mengucapkan selamat."],
-     "j": 2},
-
-    {"p": "Kalimat 'Dia pergi ke sekolah dengan cara berjalan kaki' tidak efektif. Perbaikan yang tepat adalah ...",
-     "o": ["Dia berjalan kaki dengan cara ke sekolah.",
-           "Dengan cara berjalan dia pergi ke sekolah.",
-           "Dia ke sekolah dengan cara berjalan.",
-           "Dia pergi ke sekolah dengan berjalan kaki."],
-     "j": 3},
-
-    # ── EYD / TANDA BACA / HURUF KAPITAL (5 soal) ───────────
-    {"p": "Penulisan huruf kapital yang benar untuk nama geografi terdapat pada kalimat ...",
-     "o": ["Kami berlibur ke pantai Parangtritis kemarin.",
-           "Kami berlibur ke Pantai Parangtritis kemarin.",
-           "Kami berlibur ke pantai parangtritis kemarin.",
-           "Kami berlibur ke PANTAI PARANGTRITIS kemarin."],
-     "j": 1},
-
-    {"p": "Penggunaan tanda koma yang benar terdapat pada kalimat ...",
-     "o": ["Ibu membeli sayur, ikan, dan tempe di pasar.",
-           "Ibu membeli sayur, ikan dan, tempe di pasar.",
-           "Ibu membeli, sayur ikan dan tempe di pasar.",
-           "Ibu, membeli sayur ikan dan tempe di pasar."],
-     "j": 0},
-
-    {"p": "Penggunaan tanda titik dua (:) yang benar terdapat pada kalimat ...",
-     "o": ["Hari ini: adalah hari yang paling menyenangkan.",
-           "Dia berkata: mari kita mulai belajar bersama.",
-           "Barang yang perlu dibawa: tenda, matras, dan kompor.",
-           "Ibu: sedang memasak nasi goreng di dapur."],
-     "j": 2},
-
-    {"p": "Kata baku yang penulisannya benar adalah ...",
-     "o": ["Apotik",
-           "Ijazah",
-           "Aktifitas",
-           "Nopember"],
-     "j": 1},
-
-    {"p": "Penulisan gelar dokter dan magister yang benar adalah ...",
-     "o": ["Dr. Andi Wijaya, M.Pd.",
-           "dr. Andi Wijaya M.Pd",
-           "DR. Andi Wijaya, M.PD.",
-           "dr. Andi Wijaya, M.Pd."],
-     "j": 3},
-
-    # ── IMBUHAN (7 soal) ─────────────────────────────────────
-    {"p": "Kata 'membawa' mendapat imbuhan me- yang berubah menjadi 'mem-' karena kata dasarnya diawali huruf ...",
-     "o": ["s, t, k, p (luluh)",
-           "b, p, f, v",
-           "c, j, d, sy",
-           "g, h, kh, vokal"],
-     "j": 1},
-
-    {"p": "Imbuhan me- berubah menjadi 'men-' apabila kata dasarnya diawali huruf ...",
-     "o": ["b, p, f, v",
-           "g, h, kh",
-           "d, t, c, j",
-           "l, r, m, n"],
-     "j": 2},
-
-    {"p": "Kata berimbuhan 'ber-' yang menyatakan makna 'memakai atau menggunakan' terdapat pada kalimat ...",
-     "o": ["Ayah berlari pagi setiap hari.",
-           "Ibu berbicara dengan tamu di ruang tamu.",
-           "Adik berseragam putih merah ke sekolah.",
-           "Kakak berterima kasih kepada gurunya."],
-     "j": 2},
-
-    {"p": "Makna imbuhan 'ter-' pada kata 'terjatuh' dalam kalimat 'Bukunya terjatuh dari meja' adalah ...",
-     "o": ["Melakukan dengan sengaja dan penuh kesadaran",
-           "Kejadian yang tidak disengaja",
-           "Sedang dalam proses melakukan",
-           "Sudah selesai dilakukan"],
-     "j": 1},
-
-    {"p": "Imbuhan 'ke-an' yang menyatakan makna 'keadaan atau sifat' terdapat pada kata ...",
-     "o": ["Ketua",
-           "Kesatu",
-           "Kegiatan",
-           "Kebaikan"],
-     "j": 3},
-
-    {"p": "Kata 'penulisan' mendapat imbuhan 'pe-an' yang bermakna ...",
-     "o": ["Orang yang menulis",
-           "Hasil dari menulis",
-           "Proses atau cara menulis",
-           "Tempat khusus untuk menulis"],
-     "j": 2},
-
-    {"p": "Kalimat 'Buku itu dibaca oleh Rini.' merupakan kalimat pasif yang menggunakan imbuhan ...",
-     "o": ["me-",
-           "ber-",
-           "ter-",
-           "di-"],
-     "j": 3},
-
-    # ── HOMONIM (4 soal) ─────────────────────────────────────
-    {"p": "Homonim adalah kata yang ...",
-     "o": ["Memiliki makna yang berlawanan satu sama lain",
-           "Memiliki makna yang sama atau hampir sama",
-           "Memiliki ejaan atau bunyi yang sama tetapi maknanya berbeda",
-           "Memiliki banyak makna berbeda dalam satu kata"],
-     "j": 2},
-
-    {"p": ("Perhatikan dua kalimat berikut!\n"
-           "1. 'Bisa ular itu sangat berbahaya bagi manusia.'\n"
-           "2. 'Kamu bisa menyelesaikan soal ini dengan mudah.'\n\n"
-           "Kata 'bisa' pada dua kalimat tersebut adalah contoh ..."),
-     "o": ["Sinonim",
-           "Antonim",
-           "Homonim",
-           "Polisemi"],
-     "j": 2},
-
-    {"p": "Kata 'buku' pada kalimat 'Buku jarinya memar terkena pukulan' bermakna ...",
-     "o": ["Kitab atau buku tulis pelajaran",
-           "Ruas atau sendi pada jari tangan",
-           "Bagian keras dari pohon",
-           "Tulang belakang manusia"],
-     "j": 1},
-
-    {"p": ("Perhatikan dua kalimat:\n"
-           "1. 'Rapat hari ini membahas tentang kegiatan sekolah.'\n"
-           "2. 'Jahitan bajunya sangat rapat dan kuat.'\n\n"
-           "Kata 'rapat' pada kedua kalimat di atas merupakan contoh ..."),
-     "o": ["Sinonim",
-           "Antonim",
-           "Polisemi",
-           "Homonim"],
-     "j": 3},
-
-    # ── KONJUNGSI (4 soal) ───────────────────────────────────
-    {"p": "Konjungsi yang menyatakan hubungan sebab terdapat pada kalimat ...",
-     "o": ["Rina rajin belajar tetapi nilainya tetap rendah.",
-           "Budi tidak masuk sekolah karena sakit demam.",
-           "Apakah kamu mau pergi atau tinggal di rumah?",
-           "Ketika hujan turun, kami berteduh di teras."],
-     "j": 1},
-
-    {"p": "Konjungsi yang menyatakan pertentangan terdapat pada kalimat ...",
-     "o": ["Ibu memasak dan ayah membaca koran di teras.",
-           "Siti pergi ke sekolah karena ada ujian hari ini.",
-           "Andi rajin belajar namun nilainya masih kurang memuaskan.",
-           "Dia datang ketika hujan mulai turun dengan deras."],
-     "j": 2},
-
-    {"p": "Konjungsi yang menyatakan hubungan waktu terdapat pada kalimat ...",
-     "o": ["Ia belajar keras karena ada ujian besok pagi.",
-           "Dia pergi atau tinggal, itu terserah kamu.",
-           "Rani menangis tetapi tidak mau menceritakan masalahnya.",
-           "Ketika bel berbunyi, semua siswa langsung masuk kelas."],
-     "j": 3},
-
-    {"p": "Konjungsi yang menyatakan hubungan pilihan terdapat pada kalimat ...",
-     "o": ["Ayah dan ibu pergi berbelanja ke pasar.",
-           "Ia tidak hadir ke sekolah karena sakit.",
-           "Apakah kamu mau minum teh atau kopi pagi ini?",
-           "Meskipun hujan deras, dia tetap berangkat sekolah."],
-     "j": 2},
-
-    # ── MAJAS (4 soal) ───────────────────────────────────────
-    {"p": "Kalimat 'Angin berbisik lembut di telingaku' menggunakan majas personifikasi karena ...",
+    # ── SOAL TAMBAHAN (variasi materi) ───────────────────────
+    {"p": 'Kalimat "Angin berbisik lembut di telingaku" menggunakan majas personifikasi karena ...',
      "o": ["Membandingkan angin dengan manusia menggunakan kata 'seperti'",
            "Melebih-lebihkan kekuatan dan sifat angin",
            "Memberikan sifat atau perilaku manusia (berbisik) kepada benda mati (angin)",
-           "Menggunakan angin sebagai lambang kelemahan"],
+           "Menggunakan angin sebagai lambang kelemahan dan kelembutan"],
      "j": 2},
 
-    {"p": "'Suaranya menggelegar bak guntur yang membelah langit.' Majas yang digunakan adalah ...",
-     "o": ["Metafora",
-           "Personifikasi",
-           "Simile",
-           "Hiperbola"],
+    # SOAL SULIT (6 dari 6)
+    {"p": ('Bacalah dua kalimat berikut!\n'
+           '(1) Dedi adalah murid yang cerdas sehingga selalu juara kelas.\n'
+           '(2) Sepertinya Dedi adalah murid yang paling pintar di sekolah ini.\n\n'
+           'Pernyataan yang TEPAT tentang kedua kalimat di atas adalah ...'),
+     "o": ["Kalimat (1) adalah opini karena menggunakan kata 'sehingga'",
+           "Kalimat (2) adalah fakta karena menyebutkan nama seseorang",
+           "Kalimat (1) adalah fakta dan kalimat (2) adalah opini",
+           "Kedua kalimat tersebut sama-sama merupakan fakta yang dapat dibuktikan"],
      "j": 2},
 
-    {"p": "Kalimat 'Air matanya mengalir bagai sungai yang tak pernah kering' menggunakan majas ...",
-     "o": ["Metafora",
-           "Hiperbola",
-           "Personifikasi",
-           "Simile"],
-     "j": 3},
-
-    {"p": "Kalimat 'Dia adalah cahaya dalam kegelapan hidupku' menggunakan majas ...",
-     "o": ["Hiperbola",
-           "Simile",
-           "Metafora",
-           "Personifikasi"],
-     "j": 2},
-
-    # ── Teks Pidato ──────────────────────────────────────────
-    {"p": "Bagian pembuka pidato yang baik biasanya berisi ...",
-     "o": ["Pesan utama yang ingin disampaikan pembicara",
-           "Kesimpulan dan ajakan kepada pendengar",
-           "Salam, sapaan hormat, dan ucapan puji syukur",
-           "Permohonan maaf dan salam penutup"],
-     "j": 2},
-
-    {"p": "Urutan struktur pidato yang benar adalah ...",
-     "o": ["Isi – Pembukaan – Penutup",
-           "Pembukaan – Isi – Penutup",
-           "Penutup – Pembukaan – Isi",
-           "Pembukaan – Penutup – Isi"],
+    {"p": "Kalimat yang menggunakan kalimat tidak langsung adalah ...",
+     "o": ['"Tolong tutup jendelanya!" seru Ibu kepada adik.',
+           "Ayah berkata bahwa ia akan pulang lebih awal hari ini.",
+           '"Aku sangat senang bertemu denganmu," kata Sari sambil tersenyum.',
+           '"Kapan ujian semester ini dimulai?" tanya Budi kepada gurunya.'],
      "j": 1},
 
-    {"p": ("Perhatikan penggalan pidato berikut!\n"
-           "'Oleh karena itu, saya mengajak teman-teman untuk disiplin "
-           "dalam melaksanakan piket dan membuang sampah pada tempatnya.'\n"
-           "Penggalan pidato di atas termasuk bagian ..."),
-     "o": ["Pembukaan",
-           "Isi",
-           "Penutup",
-           "Sapaan hormat"],
+    {"p": "Teks eksplanasi biasanya memiliki struktur yang terdiri atas ...",
+     "o": ["Orientasi – Komplikasi – Resolusi",
+           "Pernyataan umum – Deretan penjelas – Interpretasi",
+           "Pembuka – Isi – Penutup",
+           "Tesis – Argumentasi – Penegasan ulang"],
      "j": 1},
 
-    {"p": ("Kalimat 'Demikian pidato singkat ini, mohon maaf bila ada "
-           "kesalahan. Terima kasih.' termasuk bagian ... dari pidato."),
-     "o": ["Pembukaan",
-           "Isi",
-           "Penutup",
-           "Pendahuluan"],
+    {"p": ('Bacalah teks berikut!\n'
+           '"Terumbu karang adalah ekosistem laut yang kaya. Di dalamnya hidup\n'
+           'ribuan jenis ikan, moluska, dan tumbuhan laut. Terumbu karang juga\n'
+           'berfungsi sebagai pelindung pantai dari abrasi ombak laut."\n\n'
+           'Jenis teks di atas termasuk teks ...'),
+     "o": ["Naratif karena menceritakan peristiwa berurutan",
+           "Eksposisi karena menjelaskan informasi tentang terumbu karang",
+           "Argumentasi karena berisi pendapat tentang terumbu karang",
+           "Deskripsi karena menggambarkan keadaan pantai secara rinci"],
+     "j": 1},
+
+    {"p": 'Dalam teks laporan hasil pengamatan, kalimat "Pohon cemara memiliki daun berbentuk jarum yang berwarna hijau gelap" termasuk bagian ...',
+     "o": ["Simpulan dari hasil pengamatan",
+           "Deskripsi bagian (penjelasan ciri-ciri objek)",
+           "Pernyataan umum atau definisi objek",
+           "Tujuan dilakukannya pengamatan"],
+     "j": 1},
+
+    {"p": 'Sinonim kata "antusias" dalam kalimat "Siswa sangat antusias mengikuti kegiatan pramuka" adalah ...',
+     "o": ["Malas",
+           "Bersemangat",
+           "Terpaksa",
+           "Enggan"],
+     "j": 1},
+
+    {"p": 'Antonim kata "transparan" dalam konteks pemerintahan yang baik adalah ...',
+     "o": ["Terbuka",
+           "Jelas",
+           "Tertutup",
+           "Bersih"],
      "j": 2},
-
-    {"p": "Tujuan utama bagian isi dalam sebuah pidato adalah ...",
-     "o": ["Menyampaikan salam dan sapaan kepada hadirin",
-           "Menyampaikan pesan utama dan ajakan kepada pendengar",
-           "Mengucapkan terima kasih kepada semua hadirin",
-           "Memperkenalkan diri kepada hadirin"],
-     "j": 1},
-
-    {"p": ("Pada pidato tentang kebersihan lingkungan sekolah, kalimat "
-           "'Lingkungan yang bersih akan membuat belajar menjadi nyaman "
-           "dan jauh dari penyakit.' merupakan ..."),
-     "o": ["Salam pembuka pidato",
-           "Permohonan maaf pembicara",
-           "Pesan inti/isi pidato",
-           "Sapaan hormat kepada hadirin"],
-     "j": 2},
-
-    {"p": "Sapaan yang tepat untuk memulai pidato di hadapan kepala sekolah, guru, dan siswa adalah ...",
-     "o": ["'Hai semuanya, apa kabar hari ini?'",
-           "'Yang saya hormati Bapak Kepala Sekolah, Bapak/Ibu Guru, serta teman-teman yang saya sayangi.'",
-           "'Tolong semua diam dulu, saya mau bicara!'",
-           "'Kepada siapa pun yang hadir di sini.'"],
-     "j": 1},
 
 ]
 
@@ -948,44 +713,89 @@ PG_POOL = [
 #  POOL SOAL ESAI  (10 soal – diambil 5 per sesi)
 # ─────────────────────────────────────────────────────────────
 ESAI_POOL = [
-    {"p": ("Ceritakan kembali isi cerita rakyat 'Malin Kundang' "
-           "dengan bahasamu sendiri dalam 3–5 kalimat!")},
-    {"p": ("Buatlah sebuah pantun nasihat yang terdiri dari 4 baris "
-           "dengan pola sajak a-b-a-b!\n"
-           "(Baris 1–2 = sampiran, Baris 3–4 = isi)")},
-    {"p": ("Tuliskan sebuah paragraf deskripsi (3–5 kalimat) yang "
-           "menggambarkan suasana pagi hari di lingkungan sekolahmu!")},
-    {"p": ("Bacalah cerita singkat berikut, kemudian tentukan "
-           "tema, tokoh, latar, dan amanat cerita!\n\n"
-           "'Si Kecil adalah seekor semut yang rajin. Setiap hari ia mengumpulkan "
-           "makanan untuk persiapan musim dingin. Berbeda dengan belalang yang hanya "
-           "bermain-main. Ketika musim dingin tiba, si Kecil memiliki cukup makanan, "
-           "sementara belalang kelaparan.'")},
-    {"p": ("Perbaikilah kalimat-kalimat berikut menjadi kalimat efektif!\n"
-           "a. 'Para hadirin-hadirin sekalian dimohon untuk berdiri.'\n"
-           "b. 'Dia pergi ke sekolah dengan berjalan kaki.'\n"
-           "c. 'Saya sangat amat senang sekali mendapat hadiah itu.'")},
-    {"p": ("Tulislah sebuah paragraf narasi singkat (4–6 kalimat) tentang "
-           "pengalamanmu yang paling berkesan! Gunakan ejaan yang benar!")},
-    {"p": ("Analisislah puisi berikut!\n\n"
-           "    'Guruku'\n"
-           "    Kau bagai lilin yang menerangi\n"
-           "    Dalam gelap kau selalu hadir\n"
-           "    Ilmumu mengalir tiada henti\n"
-           "    Jasamu takkan pernah terhapus\n\n"
-           "a. Majas apa yang digunakan pada baris pertama?\n"
-           "b. Apa tema puisi di atas?\n"
-           "c. Apa amanat yang terkandung dalam puisi tersebut?")},
-    {"p": ("Jelaskan perbedaan antara teks narasi dan teks deskripsi! "
-           "Berikan masing-masing satu contoh kalimat!")},
-    {"p": ("Tentukan kalimat utama dan kalimat-kalimat penjelas dari paragraf berikut!\n\n"
-           "'Lingkungan sekolah yang bersih sangat penting bagi kesehatan siswa. "
-           "Lingkungan yang bersih membuat siswa nyaman dalam belajar. "
-           "Udara segar di lingkungan bersih juga membuat siswa lebih sehat. "
-           "Selain itu, lingkungan bersih mencerminkan kedisiplinan warga sekolah.'")},
-    {"p": ("Buatlah 5 kalimat menggunakan konjungsi/kata hubung yang berbeda "
-           "dari daftar berikut:\n(karena, tetapi, sehingga, dan, meskipun)\n\n"
-           "Setiap kalimat harus menggunakan satu konjungsi yang berbeda!")},
+    {"p": ('Bacalah teks eksplanasi singkat berikut!\n\n'
+           '"Hujan terjadi melalui beberapa tahap. Pertama, air di laut, sungai, dan '
+           'danau menguap akibat panas matahari (evaporasi). Uap air naik ke atmosfer '
+           'dan mendingin, lalu membentuk awan (kondensasi). Ketika awan sudah '
+           'penuh, terjadilah hujan (presipitasi)."\n\n'
+           'a. Sebutkan tiga informasi penting yang terdapat dalam teks eksplanasi di atas!\n'
+           'b. Jelaskan dengan bahasamu sendiri apa yang dimaksud dengan evaporasi!')},
+
+    {"p": ('Perbaikilah kalimat-kalimat berikut menjadi kalimat efektif dan jelaskan alasannya!\n\n'
+           'a. "Para hadirin-hadirin sekalian dimohon untuk berdiri."\n'
+           'b. "Banyak anak-anak yang bermain bola di lapangan itu."\n'
+           'c. "Saya sangat amat senang sekali mendapat hadiah itu."\n\n'
+           'Tuliskan perbaikannya dan jelaskan kesalahan pada setiap kalimat!')},
+
+    {"p": ('Bacalah kutipan cerpen berikut!\n\n'
+           '"Matahari belum sepenuhnya terbit ketika Lani sudah berada di kebun. '
+           'Dengan tangan mungilnya ia menyiram tanaman cabai satu per satu. '
+           '"Kalau rajin merawat, pasti hasilnya bagus," gumamnya sambil tersenyum. '
+           'Lani adalah anak bungsu dari keluarga petani yang sederhana di lereng '
+           'Gunung Merbabu. Meski hidup pas-pasan, semangatnya tak pernah padam."\n\n'
+           'Tentukan unsur intrinsik berikut dari kutipan cerpen di atas:\n'
+           'a. Tokoh dan watak tokoh\n'
+           'b. Latar (tempat, waktu, suasana)\n'
+           'c. Pesan moral yang terkandung dalam kutipan tersebut')},
+
+    {"p": ('Bacalah paragraf berikut dan jawablah pertanyaan-pertanyaan di bawah ini!\n\n'
+           '"Membaca buku sangat penting bagi perkembangan anak. Dengan membaca, '
+           'anak dapat memperluas wawasan dan pengetahuannya. Selain itu, membaca '
+           'melatih kemampuan berpikir kritis. Buku juga merupakan jendela dunia '
+           'yang dapat membawa pembaca menjelajahi berbagai tempat tanpa harus pergi."\n\n'
+           'a. Tentukan ide pokok paragraf tersebut!\n'
+           'b. Tuliskan dua kalimat yang berfungsi sebagai ide pendukung!\n'
+           'c. Termasuk tipe teks apakah paragraf di atas? Jelaskan alasanmu!')},
+
+    {"p": ('Perhatikan pernyataan-pernyataan berikut:\n\n'
+           '1. Pulau Jawa adalah pulau terpadat di Indonesia.\n'
+           '2. Menurut saya, belajar di pagi hari lebih efektif daripada malam hari.\n'
+           '3. Presiden Soekarno lahir pada 6 Juni 1901 di Surabaya.\n'
+           '4. Sepertinya tim sepak bola kita akan menang dalam pertandingan besok.\n'
+           '5. Bahasa Indonesia ditetapkan sebagai bahasa nasional pada tahun 1945.\n\n'
+           'a. Tentukan mana yang termasuk fakta dan mana yang opini!\n'
+           'b. Jelaskan perbedaan antara fakta dan opini!')},
+
+    {"p": ('Ubahlah kalimat langsung berikut menjadi kalimat tidak langsung!\n\n'
+           'a. Bu Guru berkata, "Kalian harus belajar lebih giat untuk menghadapi ujian."\n'
+           'b. Ayah berkata, "Aku akan membelikan sepeda baru untukmu jika nilaimu bagus."\n'
+           'c. Kepala Sekolah mengumumkan, "Besok semua siswa wajib hadir tepat waktu."\n\n'
+           'Tuliskan hasilnya dan perhatikan perubahan kata ganti!')},
+
+    {"p": ('Bacalah puisi berikut dengan seksama!\n\n'
+           '    Guruku\n'
+           '    Kau bagai lilin yang menerangi\n'
+           '    Dalam gelap kau selalu hadir\n'
+           '    Ilmumu mengalir tiada henti\n'
+           '    Jasamu takkan pernah terlupakan\n\n'
+           'a. Majas apa yang digunakan pada baris pertama? Jelaskan!\n'
+           'b. Apa tema puisi di atas?\n'
+           'c. Apa amanat yang terkandung dalam puisi tersebut?\n'
+           'd. Bagaimana pola rima puisi tersebut?')},
+
+    {"p": ('a. Jelaskan apa yang dimaksud dengan narasumber dan pewawancara dalam kegiatan wawancara!\n'
+           'b. Sebutkan tiga pertanyaan yang baik untuk diajukan saat mewawancarai seorang dokter '
+           'tentang cara menjaga kesehatan!\n'
+           'c. Tuliskan 5 judul cerita fiksi yang kamu ketahui (boleh cerita rakyat, novel, atau cerpen)!')},
+
+    {"p": ('Bacalah teks berikut!\n\n'
+           '"Pemerintah mengimbau masyarakat untuk menanam pohon di sekitar rumah. '
+           'Pohon yang rimbun dapat menyejukkan udara dan menyerap polusi. '
+           'Selain itu, akar pohon membantu menyerap air hujan sehingga mencegah banjir."\n\n'
+           'a. Tentukan unsur ekstrinsik apa yang bisa mempengaruhi penulisan teks tersebut! '
+           'Jelaskan!\n'
+           'b. Temukan kata-kata berimbuhan me- dalam teks di atas dan jelaskan fungsi '
+           'imbuhan me- pada setiap kata!')},
+
+    {"p": ('Bacalah cerpen singkat berikut!\n\n'
+           '"Hari itu Doni sedang berjalan pulang sekolah. Di tengah jalan, ia melihat '
+           'dompet terjatuh dari saku seorang Bapak tua. Doni segera mengambil dompet itu '
+           'dan berlari memanggil sang Bapak. Dengan wajah terkejut dan bersyukur, '
+           'Bapak itu berterima kasih kepada Doni. Doni hanya tersenyum dan berkata, '
+           '\'Ini kewajiban saya, Pak.\'".\n\n'
+           'a. Tentukan unsur intrinsik: tokoh, watak tokoh, latar, dan tema!\n'
+           'b. Simpulkan pesan moral cerpen tersebut!\n'
+           'c. Tentukan jenis majas apa yang terdapat dalam cerpen (jika ada) dan jelaskan!')},
 ]
 
 # ─────────────────────────────────────────────────────────────
@@ -1123,23 +933,18 @@ class UjianApp:
         for seq in ("<Alt-F4>", "<Alt-Tab>", "<Escape>",
                     "<Super_L>", "<Super_R>", "<Control-Escape>"):
             r.bind_all(seq, lambda e: "break")
-        # Shortcut keluar guru — Ctrl+Alt+Backspace (tidak terlihat siswa)
         r.bind_all("<Control-Alt-BackSpace>", lambda e: self._try_exit())
 
     def _enforce_fg(self):
         try:
-            # Jika ada dialog (Toplevel) milik program yang sedang terbuka,
-            # jangan lift root — biarkan dialog tetap di atas dan bisa diklik.
             active_dialogs = [
                 w for w in self.root.winfo_children()
                 if isinstance(w, tk.Toplevel) and w.winfo_exists()
             ]
             if active_dialogs:
-                # Pastikan dialog-nya yang di atas, bukan root
                 active_dialogs[-1].lift()
             else:
                 self.root.lift()
-                # Paksa fokus hanya jika app sama sekali tidak aktif
                 if self.root.focus_displayof() is None:
                     self.root.focus_force()
         except Exception:
@@ -1173,21 +978,18 @@ class UjianApp:
                  bg=C["topbar"], fg="#93c5fd",
                  font=("Segoe UI", 13, "bold")).pack(side="left", padx=18, pady=10)
 
-        # answered counter
         self._answered_lbl = tk.Label(tb, text="",
                                       bg=C["topbar"], fg="#86efac",
                                       font=("Segoe UI", 11))
         self._answered_lbl.pack(side="left", padx=10)
         self._refresh_counter()
 
-        # timer
         self._timer_lbl = tk.Label(tb, text="",
                                    bg=C["topbar"], fg=C["timer_ok"],
                                    font=("Segoe UI", 12, "bold"))
         self._timer_lbl.pack(side="left", padx=16)
         self._tick_timer()
 
-        # buttons
         bf = tk.Frame(tb, bg=C["topbar"]); bf.pack(side="right", padx=12)
         tk.Button(bf, text="KUMPULKAN",
                   bg=C["btn_submit"], fg="#fff",
@@ -1201,7 +1003,6 @@ class UjianApp:
         nb = tk.Frame(parent, bg=C["nav_bg"])
         nb.pack(fill="x")
 
-        # Separator line
         tk.Frame(nb, bg="#e2e8f0", height=1).pack(fill="x")
 
         inner = tk.Frame(nb, bg=C["nav_bg"])
@@ -1209,7 +1010,6 @@ class UjianApp:
 
         self._nav_btns = []
 
-        # PG rows: 3 rows of 15
         pg_label_frame = tk.Frame(inner, bg=C["nav_bg"])
         pg_label_frame.pack(anchor="w")
         tk.Label(pg_label_frame, text="PG:",
@@ -1230,7 +1030,6 @@ class UjianApp:
                 btn.bind("<Button-1>", lambda e, idx=i: self._show_question(idx))
                 self._nav_btns.append(btn)
 
-        # Essay row
         esai_row = tk.Frame(inner, bg=C["nav_bg"])
         esai_row.pack(anchor="w", pady=(3, 0))
         tk.Label(esai_row, text="Esai:",
@@ -1277,18 +1076,16 @@ class UjianApp:
     #  QUESTION DISPLAY
     # ════════════════════════════════════════════════════════
     def _show_question(self, idx):
-        self._save_essay()            # save essay text before leaving
+        self._save_essay()
         self.current = idx
 
-        # destroy old question frame
         if self._q_frame:
             self._q_frame.destroy()
 
-        self._canvas.yview_moveto(0)  # scroll to top
+        self._canvas.yview_moveto(0)
         self._update_nav()
 
         q = self.questions[idx]
-        # Outer card
         card = tk.Frame(self._scroll_inner, bg=C["card"])
         card.pack(fill="x", padx=60, pady=20)
         self._q_frame = card
@@ -1304,7 +1101,6 @@ class UjianApp:
         pg_num = idx + 1
         total  = NUM_PG + NUM_ESAI
 
-        # Badge row
         badge_row = tk.Frame(card, bg=C["card"])
         badge_row.pack(fill="x", padx=40, pady=(28, 0))
         tk.Label(badge_row,
@@ -1320,7 +1116,6 @@ class UjianApp:
                  font=("Segoe UI", 9),
                  padx=4, pady=3).pack(side="left", padx=10)
 
-        # Thin progress bar
         prog_frame = tk.Frame(card, bg="#e2e8f0", height=5)
         prog_frame.pack(fill="x", padx=40, pady=(10, 0))
         prog_frame.update_idletasks()
@@ -1329,14 +1124,12 @@ class UjianApp:
         tk.Frame(prog_frame, bg=C["q_pg_accent"],
                  height=5, width=pct_w).place(x=0, y=0)
 
-        # Question text
         tk.Label(card, text=q["p"],
                  bg=C["card"], fg=C["q_text"],
                  font=("Segoe UI", 14),
                  wraplength=900, justify="left",
                  anchor="nw").pack(fill="x", padx=40, pady=(20, 8))
 
-        # Options
         opts_wrap = tk.Frame(card, bg=C["card"])
         opts_wrap.pack(fill="x", padx=40, pady=(4, 0))
         current_answer = self.answers.get(idx)
@@ -1344,7 +1137,6 @@ class UjianApp:
             self._render_option(opts_wrap, idx, opt[0], opt[3:],
                                 is_selected=(current_answer == opt[0]))
 
-        # Nav buttons
         self._render_nav_buttons(card, idx)
 
     # ── Essay question ────────────────────────────────────────
@@ -1353,7 +1145,6 @@ class UjianApp:
         ei    = idx - NUM_PG + 1
         total = NUM_PG + NUM_ESAI
 
-        # Badge row
         badge_row = tk.Frame(card, bg=C["card"])
         badge_row.pack(fill="x", padx=40, pady=(28, 0))
         tk.Label(badge_row,
@@ -1362,7 +1153,6 @@ class UjianApp:
                  font=("Segoe UI", 9, "bold"),
                  padx=4, pady=3).pack(side="left")
 
-        # Progress bar
         prog_frame = tk.Frame(card, bg="#e2e8f0", height=5)
         prog_frame.pack(fill="x", padx=40, pady=(10, 0))
         prog_frame.update_idletasks()
@@ -1371,7 +1161,6 @@ class UjianApp:
         tk.Frame(prog_frame, bg=C["q_esai_accent"],
                  height=5, width=pct_w).place(x=0, y=0)
 
-        # Question text
         tk.Label(card, text=q["p"],
                  bg=C["card"], fg=C["q_text"],
                  font=("Segoe UI", 14),
@@ -1395,7 +1184,6 @@ class UjianApp:
             txt.insert("1.0", saved)
         self._cur_tw = txt
 
-        # Nav buttons
         self._render_nav_buttons(card, idx)
 
     # ── Option button ─────────────────────────────────────────
@@ -1427,7 +1215,7 @@ class UjianApp:
             self.answers[i] = let
             self._refresh_counter()
             self._update_nav()
-            self._show_question(i)   # redraw to reflect selection
+            self._show_question(i)
 
         def _hover_in(e):
             if not is_selected:
@@ -1493,7 +1281,7 @@ class UjianApp:
 
     def _update_nav(self):
         for i, btn in enumerate(self._nav_btns):
-            real_idx = i if i < NUM_PG else i  # nav index == question index
+            real_idx = i if i < NUM_PG else i
             is_curr  = (real_idx == self.current)
             is_done  = self.answers.get(real_idx, "") not in (None, "")
             is_esai  = (real_idx >= NUM_PG)
@@ -1592,13 +1380,11 @@ class UjianApp:
     def _build_results(self, score, filepath):
         for w in self.root.winfo_children():
             w.destroy()
-        # re-bind shortcut setelah winfo_children dihapus
         self.root.bind_all("<Control-Alt-BackSpace>", lambda e: self._try_exit())
 
         pct   = score / NUM_PG * 100
         color = "#16a34a" if pct >= 70 else "#ef4444"
 
-        # ── Wrapper scrollable ────────────────────────────────
         outer = tk.Frame(self.root, bg=C["page"])
         outer.pack(fill="both", expand=True)
 
@@ -1617,7 +1403,6 @@ class UjianApp:
         canvas.bind("<Configure>",
                     lambda e: canvas.itemconfig(cw, width=e.width))
 
-        # ── Header ───────────────────────────────────────────
         tk.Label(f, text="UJIAN SELESAI",
                  bg=C["page"], fg="#16a34a",
                  font=("Segoe UI", 30, "bold")).pack(pady=(36, 4))
@@ -1625,7 +1410,6 @@ class UjianApp:
                  bg=C["page"], fg=C["q_text"],
                  font=("Segoe UI", 14)).pack(pady=(0, 20))
 
-        # ── Kartu skor ───────────────────────────────────────
         card = tk.Frame(f, bg="#fff", padx=50, pady=22)
         card.pack()
 
@@ -1646,7 +1430,6 @@ class UjianApp:
                      font=("Segoe UI", 12, wt)).grid(
                          row=r, column=1, sticky="w", pady=6, padx=16)
 
-        # ── Kumpulan soal yang salah ──────────────────────────
         wrong = []
         for i in range(NUM_PG):
             q     = self.questions[i]
@@ -1674,7 +1457,6 @@ class UjianApp:
                 wcard = tk.Frame(f, bg="#fff")
                 wcard.pack(fill="x", padx=60, pady=5)
 
-                # Header soal
                 hdr = tk.Frame(wcard, bg="#dc2626")
                 hdr.pack(fill="x")
                 tk.Label(hdr, text=f"  Soal No. {no}  ",
@@ -1682,21 +1464,18 @@ class UjianApp:
                          font=("Segoe UI", 10, "bold"),
                          pady=6).pack(side="left")
 
-                # Teks pertanyaan
                 tk.Label(wcard, text=soal_text,
                          bg="#fff", fg=C["q_text"],
                          font=("Segoe UI", 12),
                          wraplength=880, justify="left",
                          anchor="w").pack(fill="x", padx=18, pady=(10, 6))
 
-                # Jawaban siswa (merah)
                 tk.Label(wcard,
                          text=f"✗  Jawaban kamu   :  {opt_siswa}",
                          bg="#fff5f5", fg="#dc2626",
                          font=("Segoe UI", 11),
                          anchor="w", padx=18, pady=8).pack(fill="x", padx=18, pady=(0, 3))
 
-                # Jawaban benar (hijau)
                 tk.Label(wcard,
                          text=f"✓  Jawaban benar  :  {opt_benar}",
                          bg="#f0fdf4", fg="#16a34a",
@@ -1708,7 +1487,6 @@ class UjianApp:
                      bg=C["page"], fg="#16a34a",
                      font=("Segoe UI", 13, "bold")).pack(pady=24)
 
-        # ── Footer hint ───────────────────────────────────────
         tk.Label(f,
                  text="Tekan  Ctrl + Alt + Backspace  untuk keluar  (khusus guru)",
                  bg=C["page"], fg="#cbd5e1",
@@ -1725,3 +1503,4 @@ if __name__ == "__main__":
     start_hook()
     app = UjianApp()
     app.run()
+
