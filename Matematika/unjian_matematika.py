@@ -111,6 +111,7 @@ C = {
 # ─────────────────────────────────────────────────────────────
 #  POOL SOAL PILIHAN GANDA  (80 soal – diambil 45 per sesi)
 #  Materi: Lingkaran, Bangun Ruang, Statistika
+#  Tingkat kesulitan ditingkatkan ~10% dari versi sebelumnya
 # ─────────────────────────────────────────────────────────────
 PG_POOL = [
 
@@ -118,444 +119,405 @@ PG_POOL = [
     # LINGKARAN
     # ══════════════════════════════════════════════════════════
 
-    {"p": "Rumus untuk menghitung luas lingkaran adalah …",
-     "o": ["π × d²", "2 × π × r", "π × r²", "π × d"],
+    {"p": "Sebuah lingkaran memiliki keliling 88 cm. Luas lingkaran tersebut adalah … (π = 22/7)",
+     "o": ["308 cm²", "616 cm²", "154 cm²", "462 cm²"],
+     "j": 1},
+
+    {"p": "Luas sebuah lingkaran adalah 616 cm². Keliling lingkaran tersebut adalah … (π = 22/7)",
+     "o": ["44 cm", "88 cm", "176 cm", "22 cm"],
+     "j": 1},
+
+    {"p": "Sebuah taman berbentuk lingkaran dengan diameter 28 m. Biaya pemasangan pagar keliling taman dengan harga Rp 75.000 per meter adalah … (π = 22/7)",
+     "o": ["Rp 5.400.000", "Rp 6.300.000", "Rp 6.600.000", "Rp 4.200.000"],
      "j": 2},
 
-    {"p": "Jari-jari sebuah lingkaran adalah 7 cm. Luas lingkaran tersebut adalah … (π = 22/7)",
-     "o": ["44 cm²", "154 cm²", "308 cm²", "616 cm²"],
+    {"p": "Sebuah roda sepeda memiliki diameter 70 cm. Jarak yang ditempuh roda setelah berputar 100 kali adalah … (π = 22/7)",
+     "o": ["2.200 cm", "22.000 cm", "4.400 cm", "11.000 cm"],
      "j": 1},
 
-    {"p": "Diameter sebuah lingkaran adalah 14 cm. Luas lingkaran tersebut adalah … (π = 22/7)",
-     "o": ["154 cm²", "616 cm²", "308 cm²", "44 cm²"],
-     "j": 0},
-
-    {"p": "Sebuah lingkaran memiliki jari-jari 10 cm. Luas lingkaran tersebut adalah … (π = 3,14)",
-     "o": ["314 cm²", "62,8 cm²", "628 cm²", "31,4 cm²"],
-     "j": 0},
-
-    {"p": "Jari-jari sebuah lingkaran adalah 7 cm. Keliling lingkaran tersebut adalah … (π = 22/7)",
-     "o": ["22 cm", "44 cm", "88 cm", "154 cm"],
+    {"p": "Luas daerah yang diarsir pada gambar setengah lingkaran dengan jari-jari 14 cm adalah … (π = 22/7)",
+     "o": ["154 cm²", "308 cm²", "616 cm²", "77 cm²"],
      "j": 1},
 
-    {"p": "Rumus keliling lingkaran adalah …",
-     "o": ["π × r²", "2 × π × r", "π × r", "4 × π × r"],
+    {"p": "Sebuah kolam renang berbentuk lingkaran dengan jari-jari 21 m. Keliling kolam tersebut adalah … (π = 22/7)",
+     "o": ["66 m", "132 m", "198 m", "264 m"],
      "j": 1},
 
-    {"p": "Diameter sebuah lingkaran adalah 21 cm. Keliling lingkaran adalah … (π = 22/7)",
-     "o": ["66 cm", "33 cm", "132 cm", "44 cm"],
-     "j": 0},
-
-    {"p": "Rumus untuk mencari luas seperempat lingkaran adalah …",
-     "o": ["1/2 × π × r²", "1/4 × π × r²", "π × r²", "3/4 × π × r²"],
+    {"p": "Sebuah pizza berdiameter 28 cm dipotong menjadi 8 bagian sama besar. Luas satu potong pizza tersebut adalah … (π = 22/7)",
+     "o": ["38,5 cm²", "77 cm²", "154 cm²", "616 cm²"],
      "j": 1},
 
-    {"p": "Jari-jari lingkaran adalah 14 cm. Luas seperempat lingkaran adalah … (π = 22/7)",
-     "o": ["616 cm²", "308 cm²", "154 cm²", "77 cm²"],
+    {"p": "Dua lingkaran konsentris memiliki jari-jari 7 cm dan 14 cm. Luas daerah di antara dua lingkaran tersebut adalah … (π = 22/7)",
+     "o": ["154 cm²", "308 cm²", "462 cm²", "616 cm²"],
      "j": 2},
 
-    {"p": "Rumus keliling setengah lingkaran (termasuk diameter) adalah …",
-     "o": ["π × r", "π × r + 2r", "2π × r", "π × d"],
+    {"p": "Sebuah lapangan berbentuk setengah lingkaran dengan jari-jari 21 m. Keliling lapangan tersebut (termasuk diameter) adalah … (π = 22/7)",
+     "o": ["66 m", "108 m", "132 m", "54 m"],
      "j": 1},
 
-    {"p": "Jari-jari sebuah setengah lingkaran adalah 7 cm. Kelilingnya adalah … (π = 22/7)",
-     "o": ["36 cm", "22 cm", "14 cm", "44 cm"],
-     "j": 0},
-
-    {"p": "Diameter sebuah lingkaran adalah 20 cm. Panjang jari-jari lingkaran tersebut adalah …",
-     "o": ["5 cm", "10 cm", "20 cm", "40 cm"],
-     "j": 1},
-
-    {"p": "Diameter sebuah lingkaran adalah 28 cm. Jari-jari lingkaran tersebut adalah …",
-     "o": ["7 cm", "14 cm", "56 cm", "28 cm"],
-     "j": 1},
-
-    {"p": "Keliling sebuah lingkaran adalah 44 cm. Jari-jari lingkaran tersebut adalah … (π = 22/7)",
-     "o": ["7 cm", "14 cm", "3,5 cm", "22 cm"],
-     "j": 0},
-
-    {"p": "Luas sebuah lingkaran adalah 314 cm². Jari-jari lingkaran tersebut adalah … (π = 3,14)",
-     "o": ["5 cm", "10 cm", "15 cm", "20 cm"],
-     "j": 1},
-
-    {"p": "Bagian lingkaran yang menghubungkan dua titik pada keliling dan melalui titik pusat disebut …",
-     "o": ["Jari-jari", "Tali busur", "Diameter", "Busur"],
+    {"p": "Jari-jari sebuah lingkaran diperbesar menjadi 2 kali lipat. Luas lingkaran baru dibandingkan luas lingkaran semula menjadi …",
+     "o": ["2 kali", "3 kali", "4 kali", "6 kali"],
      "j": 2},
 
-    {"p": "Bagian lingkaran dari titik pusat ke titik pada keliling disebut …",
-     "o": ["Diameter", "Busur", "Apotema", "Jari-jari"],
-     "j": 3},
+    {"p": "Sebuah taplak meja berbentuk lingkaran berdiameter 70 cm. Luas taplak meja tersebut adalah … (π = 22/7)",
+     "o": ["3.850 cm²", "15.400 cm²", "7.700 cm²", "1.925 cm²"],
+     "j": 0},
 
-    {"p": "Busur lingkaran adalah …",
-     "o": ["Garis lurus melalui pusat lingkaran",
-           "Bagian dari keliling lingkaran",
-           "Jarak dari pusat ke tepi lingkaran",
-           "Luas daerah dalam lingkaran"],
+    {"p": "Keliling sebuah lingkaran adalah 132 cm. Jari-jari lingkaran tersebut adalah … (π = 22/7)",
+     "o": ["14 cm", "21 cm", "42 cm", "7 cm"],
      "j": 1},
 
-    {"p": "Apotema lingkaran adalah …",
-     "o": ["Jarak dari pusat ke titik pada keliling",
-           "Garis yang menghubungkan dua titik pada keliling",
-           "Jarak tegak lurus dari pusat ke tali busur",
-           "Setengah diameter"],
+    {"p": "Luas sebuah lingkaran adalah 1.386 cm². Diameter lingkaran tersebut adalah … (π = 22/7)",
+     "o": ["21 cm", "42 cm", "14 cm", "28 cm"],
+     "j": 1},
+
+    {"p": "Sebuah roda berdiameter 1,4 m berputar 50 kali. Jarak yang ditempuh roda adalah … (π = 22/7)",
+     "o": ["110 m", "220 m", "55 m", "440 m"],
+     "j": 1},
+
+    {"p": "Sebuah taman berbentuk tiga perempat lingkaran dengan jari-jari 7 m. Luas taman tersebut adalah … (π = 22/7)",
+     "o": ["38,5 m²", "77 m²", "115,5 m²", "154 m²"],
      "j": 2},
 
-    {"p": "Pernyataan yang BENAR tentang lingkaran adalah …",
-     "o": ["Diameter = jari-jari × 3",
-           "Diameter = jari-jari × 2",
-           "Jari-jari = diameter × 2",
-           "Keliling = π × r"],
+    {"p": "Apotema adalah garis yang menghubungkan …",
+     "o": ["Pusat lingkaran ke titik pada keliling",
+           "Dua titik pada keliling melalui pusat",
+           "Pusat lingkaran tegak lurus ke tali busur",
+           "Dua titik pada keliling tidak melalui pusat"],
+     "j": 2},
+
+    {"p": "Jika luas lingkaran A = 154 cm² dan luas lingkaran B = 616 cm², maka perbandingan jari-jari lingkaran A dan B adalah … (π = 22/7)",
+     "o": ["1 : 2", "1 : 4", "2 : 3", "1 : 3"],
+     "j": 0},
+
+    {"p": "Sebuah lapangan olahraga berbentuk persegi panjang 30 m × 20 m. Di dalamnya terdapat lingkaran dengan jari-jari 7 m. Luas lapangan di luar lingkaran adalah … (π = 22/7)",
+     "o": ["444 m²", "446 m²", "600 m²", "154 m²"],
+     "j": 0},
+
+    {"p": "Sebuah jam dinding berbentuk lingkaran memiliki jari-jari 21 cm. Panjang jarum menit yang merupakan jari-jari jam tersebut menyapu luas … setelah berputar 30 menit (setengah putaran). (π = 22/7)",
+     "o": ["693 cm²", "1.386 cm²", "346,5 cm²", "2.772 cm²"],
+     "j": 0},
+
+    {"p": "Busur lingkaran merupakan …",
+     "o": ["Garis lurus yang membagi lingkaran menjadi dua bagian sama besar",
+           "Bagian dari keliling lingkaran di antara dua titik",
+           "Jarak dari titik pusat ke titik pada keliling",
+           "Garis yang menghubungkan pusat ke tali busur secara tegak lurus"],
      "j": 1},
 
     # ══════════════════════════════════════════════════════════
     # BANGUN RUANG – BALOK & KUBUS
     # ══════════════════════════════════════════════════════════
 
-    {"p": "Rumus luas permukaan balok adalah …",
-     "o": ["p × l × t", "2(pl + pt + lt)", "2(p + l) × t", "(p + l + t) × 2"],
+    {"p": "Sebuah balok memiliki luas permukaan 376 cm². Jika panjang = 10 cm dan lebar = 8 cm, maka tinggi balok tersebut adalah …",
+     "o": ["5 cm", "6 cm", "7 cm", "8 cm"],
      "j": 1},
 
-    {"p": "Sebuah balok berukuran panjang 8 cm, lebar 5 cm, dan tinggi 3 cm. Luas permukaan balok tersebut adalah …",
-     "o": ["120 cm²", "79 cm²", "158 cm²", "316 cm²"],
-     "j": 2},
-
-    {"p": "Sebuah balok memiliki panjang 10 cm, lebar 4 cm, dan tinggi 6 cm. Luas permukaan balok adalah …",
-     "o": ["248 cm²", "240 cm²", "124 cm²", "244 cm²"],
+    {"p": "Sebuah kotak kayu berbentuk balok berukuran 25 cm × 15 cm × 10 cm akan dicat seluruh permukaannya. Jika biaya pengecatan Rp 500 per cm², total biaya pengecatan adalah …",
+     "o": ["Rp 775.000", "Rp 925.000", "Rp 850.000", "Rp 1.150.000"],
      "j": 0},
 
-    {"p": "Pernyataan yang BENAR tentang balok adalah …",
-     "o": ["Memiliki 6 rusuk",
-           "Semua sisinya berbentuk persegi",
-           "Memiliki 4 sisi",
-           "Memiliki 8 titik sudut"],
+    {"p": "Sebuah akuarium berbentuk balok berukuran 60 cm × 30 cm × 40 cm. Jika diisi air hingga ¾ penuh, volume air dalam akuarium adalah …",
+     "o": ["54.000 cm³", "40.500 cm³", "72.000 cm³", "27.000 cm³"],
+     "j": 0},
+
+    {"p": "Sebuah bak mandi berbentuk balok berukuran 120 cm × 80 cm × 60 cm. Jika debit air masuk 2.000 cm³ per menit, waktu yang dibutuhkan untuk mengisi penuh bak tersebut adalah …",
+     "o": ["288 menit", "576 menit", "360 menit", "144 menit"],
+     "j": 0},
+
+    {"p": "Sebuah kubus memiliki luas permukaan 294 cm². Panjang rusuk kubus tersebut adalah …",
+     "o": ["5 cm", "6 cm", "7 cm", "8 cm"],
+     "j": 2},
+
+    {"p": "Sebanyak 8 kubus kecil dengan panjang rusuk 3 cm disusun membentuk satu kubus besar. Panjang rusuk kubus besar tersebut adalah …",
+     "o": ["6 cm", "9 cm", "12 cm", "24 cm"],
+     "j": 0},
+
+    {"p": "Sebuah balok memiliki volume 840 cm³. Jika panjang = 14 cm dan lebar = 6 cm, maka tinggi balok tersebut adalah …",
+     "o": ["8 cm", "9 cm", "10 cm", "12 cm"],
+     "j": 2},
+
+    {"p": "Dalam sebuah peti berbentuk balok berukuran 60 cm × 40 cm × 30 cm, akan dimasukkan balok kecil berukuran 10 cm × 8 cm × 6 cm. Berapa banyak balok kecil yang dapat dimasukkan?",
+     "o": ["100 buah", "120 buah", "150 buah", "180 buah"],
+     "j": 2},
+
+    {"p": "Sebuah kubus diperbesar rusuknya menjadi 3 kali lipat. Perbandingan volume kubus baru dengan volume kubus semula adalah …",
+     "o": ["3 : 1", "6 : 1", "9 : 1", "27 : 1"],
      "j": 3},
 
-    {"p": "Balok memiliki berapa rusuk?",
-     "o": ["8", "10", "12", "6"],
+    {"p": "Sebuah bak berbentuk kubus memiliki volume 27.000 cm³. Panjang rusuk bak tersebut adalah …",
+     "o": ["20 cm", "27 cm", "30 cm", "25 cm"],
      "j": 2},
 
-    {"p": "Pernyataan yang SALAH tentang balok adalah …",
-     "o": ["Balok memiliki 6 sisi",
-           "Sisi-sisi balok berbentuk persegi panjang",
-           "Balok memiliki 12 rusuk",
-           "Semua rusuk balok memiliki panjang yang sama"],
+    {"p": "Sebuah balok memiliki panjang 15 cm, lebar 10 cm, dan tinggi 8 cm. Jika panjangnya diperpanjang menjadi 20 cm, volume balok baru tersebut adalah …",
+     "o": ["1.200 cm³", "1.500 cm³", "1.600 cm³", "2.400 cm³"],
+     "j": 2},
+
+    {"p": "Jumlah panjang seluruh rusuk sebuah kubus adalah 60 cm. Volume kubus tersebut adalah …",
+     "o": ["25 cm³", "125 cm³", "150 cm³", "625 cm³"],
+     "j": 1},
+
+    {"p": "Sebuah kolam ikan berbentuk balok berukuran 3 m × 2 m × 1,5 m berisi air setinggi 1 m. Volume air dalam kolam tersebut adalah …",
+     "o": ["3 m³", "6 m³", "9 m³", "4,5 m³"],
+     "j": 1},
+
+    {"p": "Diagonal sisi sebuah kubus dengan panjang rusuk 6 cm adalah …",
+     "o": ["6√2 cm", "6√3 cm", "12 cm", "6 cm"],
+     "j": 0},
+
+    {"p": "Sebuah balok memiliki panjang rusuk-rusuknya dengan perbandingan 3 : 2 : 1. Jika volume balok = 1.536 cm³, panjang rusuk terpanjangnya adalah …",
+     "o": ["16 cm", "24 cm", "32 cm", "12 cm"],
+     "j": 1},
+
+    {"p": "Sebuah jaring-jaring kubus terbuat dari karton. Jika panjang rusuk kubus = 8 cm, luas karton yang dibutuhkan adalah …",
+     "o": ["64 cm²", "192 cm²", "384 cm²", "512 cm²"],
+     "j": 2},
+
+    {"p": "Luas permukaan sebuah balok adalah 2(40 + 30 + 24) = 188 cm². Jika panjang = 8 cm dan lebar = 5 cm, maka tinggi balok tersebut adalah …",
+     "o": ["3 cm", "4 cm", "5 cm", "6 cm"],
      "j": 3},
-
-    {"p": "Sisi yang saling berhadapan pada sebuah balok memiliki …",
-     "o": ["Ukuran berbeda-beda",
-           "Ukuran yang sama",
-           "Sudut yang berbeda",
-           "Tidak memiliki pasangan"],
-     "j": 1},
-
-    {"p": "Sebuah balok berukuran 12 cm × 8 cm × 5 cm. Volume balok tersebut adalah …",
-     "o": ["240 cm³", "480 cm³", "960 cm³", "120 cm³"],
-     "j": 1},
-
-    {"p": "Sebuah kubus memiliki berapa titik sudut?",
-     "o": ["6", "7", "8", "4"],
-     "j": 2},
-
-    {"p": "Dua buah kubus digabungkan. Jumlah total titik sudut dari kedua kubus tersebut adalah …",
-     "o": ["12", "14", "16", "18"],
-     "j": 2},
-
-    {"p": "Volume sebuah kubus adalah 216 cm³. Panjang rusuknya adalah …",
-     "o": ["4 cm", "5 cm", "6 cm", "7 cm"],
-     "j": 2},
-
-    {"p": "Sebuah kubus memiliki volume 512 cm³. Panjang rusuk kubus tersebut adalah …",
-     "o": ["7 cm", "8 cm", "9 cm", "6 cm"],
-     "j": 1},
-
-    {"p": "Jika panjang rusuk kubus adalah 5 cm, maka volumenya adalah …",
-     "o": ["25 cm³", "125 cm³", "150 cm³", "100 cm³"],
-     "j": 1},
-
-    {"p": "Sebuah kubus memiliki volume 1.000 cm³. Panjang rusuk kubus tersebut adalah …",
-     "o": ["8 cm", "9 cm", "10 cm", "11 cm"],
-     "j": 2},
-
-    {"p": "Luas permukaan kubus dengan panjang rusuk 4 cm adalah …",
-     "o": ["16 cm²", "64 cm²", "96 cm²", "32 cm²"],
-     "j": 2},
-
-    {"p": "Jaring-jaring balok terdiri dari berapa sisi?",
-     "o": ["4", "5", "6", "8"],
-     "j": 2},
-
-    {"p": "Pada jaring-jaring balok, pasangan sisi yang berhadapan memiliki …",
-     "o": ["Ukuran berbeda",
-           "Ukuran yang sama",
-           "Bentuk berbeda",
-           "Tidak ada pasangan"],
-     "j": 1},
 
     # ══════════════════════════════════════════════════════════
     # BANGUN RUANG – TABUNG, KERUCUT, BOLA
     # ══════════════════════════════════════════════════════════
 
-    {"p": "Rumus volume tabung adalah …",
-     "o": ["π × r² × t", "1/3 × π × r² × t", "4/3 × π × r³", "p × l × t"],
+    {"p": "Sebuah tabung memiliki jari-jari 7 cm dan tinggi 15 cm. Luas permukaan total tabung tersebut adalah … (π = 22/7)",
+     "o": ["968 cm²", "660 cm²", "484 cm²", "1.936 cm²"],
      "j": 0},
 
-    {"p": "Rumus volume kerucut adalah …",
-     "o": ["π × r² × t", "1/3 × π × r² × t", "4/3 × π × r³", "2 × π × r × t"],
+    {"p": "Volume sebuah tabung adalah 3.080 cm³. Jika jari-jarinya 7 cm, tinggi tabung tersebut adalah … (π = 22/7)",
+     "o": ["15 cm", "20 cm", "25 cm", "30 cm"],
      "j": 1},
 
-    {"p": "Rumus volume bola adalah …",
-     "o": ["π × r² × t", "1/3 × π × r² × t", "4/3 × π × r³", "2/3 × π × r³"],
-     "j": 2},
-
-    {"p": "Sebuah tabung memiliki jari-jari 7 cm dan tinggi 10 cm. Volume tabung tersebut adalah … (π = 22/7)",
-     "o": ["1.540 cm³", "770 cm³", "3.080 cm³", "440 cm³"],
+    {"p": "Sebuah kerucut memiliki jari-jari 21 cm dan tinggi 28 cm. Volume kerucut tersebut adalah … (π = 22/7)",
+     "o": ["12.936 cm³", "38.808 cm³", "12.936 cm³", "18.480 cm³"],
      "j": 0},
 
-    {"p": "Rumus luas selimut tabung adalah …",
-     "o": ["π × r² × t", "2 × π × r × t", "2 × π × r (r + t)", "π × r × t"],
+    {"p": "Sebuah kaleng berbentuk tabung dengan jari-jari 14 cm dan tinggi 30 cm diisi penuh dengan minyak goreng. Jika minyak dipindahkan ke kaleng kedua berdiameter sama tetapi tinggi 20 cm, berapa sisa minyak yang tidak tertampung? (π = 22/7)",
+     "o": ["5.280 cm³", "6.160 cm³", "4.400 cm³", "18.480 cm³"],
      "j": 1},
 
-    {"p": "Jari-jari tabung adalah 7 cm dan tingginya 10 cm. Luas selimut tabung adalah … (π = 22/7)",
-     "o": ["440 cm²", "880 cm²", "220 cm²", "330 cm²"],
+    {"p": "Sebuah bola memiliki jari-jari 7 cm. Luas permukaan bola tersebut adalah … (π = 22/7)",
+     "o": ["44 cm²", "154 cm²", "616 cm²", "308 cm²"],
+     "j": 2},
+
+    {"p": "Volume sebuah bola adalah 38.808 cm³. Jari-jari bola tersebut adalah … (π = 22/7)",
+     "o": ["14 cm", "21 cm", "28 cm", "7 cm"],
+     "j": 1},
+
+    {"p": "Sebuah ember berbentuk tabung berdiameter 28 cm dan tinggi 35 cm. Berapa liter air yang dapat ditampung ember tersebut? (π = 22/7, 1 liter = 1.000 cm³)",
+     "o": ["21,56 liter", "86,24 liter", "43,12 liter", "28 liter"],
      "j": 0},
 
-    {"p": "Sebuah tabung memiliki jari-jari 3,5 cm dan tinggi 10 cm. Luas selimut tabung adalah … (π = 22/7)",
-     "o": ["110 cm²", "220 cm²", "330 cm²", "440 cm²"],
-     "j": 1},
-
-    {"p": "Jika tabung dan kerucut memiliki jari-jari dan tinggi yang sama, maka perbandingan volume tabung dan volume kerucut adalah …",
-     "o": ["1:3", "2:1", "3:1", "1:2"],
-     "j": 2},
-
-    {"p": "Perbandingan volume tabung dan volume kerucut yang memiliki jari-jari dan tinggi sama adalah …",
-     "o": ["1:3", "2:3", "3:1", "3:2"],
-     "j": 2},
-
-    {"p": "Pernyataan yang BENAR tentang perbandingan volume tabung dan kerucut (r dan t sama) adalah …",
-     "o": ["Volume kerucut = volume tabung",
-           "Volume tabung = 2 × volume kerucut",
-           "Volume tabung = 3 × volume kerucut",
-           "Volume kerucut = 2 × volume tabung"],
-     "j": 2},
-
-    {"p": "Pernyataan yang BENAR tentang bangun ruang kerucut adalah …",
-     "o": ["Memiliki 2 rusuk",
-           "Memiliki 2 sisi datar",
-           "Memiliki 1 titik sudut",
-           "Alasnya berbentuk persegi"],
-     "j": 2},
-
-    {"p": "Jumlah sisi pada bangun kerucut adalah …",
-     "o": ["1", "2", "3", "4"],
-     "j": 1},
-
-    {"p": "Kerucut memiliki berapa rusuk?",
-     "o": ["0", "1", "2", "3"],
-     "j": 1},
-
-    {"p": "Alas bangun kerucut berbentuk …",
-     "o": ["Persegi", "Persegi panjang", "Lingkaran", "Segitiga"],
-     "j": 2},
-
-    {"p": "Jari-jari sebuah bola adalah 3 cm. Volume bola tersebut adalah … (π = 3,14)",
-     "o": ["56,52 cm³", "113,04 cm³", "37,68 cm³", "150,72 cm³"],
-     "j": 1},
-
-    {"p": "Volume sebuah bola dengan jari-jari 6 cm adalah … (π = 3,14)",
-     "o": ["904,32 cm³", "452,16 cm³", "226,08 cm³", "150,72 cm³"],
+    {"p": "Sebuah topi ulang tahun berbentuk kerucut memiliki jari-jari alas 10,5 cm dan tinggi 14 cm. Volume topi tersebut adalah … (π = 22/7)",
+     "o": ["1.617 cm³", "4.851 cm³", "808,5 cm³", "3.234 cm³"],
      "j": 0},
+
+    {"p": "Dua buah tabung A dan B memiliki jari-jari sama yaitu 7 cm. Tinggi tabung A = 20 cm dan tinggi tabung B = 15 cm. Selisih volume kedua tabung tersebut adalah … (π = 22/7)",
+     "o": ["770 cm³", "1.540 cm³", "2.310 cm³", "3.080 cm³"],
+     "j": 1},
+
+    {"p": "Perbandingan volume bola besar dan bola kecil adalah 27 : 8. Jika jari-jari bola kecil = 4 cm, maka jari-jari bola besar adalah …",
+     "o": ["6 cm", "8 cm", "12 cm", "9 cm"],
+     "j": 0},
+
+    {"p": "Sebuah tabung dan sebuah kerucut memiliki jari-jari dan tinggi yang sama. Jika volume tabung = 4.620 cm³, maka volume kerucut adalah … (π = 22/7)",
+     "o": ["1.540 cm³", "2.310 cm³", "3.080 cm³", "924 cm³"],
+     "j": 0},
+
+    {"p": "Luas selimut sebuah kerucut dengan jari-jari 7 cm dan garis pelukis 25 cm adalah … (π = 22/7)",
+     "o": ["550 cm²", "275 cm²", "1.100 cm²", "154 cm²"],
+     "j": 0},
+
+    {"p": "Sebuah bola dimasukkan ke dalam kubus. Jika jari-jari bola = 7 cm, volume kubus minimum yang diperlukan agar bola muat adalah …",
+     "o": ["343 cm³", "5.488 cm³", "2.744 cm³", "1.372 cm³"],
+     "j": 2},
+
+    {"p": "Volume sebuah tabung adalah 9.240 cm³. Jika tingginya 30 cm, jari-jari tabung tersebut adalah … (π = 22/7)",
+     "o": ["7 cm", "10,5 cm", "14 cm", "3,5 cm"],
+     "j": 1},
+
+    {"p": "Sebuah bola tenis memiliki jari-jari 3,5 cm. Luas permukaan bola tersebut adalah … (π = 22/7)",
+     "o": ["38,5 cm²", "77 cm²", "154 cm²", "308 cm²"],
+     "j": 2},
 
     # ══════════════════════════════════════════════════════════
     # STATISTIKA – MEAN, MEDIAN, MODUS
     # ══════════════════════════════════════════════════════════
 
-    {"p": "Rumus untuk menghitung rata-rata (mean) adalah …",
-     "o": ["Data terbanyak dibagi banyak data",
-           "Jumlah seluruh data dibagi banyak data",
-           "Data terkecil ditambah data terbesar",
-           "Data tengah dibagi 2"],
+    {"p": "Nilai ulangan 8 siswa adalah: 65, 72, 80, 68, 90, 72, 85, 76. Rata-rata nilai tersebut adalah …",
+     "o": ["74,5", "75,5", "76,0", "76,5"],
      "j": 1},
 
-    {"p": "Nilai ulangan 5 siswa adalah: 70, 80, 75, 85, 90. Rata-rata nilai tersebut adalah …",
-     "o": ["75", "80", "85", "82"],
-     "j": 1},
-
-    {"p": "Rata-rata berat badan 4 siswa adalah 45 kg. Seorang siswa baru dengan berat 50 kg bergabung. Rata-rata berat badan kelima siswa tersebut adalah …",
-     "o": ["46 kg", "47 kg", "45,5 kg", "48 kg"],
+    {"p": "Rata-rata nilai 7 siswa adalah 78. Jika seorang siswa baru dengan nilai 92 bergabung, rata-rata nilai 8 siswa tersebut adalah …",
+     "o": ["79,5", "80", "80,5", "81"],
      "j": 0},
 
-    {"p": "Berat badan 5 siswa adalah: 35, 38, 40, 42, 45 kg. Rata-rata berat badan mereka adalah …",
-     "o": ["39 kg", "40 kg", "41 kg", "38 kg"],
+    {"p": "Data tinggi badan 6 siswa: 142, 148, 145, 152, 148, 155 cm. Rata-rata tinggi badan mereka adalah …",
+     "o": ["148 cm", "148,3 cm", "150 cm", "148,5 cm"],
+     "j": 3},
+
+    {"p": "Rata-rata nilai ulangan matematika 9 siswa adalah 74. Jika nilai seorang siswa yang semula 60 diperbaiki menjadi 78, rata-rata nilai menjadi …",
+     "o": ["74", "76", "78", "72"],
      "j": 1},
 
-    {"p": "Rata-rata tinggi badan 4 siswa adalah 135 cm. Jika siswa kelima memiliki tinggi 150 cm, rata-rata tinggi badan kelima siswa tersebut adalah …",
-     "o": ["136 cm", "138 cm", "140 cm", "142 cm"],
+    {"p": "Nilai ulangan 10 siswa: 70, 75, 60, 85, 80, 75, 90, 65, 75, 85. Modus dari data tersebut adalah …",
+     "o": ["75", "80", "85", "70"],
+     "j": 0},
+
+    {"p": "Data: 12, 15, 18, 15, 20, 18, 15, 22, 18, 15. Modus dan median data tersebut adalah …",
+     "o": ["Modus = 15, Median = 16,5", "Modus = 18, Median = 15", "Modus = 15, Median = 15", "Modus = 15, Median = 18"],
+     "j": 0},
+
+    {"p": "Data nilai ujian: 55, 60, 65, 70, 75, 80, 85, 90. Median dari data tersebut adalah …",
+     "o": ["70", "72,5", "75", "77,5"],
      "j": 1},
 
-    {"p": "Jika rata-rata nilai 5 siswa adalah 80, maka jumlah nilai kelima siswa tersebut adalah …",
-     "o": ["350", "400", "450", "500"],
+    {"p": "Rata-rata nilai 5 siswa adalah 82. Jika nilai tertinggi dikeluarkan dan rata-rata menjadi 78, nilai tertinggi siswa tersebut adalah …",
+     "o": ["90", "94", "96", "98"],
      "j": 1},
 
-    {"p": "Rata-rata nilai ulangan adalah 75. Jumlah seluruh nilai adalah 600. Banyak siswa yang mengikuti ulangan adalah …",
-     "o": ["6", "7", "8", "9"],
-     "j": 2},
+    {"p": "Data: 4, 6, 8, 10, 12, 14, 16. Rata-rata dan median data tersebut adalah …",
+     "o": ["Rata-rata = 10, Median = 10", "Rata-rata = 8, Median = 10", "Rata-rata = 10, Median = 12", "Rata-rata = 12, Median = 10"],
+     "j": 0},
 
-    {"p": "Rata-rata tinggi badan siswa adalah 130 cm. Jumlah seluruh tinggi badan adalah 1.820 cm. Banyak siswa tersebut adalah …",
-     "o": ["12", "14", "15", "16"],
-     "j": 1},
-
-    {"p": "Data nilai 8 siswa: 65, 70, 75, 80, 85, 70, 65, 90. Nilai rata-rata adalah …",
+    {"p": "Nilai ulangan 12 siswa: 55, 60, 65, 70, 70, 75, 75, 80, 80, 85, 90, 95. Median dari data tersebut adalah …",
      "o": ["72,5", "75", "77,5", "80"],
      "j": 1},
 
-    {"p": "Modus adalah …",
-     "o": ["Nilai tertinggi dalam data",
-           "Nilai tengah dalam data",
-           "Nilai yang paling sering muncul",
-           "Rata-rata dari semua data"],
-     "j": 2},
-
-    {"p": "Data: 5, 7, 8, 7, 6, 9, 7, 5, 8, 7. Modus dari data tersebut adalah …",
-     "o": ["5", "6", "7", "8"],
-     "j": 2},
-
-    {"p": "Data nilai: 6, 7, 8, 9, 7, 8, 7, 6, 8, 7. Modus dari data tersebut adalah …",
-     "o": ["6", "7", "8", "9"],
+    {"p": "Jumlah nilai 6 siswa adalah 480. Jika seorang siswa mendapat nilai 100, rata-rata nilai 7 siswa tersebut adalah …",
+     "o": ["80", "82,86", "85", "83,33"],
      "j": 1},
 
-    {"p": "Data: 5, 3, 7, 3, 8, 3, 9, 4, 3. Modus dari data tersebut adalah …",
-     "o": ["3", "4", "5", "7"],
+    {"p": "Data berat badan siswa: 35, 38, 40, 40, 42, 44, 45, 48 kg. Rata-rata, median, dan modus berturut-turut adalah …",
+     "o": ["41,5 – 41 – 40", "41,75 – 41 – 40", "42 – 40 – 40", "41 – 41,5 – 40"],
      "j": 0},
 
-    {"p": "Data: 5, 7, 8, 6, 9. Median dari data tersebut adalah …",
-     "o": ["7", "8", "6", "9"],
+    {"p": "Rata-rata nilai ulangan 30 siswa adalah 76. Jika 10 siswa yang mendapat nilai di atas 80 memiliki rata-rata 86, maka rata-rata nilai 20 siswa lainnya adalah …",
+     "o": ["71", "72", "73", "74"],
      "j": 0},
 
-    {"p": "Data nilai ulangan: 70, 80, 65, 90, 75, 85, 60. Median dari data tersebut adalah …",
-     "o": ["75", "80", "70", "65"],
-     "j": 0},
+    {"p": "Data nilai: 60, 65, 70, 75, 75, 80, 80, 80, 85, 90. Pernyataan yang BENAR adalah …",
+     "o": ["Mean = Median = Modus",
+           "Modus > Median > Mean",
+           "Mean < Median < Modus",
+           "Median = 77,5 dan Modus = 80"],
+     "j": 3},
 
-    {"p": "Data: 4, 6, 8, 2, 10, 12. Median dari data tersebut adalah …",
-     "o": ["7", "8", "6", "9"],
-     "j": 0},
-
-    {"p": "Median dari data: 15, 20, 25, 30, 35 adalah …",
-     "o": ["20", "25", "30", "35"],
-     "j": 1},
+    {"p": "Rata-rata nilai 4 tes adalah 78. Setelah tes ke-5, rata-rata menjadi 80. Nilai tes ke-5 tersebut adalah …",
+     "o": ["84", "86", "88", "90"],
+     "j": 2},
 
     # ══════════════════════════════════════════════════════════
-    # STATISTIKA – DIAGRAM BATANG
+    # STATISTIKA – DIAGRAM BATANG & ANALISIS DATA
     # ══════════════════════════════════════════════════════════
 
-    {"p": "Pada diagram batang, sumbu vertikal biasanya menunjukkan …",
-     "o": ["Nama kategori",
-           "Jenis data",
-           "Frekuensi atau jumlah data",
-           "Urutan data"],
-     "j": 2},
-
-    {"p": "Diagram batang pengunjung museum: Senin=50, Selasa=40, Rabu=60, Kamis=45, Jumat=55. Hari dengan pengunjung paling sedikit adalah …",
-     "o": ["Senin", "Selasa", "Kamis", "Jumat"],
+    {"p": "Diagram batang penjualan buku per bulan: Jan=120, Feb=150, Mar=90, Apr=180, Mei=135. Rata-rata penjualan per bulan adalah …",
+     "o": ["130 buku", "135 buku", "140 buku", "145 buku"],
      "j": 1},
 
-    {"p": "Berdasarkan data pengunjung museum (Senin=50, Selasa=40, Rabu=60, Kamis=45, Jumat=55), rata-rata pengunjung per hari adalah …",
-     "o": ["48", "50", "52", "54"],
+    {"p": "Data nilai ulangan kelas 6A: 65, 70, 70, 75, 75, 75, 80, 80, 85, 90. Persentase siswa yang mendapat nilai di atas 75 adalah …",
+     "o": ["30%", "40%", "50%", "60%"],
+     "j": 0},
+
+    {"p": "Diagram batang kehadiran siswa: Senin=38, Selasa=35, Rabu=40, Kamis=37, Jumat=30. Jika total siswa 40 orang, persentase rata-rata kehadiran per hari adalah …",
+     "o": ["90%", "92,5%", "93,75%", "95%"],
+     "j": 2},
+
+    {"p": "Data penjualan es krim selama 7 hari: 45, 38, 52, 60, 48, 55, 42. Selisih antara penjualan terbanyak dan tersedikit adalah …",
+     "o": ["18 buah", "20 buah", "22 buah", "24 buah"],
+     "j": 2},
+
+    {"p": "Nilai rata-rata kelas A = 78 dengan 25 siswa dan kelas B = 82 dengan 15 siswa. Nilai rata-rata gabungan kedua kelas tersebut adalah …",
+     "o": ["79,5", "80", "79", "80,5"],
+     "j": 0},
+
+    {"p": "Data frekuensi nilai: 60 (3 siswa), 70 (8 siswa), 80 (12 siswa), 90 (5 siswa), 100 (2 siswa). Rata-rata nilai kelas tersebut adalah …",
+     "o": ["76,67", "78,33", "77", "79"],
      "j": 1},
 
-    {"p": "Diagram batang nilai ulangan: data 5 siswa mendapat nilai 70, 80, 75, 85, 90. Pernyataan yang BENAR adalah …",
-     "o": ["Nilai terendah adalah 75",
-           "Nilai rata-rata adalah 80",
-           "Nilai tertinggi adalah 90",
-           "Tidak ada siswa yang mendapat nilai 75"],
-     "j": 2},
-
-    {"p": "Data nilai matematika 7 siswa: 60, 70, 80, 75, 90, 85, 70. Pernyataan yang BENAR adalah …",
-     "o": ["Rata-rata nilai adalah 75",
-           "Modus nilai adalah 80",
-           "Nilai tertinggi adalah 90",
-           "Nilai terendah adalah 65"],
-     "j": 2},
-
-    {"p": "Data nilai: 65, 70, 75, 80, 70, 65, 90, 85. Pernyataan yang BENAR adalah …",
-     "o": ["Modus adalah 75",
-           "Mean adalah 75",
-           "Nilai terbesar adalah 85",
-           "Median adalah 70"],
+    {"p": "Dalam suatu kelas, 12 siswa mendapat nilai A, 15 siswa nilai B, 8 siswa nilai C, dan 5 siswa nilai D. Persentase siswa yang mendapat nilai A atau B adalah …",
+     "o": ["54%", "67,5%", "70%", "75%"],
      "j": 1},
 
-    {"p": "Sebuah balok memiliki 8 titik sudut dan 12 rusuk. Jumlah sisi balok tersebut adalah …",
-     "o": ["4", "5", "6", "8"],
-     "j": 2},
+    {"p": "Data nilai ulangan: 70, 72, 74, 76, 78, 80, 82. Jika nilai 70 diganti 84, perubahan yang terjadi adalah …",
+     "o": ["Mean naik 2, Median tetap", "Mean naik 2, Median naik", "Mean naik, Median naik 2", "Mean dan Median sama-sama naik 2"],
+     "j": 0},
 
-    {"p": "Rumus volume kubus dengan rusuk s adalah …",
-     "o": ["s²", "6s²", "s³", "4s²"],
-     "j": 2},
+    {"p": "Dari data: 5, 7, 8, 9, 10, 11, 12, 13, 14, 15 – nilai yang harus ditambahkan agar rata-ratanya menjadi 11 adalah …",
+     "o": ["20", "21", "22", "23"],
+     "j": 0},
+
+    {"p": "Diagram batang menunjukkan nilai matematika: nilai 6 (2 siswa), nilai 7 (6 siswa), nilai 8 (10 siswa), nilai 9 (7 siswa), nilai 10 (5 siswa). Modus dan median nilai tersebut adalah …",
+     "o": ["Modus = 8, Median = 8", "Modus = 8, Median = 9", "Modus = 9, Median = 8", "Modus = 8, Median = 7"],
+     "j": 0},
 
 ]
 
 # ─────────────────────────────────────────────────────────────
 #  POOL ESAI  (15 soal – diambil 5 per sesi secara acak)
+#  Tingkat kesulitan ditingkatkan ~10% dari versi sebelumnya
 # ─────────────────────────────────────────────────────────────
 ESAI_POOL = [
     # 0
-    {"p": "Jelaskan cara menghitung luas lingkaran! Berikan contoh soal dengan jari-jari 7 cm (π = 22/7).",
-     "pedoman": "Rumus: L = π × r². Contoh: L = 22/7 × 7² = 22/7 × 49 = 154 cm²."},
+    {"p": "Sebuah lapangan olahraga berbentuk persegi panjang 50 m × 30 m. Di dalam lapangan tersebut terdapat lingkaran besar berdiameter 28 m. Hitunglah: (a) keliling lingkaran, (b) luas lingkaran, dan (c) luas lapangan di luar lingkaran! (π = 22/7)",
+     "pedoman": "(a) K = π×d = 22/7 × 28 = 88 m. (b) L = π×r² = 22/7 × 14² = 616 m². (c) Luas persegi panjang = 50×30 = 1.500 m². Luas di luar lingkaran = 1.500 – 616 = 884 m²."},
 
     # 1
-    {"p": "Sebuah balok berukuran panjang 12 cm, lebar 8 cm, dan tinggi 5 cm. Hitunglah luas permukaan dan volume balok tersebut!",
-     "pedoman": "LP = 2(p×l + p×t + l×t) = 2(96 + 60 + 40) = 2 × 196 = 392 cm². Volume = 12 × 8 × 5 = 480 cm³."},
+    {"p": "Sebuah kolam renang berbentuk balok memiliki ukuran panjang 15 m, lebar 8 m, dan kedalaman 2 m. (a) Hitunglah volume kolam! (b) Jika kolam diisi air dengan debit 500 liter per menit, berapa lama waktu yang diperlukan untuk mengisi penuh kolam? (1 m³ = 1.000 liter)",
+     "pedoman": "(a) Volume = 15 × 8 × 2 = 240 m³ = 240.000 liter. (b) Waktu = 240.000 ÷ 500 = 480 menit = 8 jam."},
 
     # 2
-    {"p": "Data nilai ulangan matematika 10 siswa: 70, 80, 65, 75, 90, 80, 70, 85, 75, 80. Tentukan mean, median, dan modus dari data tersebut!",
-     "pedoman": "Mean = (70+80+65+75+90+80+70+85+75+80)/10 = 770/10 = 77. Diurutkan: 65,70,70,75,75,80,80,80,85,90. Median = (75+80)/2 = 77,5. Modus = 80 (muncul 3 kali)."},
+    {"p": "Data nilai ulangan matematika 12 siswa: 55, 65, 70, 75, 75, 80, 80, 80, 85, 90, 90, 95. Tentukan: (a) mean, (b) median, (c) modus, dan (d) jangkauan (nilai max – nilai min) dari data tersebut!",
+     "pedoman": "(a) Mean = (55+65+70+75+75+80+80+80+85+90+90+95)/12 = 940/12 ≈ 78,33. (b) Median = (80+80)/2 = 80 (data ke-6 dan ke-7). (c) Modus = 80 (muncul 3 kali). (d) Jangkauan = 95 – 55 = 40."},
 
     # 3
-    {"p": "Jelaskan perbedaan rumus volume tabung, kerucut, dan bola! Tuliskan rumusnya masing-masing.",
-     "pedoman": "Volume tabung = π×r²×t. Volume kerucut = 1/3×π×r²×t. Volume bola = 4/3×π×r³. Jika r dan t sama, volume tabung = 3 × volume kerucut."},
+    {"p": "Sebuah tabung memiliki jari-jari 14 cm dan tinggi 25 cm. Sebuah kerucut memiliki jari-jari 14 cm dan tinggi 25 cm. (a) Hitunglah volume tabung! (b) Hitunglah volume kerucut! (c) Berapa cm³ pasir yang dibutuhkan untuk mengisi tabung jika sudah ada kerucut di dalamnya? (π = 22/7)",
+     "pedoman": "(a) V tabung = π×r²×t = 22/7×14²×25 = 22/7×196×25 = 15.400 cm³. (b) V kerucut = 1/3×15.400 ≈ 5.133,33 cm³. (c) Pasir = 15.400 – 5.133,33 = 10.266,67 cm³."},
 
     # 4
-    {"p": "Sebuah kubus memiliki volume 343 cm³. Hitunglah panjang rusuk, luas permukaan, dan jumlah titik sudut kubus tersebut!",
-     "pedoman": "s = ∛343 = 7 cm. Luas permukaan = 6 × 7² = 6 × 49 = 294 cm². Jumlah titik sudut = 8."},
+    {"p": "Sebuah kubus besar dengan panjang rusuk 12 cm akan dipotong menjadi kubus-kubus kecil dengan panjang rusuk 3 cm. (a) Berapa banyak kubus kecil yang terbentuk? (b) Hitunglah total luas permukaan semua kubus kecil! (c) Bandingkan dengan luas permukaan kubus besar semula!",
+     "pedoman": "(a) Jumlah = (12/3)³ = 4³ = 64 kubus kecil. (b) Luas 1 kubus kecil = 6×3² = 54 cm². Total = 64×54 = 3.456 cm². (c) Luas kubus besar = 6×12² = 864 cm². Total luas kubus kecil 4× lebih besar dari kubus besar."},
 
     # 5
-    {"p": "Jelaskan apa yang dimaksud dengan mean, median, dan modus dalam statistika!",
-     "pedoman": "Mean = rata-rata (jumlah seluruh data ÷ banyak data). Median = nilai tengah setelah data diurutkan. Modus = nilai yang paling sering muncul dalam data."},
+    {"p": "Jelaskan perbedaan mean, median, dan modus! Kemudian dari data nilai: 72, 68, 80, 75, 68, 85, 90, 68, 75, 79 – tentukan ketiga ukuran pemusatan data tersebut!",
+     "pedoman": "Mean = rata-rata (jumlah ÷ banyak data). Median = nilai tengah data yang sudah diurutkan. Modus = nilai yang paling sering muncul. Data diurutkan: 68,68,68,72,75,75,79,80,85,90. Mean = 760/10 = 76. Median = (75+75)/2 = 75. Modus = 68 (muncul 3 kali)."},
 
     # 6
-    {"p": "Sebuah tabung memiliki jari-jari 7 cm dan tinggi 20 cm (π = 22/7). Hitunglah: (a) luas selimut, (b) luas alas, (c) volume tabung!",
-     "pedoman": "(a) Luas selimut = 2 × 22/7 × 7 × 20 = 880 cm². (b) Luas alas = 22/7 × 7² = 154 cm². (c) Volume = 154 × 20 = 3.080 cm³."},
+    {"p": "Sebuah bola memiliki jari-jari 21 cm. (a) Hitunglah volume bola tersebut! (b) Hitunglah luas permukaan bola! (c) Jika bola diperkecil hingga jari-jarinya menjadi 7 cm, berapa kali volume bola semula dibandingkan volume bola baru? (π = 22/7)",
+     "pedoman": "(a) V = 4/3×22/7×21³ = 4/3×22/7×9.261 = 38.808 cm³. (b) L = 4×π×r² = 4×22/7×441 = 5.544 cm². (c) V bola baru = 4/3×22/7×7³ = 1.437,33 cm³. Rasio = 38.808/1.437,33 = 27 kali."},
 
     # 7
-    {"p": "Jelaskan bagian-bagian lingkaran berikut: jari-jari, diameter, busur, tali busur, dan apotema!",
-     "pedoman": "Jari-jari: garis dari pusat ke keliling. Diameter: garis melalui pusat = 2 × jari-jari. Busur: bagian dari keliling lingkaran. Tali busur: garis lurus menghubungkan 2 titik di keliling. Apotema: jarak tegak lurus dari pusat ke tali busur."},
+    {"p": "Jelaskan bagian-bagian lingkaran berikut beserta rumusnya: (a) jari-jari dan diameter, (b) luas lingkaran, (c) keliling lingkaran, (d) luas setengah lingkaran, (e) keliling setengah lingkaran (termasuk diameter)!",
+     "pedoman": "(a) r = jarak pusat ke keliling; d = 2r. (b) L = π×r². (c) K = 2×π×r = π×d. (d) L½ = ½×π×r². (e) K½ = π×r + 2r = r(π + 2)."},
 
     # 8
-    {"p": "Data pengunjung perpustakaan selama 5 hari: Senin=30, Selasa=25, Rabu=40, Kamis=35, Jumat=45. Tentukan: hari tersibuk, hari paling sepi, dan rata-rata pengunjung per hari!",
-     "pedoman": "Hari tersibuk = Jumat (45 orang). Hari paling sepi = Selasa (25 orang). Total = 30+25+40+35+45 = 175. Rata-rata = 175 ÷ 5 = 35 orang/hari."},
+    {"p": "Data kunjungan wisatawan ke suatu tempat wisata dalam 6 bulan: Jan=1.200, Feb=980, Mar=1.450, Apr=1.680, Mei=2.100, Jun=1.790. (a) Tentukan bulan dengan kunjungan tertinggi dan terendah! (b) Hitunglah rata-rata kunjungan per bulan! (c) Bulan mana yang kunjungannya di atas rata-rata?",
+     "pedoman": "(a) Tertinggi = Mei (2.100), Terendah = Feb (980). (b) Total = 9.200. Rata-rata = 9.200/6 ≈ 1.533,33. (c) Bulan di atas rata-rata: Mar (1.450 – tidak), Apr (1.680 – ya), Mei (2.100 – ya), Jun (1.790 – ya) → April, Mei, Juni."},
 
     # 9
-    {"p": "Jelaskan cara membaca diagram batang dan informasi apa saja yang dapat diperoleh dari diagram batang!",
-     "pedoman": "Diagram batang dibaca dengan melihat tinggi batang pada sumbu vertikal (frekuensi/jumlah) dan kategori pada sumbu horizontal. Informasi yang diperoleh: nilai tertinggi dan terendah, perbandingan antar data, jumlah total, dan rata-rata."},
+    {"p": "Sebuah ember berbentuk tabung berdiameter 28 cm dan tinggi 40 cm diisi air sebanyak ¾ penuh. (a) Hitunglah volume air dalam ember! (b) Air dituangkan ke dalam botol-botol berkapasitas 1.540 cm³. Berapa botol yang dapat diisi penuh? (π = 22/7)",
+     "pedoman": "(a) V tabung = π×r²×t = 22/7×14²×40 = 24.640 cm³. V air = ¾×24.640 = 18.480 cm³. (b) Jumlah botol = 18.480 ÷ 1.540 = 12 botol."},
 
     # 10
-    {"p": "Sebuah bola memiliki jari-jari 3 cm. Hitunglah volume bola tersebut (π = 3,14)!",
-     "pedoman": "V = 4/3 × π × r³ = 4/3 × 3,14 × 3³ = 4/3 × 3,14 × 27 = 4/3 × 84,78 = 113,04 cm³."},
+    {"p": "Nilai rata-rata ulangan matematika kelas 6 adalah 76. Kelas terdiri dari 30 siswa. (a) Berapakah jumlah seluruh nilai siswa? (b) Jika 5 siswa terbaik dengan rata-rata nilai 95 dikeluarkan dari perhitungan, berapa rata-rata nilai 25 siswa lainnya? (c) Apa yang terjadi pada mean jika semua nilai ditambah 4?",
+     "pedoman": "(a) Jumlah = 76 × 30 = 2.280. (b) Jumlah 5 siswa terbaik = 95 × 5 = 475. Jumlah 25 siswa = 2.280 – 475 = 1.805. Rata-rata = 1.805/25 = 72,2. (c) Mean juga bertambah 4 menjadi 80."},
 
     # 11
-    {"p": "Jelaskan sifat-sifat bangun ruang kerucut! Sebutkan jumlah titik sudut, rusuk, dan sisinya.",
-     "pedoman": "Titik sudut: 1 (puncak kerucut). Rusuk: 1 (tepi alas yang berupa lingkaran). Sisi: 2 (1 alas berbentuk lingkaran + 1 selimut kerucut yang berbentuk juring). Alas kerucut berbentuk lingkaran."},
+    {"p": "Jelaskan sifat-sifat bangun ruang kerucut dan tabung! Sertakan jumlah titik sudut, rusuk, sisi, dan rumus volume masing-masing.",
+     "pedoman": "Kerucut: titik sudut = 1 (puncak), rusuk = 1 (tepi alas), sisi = 2 (alas lingkaran + selimut), V = 1/3×π×r²×t. Tabung: titik sudut = 0, rusuk = 2 (tepi atas dan bawah), sisi = 3 (2 alas lingkaran + 1 selimut), V = π×r²×t."},
 
     # 12
-    {"p": "Rata-rata nilai ulangan matematika suatu kelas adalah 75. Jika jumlah seluruh nilai adalah 2.250, berapa banyak siswa di kelas tersebut? Jelaskan caranya!",
-     "pedoman": "Banyak siswa = jumlah seluruh nilai ÷ rata-rata = 2.250 ÷ 75 = 30 siswa."},
+    {"p": "Rata-rata nilai ulangan IPA, Matematika, dan Bahasa Indonesia seorang siswa adalah 82. Nilai IPA = 80 dan nilai Bahasa Indonesia = 78. (a) Berapakah nilai Matematika siswa tersebut? (b) Jika nilai Matematika diperbaiki menjadi 98, berapa rata-rata baru ketiga mata pelajaran tersebut?",
+     "pedoman": "(a) Total nilai = 82×3 = 246. Nilai Mat = 246 – 80 – 78 = 88. (b) Total baru = 80 + 98 + 78 = 256. Rata-rata baru = 256/3 ≈ 85,33."},
 
     # 13
-    {"p": "Sebuah setengah lingkaran memiliki jari-jari 14 cm. Hitunglah luas dan keliling setengah lingkaran tersebut (π = 22/7)!",
-     "pedoman": "Luas = 1/2 × π × r² = 1/2 × 22/7 × 14² = 1/2 × 616 = 308 cm². Keliling = π×r + 2r = (22/7 × 14) + (2 × 14) = 44 + 28 = 72 cm."},
+    {"p": "Sebuah setengah lingkaran memiliki diameter 28 cm. Di dalamnya terdapat dua lingkaran kecil yang sama besar dengan diameter masing-masing 7 cm. (a) Hitunglah luas setengah lingkaran besar! (b) Hitunglah total luas kedua lingkaran kecil! (c) Hitunglah luas daerah yang tidak ditutupi lingkaran kecil! (π = 22/7)",
+     "pedoman": "(a) r besar = 14 cm. Luas ½ lingkaran = ½×22/7×14² = ½×616 = 308 cm². (b) Luas 1 lingkaran kecil = 22/7×3,5² = 38,5 cm². Total 2 lingkaran = 77 cm². (c) Luas sisa = 308 – 77 = 231 cm²."},
 
     # 14
-    {"p": "Jelaskan perbedaan antara jaring-jaring kubus dan jaring-jaring balok!",
-     "pedoman": "Jaring-jaring kubus: 6 sisi berbentuk persegi dengan ukuran sama. Jaring-jaring balok: 6 sisi berbentuk persegi panjang dengan 3 pasang sisi yang sama ukurannya (sisi berhadapan). Kubus adalah balok khusus di mana semua rusuknya sama panjang."},
+    {"p": "Jelaskan perbedaan jaring-jaring kubus dan jaring-jaring balok! Kemudian, sebuah balok memiliki panjang 12 cm, lebar 8 cm, dan tinggi 5 cm. Hitunglah luas permukaan dan panjang seluruh rusuk balok tersebut!",
+     "pedoman": "Jaring-jaring kubus: 6 sisi persegi sama besar. Jaring-jaring balok: 6 sisi persegi panjang dengan 3 pasang ukuran berbeda. Luas permukaan = 2(12×8 + 12×5 + 8×5) = 2(96+60+40) = 2×196 = 392 cm². Jumlah rusuk = 4(p+l+t) = 4(12+8+5) = 4×25 = 100 cm."},
 ]
 
 # ─────────────────────────────────────────────────────────────
